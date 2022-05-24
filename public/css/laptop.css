@@ -1,0 +1,38 @@
+@media (min-width :481px){
+
+    .flex{
+        display: flex;
+    }
+
+    .flex1{
+        display: flex;
+    }
+    .w50 {
+        width: 50%;
+    }
+
+    .padtopname {
+        padding-top: 45px;
+    }
+
+     .padtopdesc {
+        padding-top: 60px;
+    }
+
+    .nav-header {
+        background-color: gray;
+        color: white;
+        width: 100%;
+        height: 50px;
+        margin: 0%;
+        padding: 0%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: center;
+      }
+
+
+
+
+    }

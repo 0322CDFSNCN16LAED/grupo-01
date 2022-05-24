@@ -1,0 +1,39 @@
+main {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100% ;
+  
+}
+
+.anchototal {
+    
+       
+    width: 100% ;
+}
+
+.botonregiter{
+    width: 100%;
+    background-color: #1259c3;
+}
+
+.contenedor {
+    display: flex;
+}
+
+span{
+    color: red;
+}
+
+.anchoerror {
+    width: 100%;
+}
+
+.border{
+    border: 1px solid red;
+}
+
