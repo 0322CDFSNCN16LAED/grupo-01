@@ -1,0 +1,9 @@
+@media (min-width: 769px) {
+    .elemento-mmejor {
+        font-size: 16px;
+        margin-left: 40px
+    }
+    .articulo {
+        width: 22%;
+    }
+}

@@ -1,0 +1,39 @@
+@media (min-width: 481px) {
+    .burger-menu {
+        display: none;
+    }
+    .iconos-header {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 4px;
+    }
+    .barra-nav-tablet {
+        display: flex;
+    }
+    .elemento-mmejor {
+        font-size: 16px;
+    }
+    .mundo-mejor {
+        font-size: 18px;
+    }
+    .articulos {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .articulo {
+        width: 45%;
+    }
+    .descripciones {
+        font-size: 16px;
+    }
+    .precios {
+        font-size: 12px;
+    }
+    .cantidad {
+        font-size: 12px
+    }
+
+
+}
