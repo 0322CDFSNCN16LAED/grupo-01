@@ -64,7 +64,6 @@ body {
     width: 100%;
     font-family: 'Lilita One', cursiva;
     
-    
 }
 
 
@@ -330,7 +329,7 @@ transition: color 1s;
     padding: auto;
   }
   .img {
-    width: 100%;
+   
     margin: 0%;
     padding: 0%;
   }
@@ -469,6 +468,9 @@ transition: color 1s;
     padding: 0%;
     justify-content: center;
     border-top: 1px solid lightgray;
+   
+  
+    
   }
   .div-beneficios-header {
     width: 50%;
