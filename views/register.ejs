@@ -1,83 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>carritocompra</title>
-
-
-
-
-    
-    <meta name="viewport" content="width=device-wid th, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2? family=Montserrat:wght@400;700&family=Roboto&display=swap" rel="stylesheet"> 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@100&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/carrito-register.css">
-    <link rel="stylesheet" href="/css/laptop.css">
-
-
-
+<%- include("./partials/head.ejs") %>
 </head>
-<body class=" bg-yellow font12">
-    <header>
-        <section>
 
-        
-        <div class="nav-tittle">
-            <div class="tittle"><a href="./"><img class="img" src="/images/logo.jpg" alt="Logo"></a>
-        </div>
-        
-            <section class="section-header">
-        <div class="barra"><input placeholder="Buscar productos, marcas" class="search-u"><a href=""><i class="fas fa-search search animation-search"></i></a></div>
-        <section class="section-icon-tittle">
-        <div class="div-icon-tittle"><i class="fas fa-user icon-tittle"></i></div>
-        <div class="div-icon-tittle"><i class="fas fa-shopping-cart icon-tittle"></i></div>
-        <div class="burguer">
-            <a href=""><i class="fas fa-bars icon-burguer"></i></a>
-          </div>
-        </section>
-        </section>
-        
-        <section class="section-beneficios-all">
-            <div class="div-beneficios-header"><h4>AYUDAMOS A CREAR UN MUNDO MEJOR</h4></div>
-        <section class="section-beneficios-header">
-            <article class="article-beneficios-header">
-        <div><i class="fas fa-faucet icon-beneficos-header"></i></div>
-        <div class="contador">CONTADOR</div>
-          <div class="div-beneficios-header1"> Agua </div>
-        </article>
-        <article class="article-beneficios-header">
-          <div><i class="fas fa-paw icon-beneficos-header"></i></div>
-          <div class="contador">CONTADOR</div>
-          <div class="div-beneficios-header1"> Vidas </div>
-        </article>
-        <article class="article-beneficios-header">
-        <div><i class="fas fa-exclamation-triangle icon-beneficos-header"></i></div>
-        <div class="contador">CONTADOR</div>
-          <div class="div-beneficios-header1"> CO2 </div>
-        </article>
-        </section>
-        </section>
-        </section>
-        
-        <nav class="nav-header">
-        <div class="div-nav">PRODUTOS</div>
-        <div class="div-nav">RECETAS</div>
-        <div class="div-nav">REEMPLAZOS</div>
-        <div class="div-nav">CONTACTO</div>
-        
-        </nav>
-        
-        </header>
+<body>
+
+<header>
+  <%- include("./partials/header.ejs") %>
+
+</header>
     <main >
         <form method="GET" action="/">
             
@@ -195,16 +127,10 @@ rel="stylesheet" />
     </main>
 
 
-    <footer class="bg-black font-white padtop30">
-        <div class="flex-main4">                
-            <p><i class="fab fa-instagram font-y font24"></i></p>
-            <p><i class="fab fa-facebook-square font-y font24 "></i></p>
-            <p><i class="fab fa-twitter-square font-y font24 "></i></p>
-            <p><i class="fas fa-envelope font-y  font24"></i></p>
-        </div>
-
-        <p>CopyRight 2022</p>
-    </footer
+    <footer class="footer">
+        <%- include("./partials/footer.ejs") %>
+  
+  </footer>
 
 
 

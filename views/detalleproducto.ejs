@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<%- include("./partials/head.ejs") %>
+</head>
+
+<body>
+
+<header>
+  <%- include("./partials/header.ejs") %>
+
+</header>
+<br>
+<main >
+
+<section>
+    <article class="articulo">
+       <div class="tittle-icon"> <i class="fas fa-angle-double-right icon0"></i></div>
+   <div class="div-tittle"><h2 class="tittle-product1">VEGAN BURGUER DE LENTAJAS</h2></div> 
+  <div class="div-image">  <img class="image" src="/images/burguer.png" alt="burger de lentejas"></div>
+</article>
+</section>
+<section class="section-boton">
+    <div class="bottom">
+        <button type="submit" value="Enviar" class="boton"> Comprar <i class="fas fa-dollar-sign icon animation"></i> </button>
+    </div>
+    <div class="bottom">
+        <button type="reset" value="Borrar" class="boton"> Agregar al carrito <i class="fas fa-shopping-cart icon animation"></i> </button>
+    </div>
+    <div class="bottom">
+      <button type="submit" value="Volver al inicio" class="boton"> Volver al inicio <i class="fas fa-home icon animation"></i> </button>
+  </div >
+</section>
+<section>
+    <div class="div-beneficios"><h4>Tu aporte con esta compra</h4></div>
+<section class="section-beneficios">
+    <article class="article-beneficios">
+<div><i class="fas fa-faucet icon-beneficios"></i></div>
+<div>CONTADOR</div>
+  <div class="div-beneficios"> Agua </div>
+</article>
+<article class="article-beneficios">
+  <div><i class="fas fa-paw icon-beneficios"></i></div>
+  <div>CONTADOR</div>
+  <div class="div-beneficios"> Vidas </div>
+</article>
+<article class="article-beneficios">
+<div><i class="fas fa-exclamation-triangle icon-beneficios"></i></div>
+<div>CONTADOR</div>
+  <div class="div-beneficios"> CO2 </div>
+</article>
+</section>
+</section>
+    </main>
+    <br>
+    <br>
+    <footer class="footer">
+      <%- include("./partials/footer.ejs") %>
+
+</footer>
+
+</body>
+</html>

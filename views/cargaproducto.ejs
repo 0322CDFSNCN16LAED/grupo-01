@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<%- include("./partials/head.ejs") %>
+</head>
+
+<body>
+
+<header>
+  <%- include("./partials/header.ejs") %>
+
+</header>
+<br>
+<main >
+
+<section>
+    <article class="articulo">
+       <div class="tittle-icon"> <i class="fas fa-angle-double-right icon0"></i></div>
+       <% productos.forEach(producto=> {%>
+        <a href="/detalleproducto/<%= producto.id %>"></a>
+        <div class="div-tittle"><h2 class="tittle-product1"><%= producto.nombre %></h2></div> 
+        <img src="<%= producto.imagen %>">  
+        
+     
+        
+       
+        <% }); %>
+
+
+
+</article>
+
+
+
+</section>
+
+</main>
+
+    <br>
+    <br>
+
+
+    <footer class="footer">
+      <%- include("./partials/footer.ejs") %>
+
+</footer>
+
+</body>
+</html>

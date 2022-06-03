@@ -1,113 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/home-tablet.css">
-    <link rel="stylesheet" href="/css/home-desktop.css">
-    <link rel="stylesheet" href="/css/login.css">
-
+<%- include("./partials/head.ejs") %>
 </head>
 
-<body class="width-100vw height-100vh font-family-lilita bg-pagina display-flex flex-column">
-    <header class="width-100pc display-flex flex-column margin-bottom-5px padding-bottom-5px">
-        <section class="display-flex align-items-center justify-content-space-around">
-            <img src="/images/logo.jpg" class="bg-pagina width-20pc">
-            <div class="display-flex flex-column width-60pc align-items-center">
-                <div class="display-none align-self-end iconos-header">
-                    <a href="/user"><i class="font-size-18 fas fa-user  text-color-black"></i></a>
-                    <a href="/cart" class="margin-left-5px"><i
-                            class="font-size-18 fas fa-shopping-cart text-color-black"></i></a>
-                </div>
-                <form
-                    class="border-radius-3px display-flex align-items-center buscador height-100pc bg-white width-100pc padding-5px buscador"
-                    action="/busqueda" method="get">
-                    <input type="search" class="grow heigth-100pc border-radius-3px borde-blanco width-90pc"
-                        placeholder="Busca productos y más">
-                    <button type="submit" class="bg-white border-radius-3px borde-blanco"><i
-                            class=" bg-white fas fa-search center-me "></i></button>
-                </form>
-                <nav class="width-100pc display-none barra-nav-tablet">
-                    <ul
-                        class="width-100pc display-flex align-items-center justify-content-end nav-sin-estilo height-100pc">
-                        <li><a class="lista-sin-subrayar text-color-black" href=/register>Registrate</a></li>
-                        <li><a class="lista-sin-subrayar text-color-black margin-left-7px" href=/login>Ingresa</a></li>
-                        <li><a class="lista-sin-subrayar text-color-black margin-left-7px" href=/help>Ayuda</a></li>
-                    </ul>
-                </nav>
-            </div>
-            </div>
-        </section>
-        <a class="center-me burger-menu">
-            <i class="center-me fas fa-bars bg-black text-color-white icono-mejorado"></i>
-        </a>
-        <div class="width-100pc border-bottom-black">
-        </div>
-        <section
-            class="display-flex justify-content-space-between margin-bottom-5px width-90pc center-me margin-auto align-items-center">
-            <div class="display-flex flex-column align-items-center flex-wrap-wrap mundo-mejor position-relative">
-                <p>Ayudanos a crear un</p>
-                <p>mundo mejor</p>
-            </div>
-            <div class="display-flex flex-column align-items-center font-size-12 grow">
-                <div class="display-flex align-items-center">
-                    <div class="display-flex align-items-center padding-5px">
-                        <div class="display-flex flex-column align-items-center elemento-mmejor">
-                            <p>Ahorramos</p>
-                            <p>X</p>
-                            <p>Litros de</p>
-                            <p>agua</p>
+<body>
 
-                        </div>
-                        <i class="fas fa-hand-holding-water font-size-16 text-color-blue-water "></i>
-                    </div>
-                    <div class="display-flex align-items-center margin-left-10px padding-5px">
-                        <div class="display-flex flex-column align-items-center elemento-mmejor">
-                            <p>Evitamos</p>
-                            <p>X</p>
-                            <p>Kg de CO2</p>
-                            <p>emitidos</p>
-                        </div>
-                        <i class="fas fa-smog font-size-16"></i>
-                    </div>
-                </div>
-                <div class="display-flex align-items-center">
-                    <div class="display-flex flex-column align-items-center padding-5px elemento-mmejor">
-                        <p>Salvamos</p>
-                        <p>X</p>
-                        <p>vidas</p>
-                    </div>
-                    <div class="min-width-16px">
-                        <i class="fas fa-heart text-color-red font-size-16 corazon"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="width-100pc border-bottom-black">
-        </div>
-        <nav
-            class="width-100pc bg-grey border-bottom-black center-me padding-5px display-flex justify-content-center align-items-flex-end ">
-            <ul
-                class="width-90pc display-flex align-items-end justify-content-space-around nav-sin-estilo min-heigth-30px height-100pc text-color-white">
-                <li><a class="lista-sin-subrayar text-color-white" href=/productos>Productos</a><i
-                        class="text-color-white fas fa-angle-down"></i></li>
-                <li><a class="lista-sin-subrayar text-color-white" href=/reemplazos>Reemplazos</a><i
-                        class="text-color-white fas fa-angle-down"></i></li>
-                <li><a class="lista-sin-subrayar text-color-white" href=/recetas>Recetas</a><i
-                        class="text-color-white fas fa-angle-down"></i></li>
-                <li><a class="lista-sin-subrayar text-color-white" href=/contacto>Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+  <%- include("./partials/header.ejs") %>
+
+</header>
+    
     <main class="grow margin-bottom-55px width-90pc margin-auto">
         <section class="100pc">
             <h2 class="">Productos destacados</h2>
@@ -168,19 +71,10 @@
 
 
     </main>
-    <footer
-        class="width-100pc bg-black display-flex flex-column justify-content-center align-items-center padding-10px">
-        <div class="display-flex flex-row justify-content-space-around">
-            <a href="https://www.instagram.com/"><i class="font-size-18 text-color-pagina fab fa-instagram"></i></a>
-            <a href="https://es-la.facebook.com/"><i
-                    class="font-size-18 margin-left-10px text-color-pagina fab fa-facebook-square"></i></a>
-            <a href="https://twitter.com/?lang=es"><i
-                    class="font-size-18 margin-left-10px text-color-pagina fab fa-twitter"></i></a>
-            <a href="/contact"><i class="font-size-18 margin-left-10px text-color-pagina far fa-envelope"></i></a>
-        </div>
-        <p class="text-color-pagina font-size-12"><i class="text-color-pagina far fa-copyright"></i>2022 Todos los
-            derechos reservados</p>
-    </footer>
+    <footer class="footer">
+        <%- include("./partials/footer.ejs") %>
+  
+  </footer>
 </body>
 
 </html>
