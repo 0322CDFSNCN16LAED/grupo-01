@@ -6,7 +6,7 @@ const productos = [
         descripcion : "Hambuersa de lentejas en caja de 4 U",
         precio : 350,
         id : 1,
-        imagen : "burger.png"
+        imagen : "burguer.png"
      
     },
     {
