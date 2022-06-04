@@ -2,22 +2,27 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    transition: all 450ms ;
+    
  }
 body {
-      font-family: 'Roboto', sans-serif; 
+        font-family: 'Lilita One', cursiva;
      }
+
 .width-100pc {
         width: 100%;
 }
 .width-100vw {
         width: 100vw;
 }
+.width-99pc {
+        width: 99%;
+}
+
 .width-90pc {
         width: 90%;
 }
 .width-80pc {
-        width: 90%;
+        width: 80%;
 }
 .width-70pc {
         width: 70%;
@@ -27,6 +32,9 @@ body {
 }
 .width-40pc {
         width: 40%;
+}
+.width-33pc {
+        width: 33%;
 }
 .width-30pc {
         width: 30%;
@@ -60,7 +68,7 @@ body {
 }
 .align-items-center {
         align-items: center;
-}
+} 
 .align-items-end {
         align-items: flex-end;
 }
@@ -81,7 +89,7 @@ body {
 }
 .justify-content-space-between {
         justify-content: space-between;
-}
+} 
 .flex-wrap-wrap {
         flex-wrap: wrap;
 }
@@ -124,6 +132,11 @@ body {
 .font-size-12 {
         font-size: 12px;
 }
+
+
+.font-size-10 {
+        font-size: 10px;
+}
 .font-family-lilita {
         font-family: 'Lilita One', cursive;
 }
@@ -141,6 +154,9 @@ body {
 }
 .grow {
         flex-grow: 1;
+}
+.margin-5px {
+        margin: 5px;
 }
 .margin-10px {
         margin: 10px;
@@ -160,6 +176,16 @@ body {
 .margin-left-5px {
         margin-left: 5px;
 }
+.marginleft20{
+        margin-left: 20%;
+
+}
+.marginleft35{
+        margin-left: 35%;
+
+}
+
+
 .margin-bottom-55px {
         margin-bottom: 55px;
 }
@@ -181,6 +207,46 @@ body {
 .padding-bottom-5px {
         padding-bottom: 5px;
 }
+
+.padright20{
+        padding-right: 20px;
+}
+    
+.padtop30{
+        padding-top: 30px;
+}
+
+.padtop15{
+        padding-top: 15px;    
+        
+}
+
+.padtop28{
+        padding-top: 28px;
+       
+    }
+
+.padleft12 {
+        padding-left: 12px;
+}
+
+
+
+
+
+.underline {
+    text-decoration: underline;
+}
+
+.bold{
+        font-weight: bold;
+        
+    }
+
+.blackborderall {
+        border: black solid 2px;
+    }
+
 .border-bottom-black {
         border-bottom: #000000 solid 2px;
 }
@@ -212,6 +278,9 @@ body {
         font-size: 20px;
         text-align: center;
 }
+
+
+
 @keyframes creciendo {
         0% { font-size: 13px; }
         100% { font-size: 16px;}

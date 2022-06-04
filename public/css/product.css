@@ -138,7 +138,9 @@ body {
 }
 .icon-burguer {
   margin: 0%;
-  padding: 8%;
+  height: 30px;
+  width: 30px;
+  padding: 25%;
   background-color: black;
   color: #ffe600;
   display: flex;

@@ -1,0 +1,73 @@
+article{
+    margin-bottom: 10px;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
+.padgopay {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.w100 {
+    width: 100%;
+    
+}
+
+.h100 {
+    height: 100%;
+}
+
+.tacho{    
+
+padding-top: 3.5px;
+padding-right: 5px;
+transition: color 1s;
+}
+
+.tacho:hover {
+    color: red;
+}
+
+.circle{
+    width: 20px;
+    height: 10px;
+    border: black solid 1px;
+    border-radius: 50%;
+    background-color: #C4C4C4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  
+
+
+
+  
+
+
+ 
+
+
+
+
