@@ -1,6 +1,6 @@
 const productos = require("../productos")
 
-const controler = {
+const controller = {
 
     home : (req,res)=>{
         res.render("home")
@@ -31,6 +31,9 @@ const controler = {
     carrito : (req,res)=>{
         res.render("carrito")
     },
+    busqueda : (req,res) => {
+        
+    }
     
    
 
@@ -38,6 +41,6 @@ const controler = {
 }
 
 
-module.exports = controler
+module.exports = controller
 
 

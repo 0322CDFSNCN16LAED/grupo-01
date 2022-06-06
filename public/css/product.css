@@ -129,27 +129,7 @@ body {
   font-weight: bold;
   color: white;
 }
-.burguer {
-  width: 30%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  border: none;
-}
-.icon-burguer {
-  margin: 0%;
-  height: 30px;
-  width: 30px;
-  padding: 25%;
-  background-color: black;
-  color: #ffe600;
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  text-align: center;
-  margin-top: -1px;
-}
+
 .section-beneficios-all {
   display: flex;
   flex-wrap: wrap;

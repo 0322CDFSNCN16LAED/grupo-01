@@ -1,4 +1,4 @@
-@media (min-width: 481px) {
+@media (min-width: 576px) {
     .burger-menu {
         display: none;
     }
@@ -10,7 +10,7 @@
     .barra-nav-tablet {
         display: flex;
     }
-    .elemento-mmejor {
+    .elemento-mejor {
         font-size: 16px;
     }
     .mundo-mejor {
