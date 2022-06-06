@@ -1,4 +1,4 @@
-@media (min-width :481px){
+@media (min-width :769px){
 
     .flex{
         display: flex;
@@ -31,7 +31,16 @@
         justify-content: space-evenly;
         align-content: center;
       }
+
+      .div-icon-tittle {
+        display: flex;
+        width: 50%;
+        justify-content: center;
+      }
       
+      .burguer{
+          display: none;
+      }
 
       .w22{
           width: 22%;
