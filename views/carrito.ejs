@@ -2,9 +2,15 @@
 <html lang="es">
 <head>
 <%- include("./partials/head.ejs") %>
+<link rel="stylesheet" href="/css/carrito.css">
+<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/laptop.css">
+<link rel="stylesheet" href="/css/home-tablet.css">
+<link rel="stylesheet" href="/css/home-desktop.css">
+
 </head>
 
-<body>
+<body class="bg-pagina">
 
 <header>
   <%- include("./partials/header.ejs") %>
@@ -142,7 +148,7 @@
             
             <h3 class="center-me" > BENEFICIOS DE ESTA COMPRA </h3>
 
-            <div class="display-flex justify-content-space-between pad10">   
+            <div class="display-flex justify-content-space-around pad10">   
                 <div>  
                  
                 <p class="circle marginleft20"> </p>
@@ -169,7 +175,7 @@
             
                 <h3 class="center-me" >  FORMAS DE PAGO </h3>
                 
-                <div class="display-flex justify-content-space-between"> 
+                <div class="display-flex justify-content-space-around"> 
                 <img src="/images/VISA2.png " >   
                 <img src="/images/master.png " >   
                 <img src="/images/pay.png " class="pad">    

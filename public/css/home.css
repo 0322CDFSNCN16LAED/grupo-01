@@ -198,6 +198,9 @@ body {
 .margin-auto {
         margin: auto;
 }
+.padding-0 {
+        padding: 0;
+}
 .padding-5px {
         padding: 5px;
 }
@@ -294,3 +297,71 @@ body {
 .box-shadow-comun {
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
+.section-beneficios-all {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0%;
+        padding: 0%;
+        justify-content: center;
+        border-top: 1px solid lightgray;
+      } 
+.section-beneficios-all {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0%;
+        padding: 0%;
+        justify-content: center;
+        border-top: 1px solid lightgray;
+      }
+.div-beneficios-header {
+        width: 50%;
+        margin: 0%;
+        padding: 0%;
+        display: flex;
+        font-size: 100%;
+        text-align: center;
+        justify-content: center;
+        align-self: center;
+      }
+.div-beneficios-header1 {
+        font-size: 140%;
+      }
+.section-beneficios-header {
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+        text-align: right;
+      }
+.article-beneficios-header {
+        width: 33%;
+        font-size: 60%;
+        display: block;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-top: -5%;
+      }
+.icon-beneficos-header {
+        background-color: #ffe600;
+        color: black;
+        width: 100%;
+        font-size: 200%;
+        margin-top: 20%;
+        margin-bottom: 20%;
+      }
+.contador {
+        font-size: 100%;
+        margin-top: -20%;
+        margin-bottom: 10%;
+      }
+.search-u {
+        background-color: #ffe600;
+        width: 100%;
+        height: 30px;
+        position: relative;
+        margin: 0px;
+        border: solid lightgrey;
+        border-radius: 5px;
+      }
