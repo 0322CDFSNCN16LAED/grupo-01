@@ -30,6 +30,9 @@ body {
 .width-60pc {
         width: 60%;
 }
+.width-45pc {
+        width: 45%;
+}
 .width-40pc {
         width: 40%;
 }
@@ -74,10 +77,18 @@ body {
 }
 .align-self-end {
         align-self: flex-end;
-}
+} 
 .align-self-start {
         align-self: flex-start;
 }
+
+.align-self-center {
+        align-self: center;
+}
+
+
+
+
 .justify-content-center {
         justify-content: center;
 }
@@ -89,10 +100,10 @@ body {
 }
 .justify-content-space-between {
         justify-content: space-between;
-} 
+}  
 .flex-wrap-wrap {
         flex-wrap: wrap;
-}
+} 
 .bg-pagina {
         background-color: #FFE600 ;
 }
@@ -129,6 +140,10 @@ body {
 .font-size-16 {
         font-size: 16px;
 }
+
+.font-size-14 {
+        font-size: 14px;
+}
 .font-size-12 {
         font-size: 12px;
 }
@@ -149,6 +164,12 @@ body {
 .center-me {
         text-align:center;
 }
+
+.center-me {
+        text-align:center;
+}
+
+
 .border-radius-3px {
         border-radius: 3px;
 }
@@ -218,16 +239,36 @@ body {
 .padtop30{
         padding-top: 30px;
 }
+.padtop28{
+        padding-top: 28px;
+       
+}
+
+.padtop20{
+        padding-top: 20px;
+}
+.padtop15{
+        padding-top: 15px;
+      }
+
+.padtop40p{
+        padding-top: 40%;
+}
+
+
+.padbottom20{
+        padding-bottom: 20px;
+       
+}
+
+
+
 
 .padtop15{
         padding-top: 15px;    
         
 }
 
-.padtop28{
-        padding-top: 28px;
-       
-    }
 
 .padleft12 {
         padding-left: 12px;

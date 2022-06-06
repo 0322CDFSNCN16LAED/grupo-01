@@ -32,6 +32,15 @@ const productos = [
         id : 4,
         imagen : "choritop.jpg"
      
+    },
+
+    {
+        nombre : "VEGAN PIZZA PARTY",
+        descripcion : " Lista para hornear",
+        precio : 100,
+        id : 4,
+        imagen : "choritop.jpg"
+     
     }
 ]
 

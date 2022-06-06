@@ -11,6 +11,7 @@ body {
   padding: auto;
   position: absolute;
 }
+
 .header {
   margin: auto;
   padding: auto;
@@ -68,7 +69,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: -30%;
+  margin-top: -10%;
 }
 .div-icon-tittle {
   display: flex;

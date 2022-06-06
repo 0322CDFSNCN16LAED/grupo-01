@@ -10,20 +10,25 @@ div {
   
 }
 
-.w100-reg {
-
-    
-    width: 100%;
+.margintop {
+    border-top: black solid 5px;
   }
-
-  .w50-reg{
-    width: 45%;
+ 
+  .marginbottom{
+   border-bottom: black solid 5px;
+   padding-bottom: 15px;
   }
-
  
 
   .border-reg{
     border-radius: 8px;
+  }
+
+  .face-gmail {
+    display: flex;
+    border : black solid 2px;
+    border-radius: 5px;
+    width: 48%;
   }
 
   .flex-register{
@@ -33,32 +38,15 @@ div {
   }
 
 
-  .pad20{
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
+
 
   .margreg{
     margin-bottom: 10px;
   }
 
 
-  .flexregcon {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    
-    align-self: center;
-  }
 
- .margintop {
-   border-top: black solid 5px;
- }
 
- .marginbottom{
-  border-bottom: black solid 5px;
-  padding-bottom: 15px;
- }
 
  .black{
    background-color: black;
@@ -67,23 +55,11 @@ div {
    text-align: left;
  }
 
- .flexdatpers {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
 
- }
 
- .prueba2 {
-   display: flex;
-   border : black solid 2px;
-   border-radius: 5px;
-   width: 48%;
- }
 
- .pad{
-   padding-top: 15px;
- }
+
+
 
 
 .anchototal {
