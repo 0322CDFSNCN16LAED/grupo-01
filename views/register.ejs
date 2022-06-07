@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="/css/register.css">
 <link rel="stylesheet" href="/css/home-tablet.css">
 <link rel="stylesheet" href="/css/home-desktop.css">
+<link rel="stylesheet" href="/css/laptop.css">
 </head>
 
 <body class="width-100vw height-100vh font-family-lilita bg-pagina display-flex flex-column min-heigth-100vh">
@@ -18,42 +19,42 @@
         <form method="GET" action="/">
             
             <section class="registratecon">
-                <h1> Registrarse</h1>
+                <h1 class="text-color-blue"> Registrarse</h1>
                 <div class="margintop">
-                    <h2>Registate con : </h2>
+                    <h2 class="text-color-blue" >Registate con : </h2>
                 </div>
                 <div class="display-flex justify-content-space-between flex-wrap-wrap align-self-center marginbottom">
-                    <div class="face-gmail">
-                        <p><i class="fab fa-facebook-square font-size-24"></i></p>
-                        <a href="https://es-la.facebook.com/" class="padtop15"> Facebook</a>
+                    <div class="face-gmail justify-content-space-between ">
+                        <i class="fab fa-facebook-square font-size-24 justify-content-center align-self-center"></i>
+                        <p class="justify-content-center align-self-center text-color-blue "><a href="https://es-la.facebook.com/" class="padtop15 justify-content-center align-self-center "> Facebook</a></p>
                         
-                        
+                         
                     </div>
-                    <div class="face-gmail">
+                    <div class="face-gmail justify-content-space-between">
                        
-                        <p><i class="fas fa-envelope font-size-24"></i></p>
-                        <a href="https://accounts.google.com/" class="padtop15"> Gmail</a>
+                        <p><i class="fas fa-envelope font-size-24 justify-content-center align-self-center "></i></p>
+                        <p class="justify-content-center align-self-center " ><a href="https://accounts.google.com/" class="padtop15 justify-content-center align-self-center "> Gmail</a></p>
                 </div>
            </section>
 
            <section class="creausuario">
 
-                <h2> O crea un usuario </h2>
-                <h3> Datos personales </h3> 
-                <div class="display-flex justify-content-space-between flex-wrap-wrap">
+                <h2 class="padtop15 text-color-blue " > O crea un usuario </h2>
+                <h3 class="padtop15 text-color-blue"  > Datos personales </h3> 
+                <div class="display-flex justify-content-space-between flex-wrap-wrap padtop15" >
                     <input type="text" name="nombreyapelido" placeholder="Nombre" class="width-45pc border-reg "> 
                     
                     <input type="text" name="nombreyapelido" placeholder="Apellido" class="width-45pc border-reg"> 
                    
                 </div>
 
-                <div class="flex-register">
+                <div class="flex-register padtop15 ">
                     <div>
-                        <p>Fecha de nacimiento </p>
+                        <p class="text-color-blue">Fecha de nacimiento </p>
                         <input type="date" name="date " class="border-reg" >   
                 </div>
                 <div>
-                    <p> Sexo </p>
+                    <p class="text-color-blue"> Sexo </p>
                     <select class="border-reg">
                         <option> F </option>
                         <option> M </option>
@@ -62,15 +63,15 @@
                     </select>
                 </div>
                     <div>
-                        <p> Celular </p>
+                        <p class="text-color-blue"> Celular </p>
                         <input type="text" name="" placeholder="Celular" class="border-reg"> 
                     
                     </div>
                 </div>
 
-                <h3> Datos de acceso </h3> 
+                <h3 class="padtop15 text-color-blue "> Datos de acceso </h3> 
 
-                <div>
+                <div class="padtop15" >
                     <input type="email" name="" placeholder="Correo Electronico" class="width-100pc border-reg"> 
                     <span> *Este campo no puede estar vacio</span> 
                 </div>
@@ -92,10 +93,10 @@
 
         
             <div>
-                <h2> Intereses </h2>
+                <h2 class="text-color-blue" > Intereses </h2>
                 <div class="border">
                     <input type="checkbox" name="categoria-interes "  value ="Electro" id="categoria_electro"  > 
-                    <label for="categoria_electro"> Hambuerguesa </label>
+                    <label for="categoria_electro "> Hambuerguesa </label>
                 </div>
                 <div class="border">
                     <input type="checkbox" name="categoria-interes "  value ="Moda" id="categoria_moda"> 

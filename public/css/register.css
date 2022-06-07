@@ -23,9 +23,9 @@
   }
 
   .flex-register{
-    display: flex;
+    display: block;
     justify-content: space-around;
-    text-align: center;
+    
   }
 
 
@@ -40,7 +40,7 @@
 
 
  .black{
-   background-color: black;
+   background-color: #707375;
    color: white;
    font-family: lilita one;
    text-align: left;
