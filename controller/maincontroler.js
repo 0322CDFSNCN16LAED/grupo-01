@@ -19,13 +19,15 @@ const controller = {
         res.render("productos", {productos : productos})
     },
 
-    cargaproducto : (req,res)=>{
-       
-        res.render("cargaproducto", {productos : productos})
+    listarProductos : (req,res)=>{
+        res.render("listaProductos", {productos : productos})
     },
 
     detalleproducto : (req,res)=>{
-        res.render("detalleproducto")
+        let id = req.params.id ;
+        let productoDetalle= productos.find((producto) => producto.id == id); 
+        
+        res.render("detalleproducto", {productoDetalle : productoDetalle})
     },
 
     carrito : (req,res)=>{
@@ -33,12 +35,20 @@ const controller = {
     },
     busqueda : (req,res) => {
         
-    }
+    },
+    editarProducto: (req,res) => {
+        let id = req.params.id ;
+        let productoToEdit= productos.find((producto) => producto.id == id); 
+        res.render("editarProducto", {productoToEdit : productoToEdit});
+    },
+        
+
+} 
     
    
 
 
-}
+
 
 
 module.exports = controller

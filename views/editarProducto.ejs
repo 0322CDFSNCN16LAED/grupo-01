@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/head.ejs") %>
+    <title>Green Meat</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/home-tablet.css">
+    <link rel="stylesheet" href="/css/home-desktop.css">
+    <link rel="stylesheet" href="/css/home-tablet.css">
+    <link rel="stylesheet" href="/css/home-desktop.css">
+
+</head>
+
+<body class="width-100vw height-100vh font-family-lilita bg-pagina display-flex flex-column min-heigth-100vh">
+
+    <%- include("./partials/header.ejs") %>  
+    <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh">
+        <section class="100pc">
+          <h2 class="">Usted está editando el producto: <%= productoToEdit.nombre %> </h2>
+          <form action=<%= "/editarProducto/" + productoToEdit.id + "?_method=PUT" %> method="POST">
+            <label for="">Ingrese aquí el nuevo nombre que desea ingresar</label>
+            <input type="text" name="nombre" value= <%= productoToEdit.nombre %> >
+            <br>
+            <label for="">Ingrese aquí la nueva descripción que desea ingresar</label>
+            <input type="text" name="descripcion" value= <%= productoToEdit.descripcion %> >
+            <br>
+            <label for="">Ingrese aquí a que carne reemplaza el producto</label>
+            <input type="text" name="reemplaza" value= <%= productoToEdit.reemplaza %> >
+            <br>
+            <label for="">Ingrese aquí en qué presentación viene el producto</label>
+            <input type="text" name="presentacion" value= <%= productoToEdit.presentacion %> >
+            <br>
+            <label for="">Ingrese aquí el precio nuevo del producto</label>
+            <input type="text" name="precio" value= <%= productoToEdit.precio %> >
+            <br>
+            <button type="submit">Enviar</button>
+          </form>
+        </section>
+
+
+    </main>
+    <%- include("./partials/footer.ejs") %>
+</body>
+
+</html>

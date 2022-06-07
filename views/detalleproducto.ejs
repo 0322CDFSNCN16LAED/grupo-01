@@ -3,58 +3,61 @@
 <head>
 <%- include("./partials/head.ejs") %>
 <link rel="stylesheet" href="/css/home.css">
-<link rel="stylesheet" href="/css/product.css">
+
 <link rel="stylesheet" href="/css/home-tablet.css">
 <link rel="stylesheet" href="/css/home-desktop.css">
 </head>
 
-<body>
+<body class="width-100vw height-100vh font-family-lilita bg-pagina display-flex flex-column min-heigth-100vh" >
 
 <header>
   <%- include("./partials/header.ejs") %>
 
 </header>
 <br>
-<main >
-
+<main class="grow margin-bottom-55px width-90pc margin-auto height-100vh">
+  <article
+  class="display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
+   <img src="/images/<%= productoDetalle.imagen %>" class="width-100pc">
+  <div class="display-flex flex-column width-90pc">
+    <h3 class="descripciones margin-top-5px margin-bottom-5px text-color-pagina width-100pc"><%= productoDetalle.nombre %></h3>  
+    <p class="descripciones margin-top-5px margin-bottom-5px text-color-pagina width-100pc"><%= productoDetalle.descripcion %></p>
+    <p class="descripciones margin-top-5px margin-bottom-5px text-color-pagina width-100pc"><%= "Este producto reemplaza a la carne de " + productoDetalle.reemplaza %></p>
+    <p class="text-color-pagina margin-top-5px margin-bottom-5px">Presentación: <%= productoDetalle.presentacion %> </p>
+    <p class="text-color-pagina margin-top-5px margin-bottom-5px "><%= "Adquirilo por solo $" + productoDetalle.precio %></p>
+  </div>
+  
+</article>
+<section class="display-flex flex-wrap width-100pc justify-content-center">
+  <div class="div-beneficios-header"><h4 class="text-color-blue">CON ESTA COMPRA APORTÁS</h4></div>
+<section class="section-beneficios-header">
+  <article class="article-beneficios-header">
+<i class="fas fa-faucet icon-beneficos-header text-color-blue"></i>
+<div class="contador text-color-blue">CONTADOR</div>
+<div class="div-beneficios-header1 text-color-blue"> Agua </div>
+</article>
+<article class="article-beneficios-header">
+<div><i class="fas fa-paw icon-beneficos-header text-color-blue"></i></div>
+<div class="contador text-color-blue">CONTADOR</div>
+<div class="div-beneficios-header1 text-color-blue"> Vidas </div>
+</article>
+<article class="article-beneficios-header">
+<div><i class="fas fa-exclamation-triangle icon-beneficos-header text-color-blue"></i></div>
+<div class="contador text-color-blue">CONTADOR</div>
+<div class="div-beneficios-header1 text-color-blue"> CO2 </div>
+</article>
+</section>
+</section>
+</section>
+<section class="display-flex flex-column margin-10px border-radius-3px align-items-center">
+  <a href="/carrito">  
+    <button type="submit" value="Borrar" class="bg-verde border-none border-radius-3px margin-bottom-5px padding-5px text-color-pagina"> Agregar al carrito <i class="fas fa-shopping-cart"></i> </button>
+  </a>
+  <a href="/carrito">  
+    <button type="submit" value="Volver al inicio" class="bg-verde border-none border-radius-3px padding-5px text-color-pagina"> Volver al inicio <i class="fas fa-home"></i> </button>
+  </a>
+  </section>
 <section>
-    <article class="articulo">
-       <div class="tittle-icon"> <i class="fas fa-angle-double-right icon0"></i></div>
-   <div class="div-tittle"><h2 class="tittle-product1">VEGAN BURGUER DE LENTAJAS</h2></div> 
-  <div class="div-image">  <img class="image" src="/images/burguer.png" alt="burger de lentejas"></div>
-</article>
-</section>
-<section class="section-boton">
-    <div class="bottom">
-        <button type="submit" value="Enviar" class="boton"> Comprar <i class="fas fa-dollar-sign icon animation"></i> </button>
-    </div>
-    <div class="bottom">
-        <button type="reset" value="Borrar" class="boton"> Agregar al carrito <i class="fas fa-shopping-cart icon animation"></i> </button>
-    </div>
-    <div class="bottom">
-      <button type="submit" value="Volver al inicio" class="boton"> Volver al inicio <i class="fas fa-home icon animation"></i> </button>
-  </div >
-</section>
-<section>
-    <div class="div-beneficios"><h4>Tu aporte con esta compra</h4></div>
-<section class="section-beneficios">
-    <article class="article-beneficios">
-<div><i class="fas fa-faucet icon-beneficios"></i></div>
-<div>CONTADOR</div>
-  <div class="div-beneficios"> Agua </div>
-</article>
-<article class="article-beneficios">
-  <div><i class="fas fa-paw icon-beneficios"></i></div>
-  <div>CONTADOR</div>
-  <div class="div-beneficios"> Vidas </div>
-</article>
-<article class="article-beneficios">
-<div><i class="fas fa-exclamation-triangle icon-beneficios"></i></div>
-<div>CONTADOR</div>
-  <div class="div-beneficios"> CO2 </div>
-</article>
-</section>
-</section>
     </main>
     <br>
     <br>
