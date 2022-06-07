@@ -57,6 +57,12 @@ body {
 .min-heigth-30px {
         min-height: 30px;
 }
+.min-heigth-100vh {
+        min-height: 100vh;
+}
+.max-heigth-150px {
+        max-height: 150px;
+}
 .display-none {
         display: none;
 }
@@ -113,8 +119,14 @@ body {
 .bg-grey {
         background-color: #C4C4C4;
 }
+.bg-verde {
+        background-color: #6E8C56;
+}
 .bg-white {
         background-color: #FFFFFF;
+}
+.bg-blue {
+        background-color: #707375;
 }
 .text-color-white {
         color: #FFFFFF;
@@ -130,6 +142,9 @@ body {
 }
 .text-color-blue-water {
         color: 	#256d7b
+}
+.text-color-blue {
+        color: #707375
 }
 .font-size-24 {
         font-size: 24px;
@@ -368,34 +383,35 @@ body {
       }
 .div-beneficios-header1 {
         font-size: 140%;
+        margin-top: 10px;
+        margin-bottom: 10px;
       }
 .section-beneficios-header {
         width: 50%;
         display: flex;
         justify-content: space-evenly;
-        text-align: right;
+        text-align: center;
       }
 .article-beneficios-header {
         width: 33%;
         font-size: 60%;
-        display: block;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-        flex-wrap: wrap;
         text-align: center;
-        margin-top: -5%;
       }
 .icon-beneficos-header {
         background-color: #ffe600;
-        color: black;
         width: 100%;
         font-size: 200%;
-        margin-top: 20%;
-        margin-bottom: 20%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        
       }
 .contador {
         font-size: 100%;
-        margin-top: -20%;
-        margin-bottom: 10%;
+        margin-top: 0;
+        margin-bottom: 0;
       }
 .search-u {
         background-color: #ffe600;

@@ -15,7 +15,7 @@
 
 </header>
 <br>
-<main >
+<main class="width-100vw  font-family-lilita bg-pagina display-flex flex-column min-heigth-100vh" >
     <form method="GET" action="/" class="form">
 
       <h2 class="h2">Ingresá</h2>
@@ -29,21 +29,18 @@
         <br>
     </div >
     <div class="bottom">
-    <button type="submit" value="Enviar" class="boton" > Enviar </button>  </div >
+    <button type="submit" value="Enviar" class="boton text-color-pagina" > Enviar </button>  </div >
     <div class="bottom">
-        <button type="reset" value="Borrar" class="boton" > Borrar </button>  </div >
+        <button type="reset" value="Borrar" class="boton text-color-pagina" > Borrar </button>  </div >
         <div class="bottom">
-      <button type="submit" value="Volver al inicio" class="boton" > Volver al inicio</button>
+      <button type="submit" value="Volver al inicio" class="boton text-color-pagina" > Volver al inicio</button>
   </div >
     </form>
     </main>
-    <br>
-    <br>
-    <br>
-    <footer class="footer">
-      <%- include("./partials/footer.ejs") %>
 
-</footer>
+<%- include("./partials/footer.ejs") %>
+
+
 
 </body>
 </html>
