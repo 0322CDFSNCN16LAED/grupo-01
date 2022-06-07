@@ -1,5 +1,3 @@
-
-
 const productos = [
     {
         nombre : "VEGAN BURGUER",
