@@ -9,7 +9,7 @@ body {
   font-size: 16px;
   background-color: #ffe600;
   padding: auto;
-  position: absolute;
+  
 }
 .h2 {
   text-align: center;
@@ -28,9 +28,9 @@ body {
   margin: auto;
   width: 100%;
   margin-bottom: 1px;
-  color: green;
+  
   font-weight: bold;
-  background-color: lightgray;
+
   border-radius: 8px;
   justify-content: center;
 }
@@ -45,17 +45,17 @@ body {
 }
 .boton {
   display: flex;
-  background-color: lightgray;
+ 
   border: solid 1px black;
   margin: 2px;
   justify-content: center;
 }
 .boton:hover {
-  background-color: #ffe600;
+  background-color: #6E8C56 ;
   border: solid 1px green;
 }
 .boton {
-  background-color: lightgray;
+  background-color: #707375 ;
   border: solid 1px black;
   transition: color 15s;
 }

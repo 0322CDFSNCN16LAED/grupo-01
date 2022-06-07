@@ -9,18 +9,14 @@ body {
   font-size: 16px;
   background-color: #ffe600;
   padding: auto;
-  position: absolute;
+  
 }
 
 .header {
   margin: auto;
   padding: auto;
 }
-.img {
-  width: 100%;
-  margin: 0%;
-  padding: 0%;
-}
+
 .section-header {
   width: 50%;
   display: flex;
@@ -169,7 +165,6 @@ body {
 }
 .icon-beneficos-header {
   background-color: #ffe600;
-  color: black;
   width: 100%;
   font-size: 200%;
   margin-top: 20%;
@@ -317,7 +312,7 @@ header div i {
   margin-bottom: 1px;
   color: green;
   font-weight: bold;
-  background-color: lightgray;
+  background-color: #707375 ;
   border-radius: 8px;
   align-content: center;
   text-align: center;
@@ -330,7 +325,7 @@ header div i {
   align-content: center;
 }
 .boton {
-  background-color: lightgray;
+  background-color: #707375 ;
   border: solid 1px black;
   text-align: center;
 }
@@ -339,7 +334,7 @@ header div i {
   border: solid 1px green;
 }
 .boton {
-  background-color: lightgray;
+  background-color: #707375 ;
   border: solid 1px black;
   transition: color 15s;
 }
@@ -426,3 +421,4 @@ header div i {
   background-color: black;
   border: none;
 }
+

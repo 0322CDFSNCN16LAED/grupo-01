@@ -12,7 +12,7 @@
 
 </head>
 
-<body class="width-100vw height-100vh font-family-lilita bg-pagina display-flex flex-column">
+<body class="width-100vw height-100vh font-family-lilita bg-pagina display-flex flex-column min-heigth-100vh">
 
     <%- include("./partials/header.ejs") %>  
     <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh">
@@ -20,7 +20,7 @@
             <h2 class="">Productos destacados</h2>
             <article class="display-flex width-100pc flex-column align-items-center articulos">
                 <article
-                    class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-black align-items-center">
+                    class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
                     <img src="/images/bocadito.jpg" class="width-100pc">
                     <div class="display-flex flex-column width-90pc">
                         <div class="display-flex justify-content-space-between margin-top-10px width-100pc">
@@ -32,7 +32,7 @@
                     </div>
                 </article>
                 <article
-                    class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-black align-items-center">
+                    class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
                     <img src="/images/burguer.png" class="width-100pc">
                     <div class="display-flex flex-column width-90pc">
                         <div class="display-flex justify-content-space-between margin-top-10px width-100pc">
@@ -45,7 +45,7 @@
                     </div>
                 </article>
                 <article
-                    class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-black align-items-center">
+                    class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
                     <img src="/images/bocadito.jpg" class="width-100pc">
                     <div class="display-flex flex-column width-90pc">
                         <div class="display-flex justify-content-space-between margin-top-10px width-100pc">
@@ -58,7 +58,7 @@
                     </div>
                 </article>
                 <article
-                    class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-black align-items-center">
+                    class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
                     <img src="/images/burguer.png" class="width-100pc">
                     <div class="display-flex flex-column width-90pc">
                         <div class="display-flex justify-content-space-between margin-top-10px width-100pc">
@@ -75,19 +75,7 @@
 
 
     </main>
-    <footer
-        class="width-100pc bg-black display-flex flex-column justify-content-center align-items-center padding-10px">
-        <div class="display-flex flex-row justify-content-space-around">
-            <a href="https://www.instagram.com/"><i class="font-size-18 text-color-pagina fab fa-instagram"></i></a>
-            <a href="https://es-la.facebook.com/"><i
-                    class="font-size-18 margin-left-10px text-color-pagina fab fa-facebook-square"></i></a>
-            <a href="https://twitter.com/?lang=es"><i
-                    class="font-size-18 margin-left-10px text-color-pagina fab fa-twitter"></i></a>
-            <a href="/contact"><i class="font-size-18 margin-left-10px text-color-pagina far fa-envelope"></i></a>
-        </div>
-        <p class="text-color-pagina font-size-12"><i class="text-color-pagina far fa-copyright"></i>2022 Todos los
-            derechos reservados</p>
-    </footer>
+    <%- include("./partials/footer.ejs") %>
 </body>
 
 </html>
