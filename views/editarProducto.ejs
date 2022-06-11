@@ -16,23 +16,23 @@
 
     <%- include("./partials/header.ejs") %>  
     <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh">
-        <section class="width-100pc display-flex flex-column margin-10px border-radius-3px align-items-center text-color-blue">
-          <h2 class="margin-bottom-10px">Usted está editando el producto: <%= productoToEdit.nombre %> </h2>
-          <form action=<%= "/editarProducto/" + productoToEdit.id + "?_method=PUT" %> method="POST">
+        <section class="100pc">
+          <h2 class="">Usted está editando el producto: <%= productToEdit.nombre %> </h2>
+          <form action="/editarProducto/<%=productToEdit.id%>?_method=PUT"  method="POST">
             <label for="">Ingrese aquí el nuevo nombre que desea ingresar</label>
-            <input class="margin-bottom-10px border-radius-3px" type="text" name="nombre" value= <%= productoToEdit.nombre %> >
+            <input class="margin-bottom-10px border-radius-3px" type="text" name="nombre" value= <%= productToEdit.nombre %> >
             <br>
             <label for="">Ingrese aquí la nueva descripción que desea ingresar</label>
-            <input class="margin-bottom-10px border-radius-3px" type="text" name="descripcion" value= <%= productoToEdit.descripcion %> >
+            <input class="margin-bottom-10px border-radius-3px" type="text" name="descripcion" value= <%= productToEdit.descripcion %> >
             <br>
             <label for="">Ingrese aquí a que carne reemplaza el producto</label>
-            <input class="margin-bottom-10px border-radius-3px" type="text" name="reemplaza" value= <%= productoToEdit.reemplaza %> >
+            <input class="margin-bottom-10px border-radius-3px" type="text" name="reemplaza" value= <%= productToEdit.reemplaza %> >
             <br>
             <label for="">Ingrese aquí en qué presentación viene el producto</label>
-            <input class="margin-bottom-10px border-radius-3px" type="text" name="presentacion" value= <%= productoToEdit.presentacion %> >
+            <input class="margin-bottom-10px border-radius-3px" type="text" name="presentacion" value= <%= productToEdit.presentacion %> >
             <br>
             <label for="">Ingrese aquí el precio nuevo del producto</label>
-            <input class="margin-bottom-10px border-radius-3px" type="text" name="precio" value= <%= productoToEdit.precio %> >
+            <input class="margin-bottom-10px border-radius-3px" type="text" name="precio" value= <%= productToEdit.precio %> >
             <br>
             <div>
               <button type="submit" class="bg-verde border-none border-radius-3px padding-5px text-color-pagina">Enviar</button>

@@ -56,8 +56,24 @@
   <a href="/carrito">  
     <button type="submit" value="Volver al inicio" class="bg-verde border-none border-radius-3px padding-5px text-color-pagina"> Volver al inicio <i class="fas fa-home"></i> </button>
   </a>
+  <br>
+
+  <a href="/editarProducto/<%=productoDetalle.id%>">  
+    <button type="submit" value="Volver al inicio" class="bg-verde border-none border-radius-3px padding-5px text-color-pagina"> Editar  </button>
+  </a>
+
+  <form action="/eliminarProducto/<%=productoDetalle.id%>?_method=delete" method="post">
+  
+    <button type="submit" value="Volver al inicio" class="bg-verde border-none border-radius-3px padding-5px text-color-pagina"> Eliminar  </button>
+ 
+</form>
+
   </section>
-<section>
+
+
+
+
+
     </main>
     <br>
     <br>

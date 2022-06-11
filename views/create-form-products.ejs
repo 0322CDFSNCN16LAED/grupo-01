@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/head.ejs") %>
+    <title>Green Meat</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/home-tablet.css">
+    <link rel="stylesheet" href="/css/home-desktop.css">
+    <link rel="stylesheet" href="/css/home-tablet.css">
+    <link rel="stylesheet" href="/css/home-desktop.css">
+
+</head>
+
+<body class="width-100vw height-100vh font-family-lilita bg-pagina display-flex flex-column min-heigth-100vh">
+
+    <%- include("./partials/header.ejs") %>  
+    <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh">
+        <section class="100pc">
+          <h2 class="">Usted está creando un producto: </h2>
+          <form action="/crearProducto"  method="post">
+            <label for="">Nombre </label>
+            <input type="text" name="nombre"  >
+            <br>
+            <label for=""> Descripción </label>
+            <input type="text" name="descripcion"  >
+            <br>
+            <label for=""> Reemplazo de : </label>
+            <select name="reemplaza">
+              <option> pollo</option>
+              <option> vacuno</option>
+              <option> pescado</option>
+              <option> cerdo</option>
+            </select>
+            <br>
+            <label for=""> Presentación </label>
+            <select name="presentacion">
+              <option> Unidad </option>
+              <option> Caja de 4 </option>
+              <option> Caja de 6 </option>
+              <option> Kilos </option>
+            </select>
+            <br>
+            <label for=""> Precio </label>
+            <input type="text" name="precio"  >
+            <br>
+            <button type="submit">Guardar</button>
+          </form>
+        </section>
+
+
+    </main>
+    <%- include("./partials/footer.ejs") %>
+</body>
+
+</html>

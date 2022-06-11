@@ -1,4 +1,9 @@
-const productos = require("../productos")
+const express = require("express");
+const fs = require ("fs");
+const path = require ("path");
+const db = require ("../database/db.js")
+const productos = db.getAll() ;
+
 
 const controller = {
 
@@ -14,18 +19,13 @@ const controller = {
         res.render("register")
     },
 
-    productos : (req,res)=>{
-       
-        res.render("productos", {productos : productos})
-    },
-
     listarProductos : (req,res)=>{
         res.render("listaProductos", {productos : productos})
     },
 
     detalleproducto : (req,res)=>{
         let id = req.params.id ;
-        let productoDetalle= productos.find((producto) => producto.id == id); 
+        let productoDetalle= db.getOne(id); 
         
         res.render("detalleproducto", {productoDetalle : productoDetalle})
     },
@@ -36,26 +36,48 @@ const controller = {
     busqueda : (req,res) => {
         
     },
+    createProducto : (req,res) => {
+        res.render("create-form-products")
+    },
+
+    guardarProducto : (req,res) => {
+        const nuevoProducto = req.body ;
+        nuevoProducto.id = db.creacionId() ;
+        productos.push(nuevoProducto) ;
+        db.writeAndSave(productos);
+    
+        res.redirect("/listaProductos") ;
+    },
+
+
     editarProducto: (req,res) => {
         let id = req.params.id ;
-        let productoToEdit= productos.find((producto) => producto.id == id); 
-        res.render("editarProducto", {productoToEdit : productoToEdit});
+        let productToEdit= db.getOne(id);
+        res.render("editarProducto", {productToEdit : productToEdit});
     },
-    crearProducto: (req,res) => {
-        let productoNuevo = {
-            id: req.body.id ,
-            nombre: req.body.titulo ,
-            descripcion: req.body.genero ,
-            presentacion: req.body.duracion ,
-            precio: req.body.precio ,
-            reemplaza: req.body.reemplaza ,
-        }
-
-        res.render("crearProducto")
-    },
-    laCreacion: (req,res) => {
+    uploadProducto: (req,res) => {
+       let id = req.params.id ;
+        let productoEdited= productos.find(product => product.id == id);
         
-    }
+        productoEdited.nombre = req.body.nombre ;
+        productoEdited.descripcion = req.body.descripcion ;
+        productoEdited.reemplaza = req.body.reemplaza ;
+        productoEdited.precio = req.body.precio ;
+        productoEdited.presentacion = req.body.presentacion ;
+         
+        db.writeAndSave(productos); 
+
+        res.redirect("/listaProductos");
+    },
+
+    eliminarProducto: (req,res) => {
+        const id = req.params.id ;
+        const filtrados = productos.filter((product) => product.id != id) ;
+        db.writeAndSave(filtrados); 
+        res.redirect("/listaProductos");
+        
+    },
+        
         
 
 } 
