@@ -41,6 +41,21 @@ const controller = {
         let productoToEdit= productos.find((producto) => producto.id == id); 
         res.render("editarProducto", {productoToEdit : productoToEdit});
     },
+    crearProducto: (req,res) => {
+        let productoNuevo = {
+            id: req.body.id ,
+            nombre: req.body.titulo ,
+            descripcion: req.body.genero ,
+            presentacion: req.body.duracion ,
+            precio: req.body.precio ,
+            reemplaza: req.body.reemplaza ,
+        }
+
+        res.render("crearProducto")
+    },
+    laCreacion: (req,res) => {
+        
+    }
         
 
 } 

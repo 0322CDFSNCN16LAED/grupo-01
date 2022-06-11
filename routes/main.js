@@ -19,6 +19,7 @@ router.get("/producto", controller.productos);
 router.get("/listaProductos", controller.listarProductos);
 router.get("/busqueda", controller.busqueda);
 router.get("/editarProducto/:id", controller.editarProducto);
+router.get("/crearProducto/", controller.crearProducto);
 
 
 
