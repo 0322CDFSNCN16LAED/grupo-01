@@ -18,7 +18,7 @@
     <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh">
         <section class="100pc">
           <h2 class="">Usted está editando el producto: <%= productoToEdit.nombre %> </h2>
-          <form action=<%= "/editarProducto/" + productoToEdit.id + "?_method=PUT" %> method="POST">
+          <form action="/editarProducto/<%=productoToEdit.id%>?_method=PUT"  method="POST">
             <label for="">Ingrese aquí el nuevo nombre que desea ingresar</label>
             <input type="text" name="nombre" value= <%= productoToEdit.nombre %> >
             <br>

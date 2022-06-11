@@ -15,10 +15,20 @@ router.get("/login", controller.login);
 router.get("/register", controller.register);
 router.get("/detalleproducto/:id", controller.detalleproducto);
 router.get("/carrito", controller.carrito);
-router.get("/producto", controller.productos);
 router.get("/listaProductos", controller.listarProductos);
 router.get("/busqueda", controller.busqueda);
+
+
 router.get("/editarProducto/:id", controller.editarProducto);
+router.put("/editarProducto/:id", controller.uploadProducto);
+
+router.get("/crearProducto", controller.createProducto);
+router.post("/crearProducto", controller.guardarProducto);
+
+
+
+router.delete("/eliminarProducto", controller.eliminarProducto);
+
 
 
 
