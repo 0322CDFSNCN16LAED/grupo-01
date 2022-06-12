@@ -16,7 +16,7 @@
 
 </header>
     <main >
-        <form method="POST" action="/crearUsuario">
+        <form method="POST" action="/crearUsuario" enctype="multipart/form-data">
             
             <section class="registratecon">
                 <h1 class="text-color-blue"> Registrarse</h1>
@@ -51,7 +51,7 @@
                 <div class="flex-register padtop15 ">
                     <div>
                         <p class="text-color-blue">Fecha de nacimiento </p>
-                        <input type="date" name="nacimiento " class="border-reg" >   
+                        <input type="date" name="nacimiento" class="border-reg" >   
                 </div>
                 <div>
                     <p class="text-color-blue" > Sexo </p>
@@ -69,10 +69,18 @@
                     </div>
                 </div>
 
+            </div>
+            <div>
+                <p class="text-color-blue"> Imagen usuario</p>
+                <input type="file" name="imagenusuario"  class="border-reg"> 
+            
+            </div>
+        </div>
+
                 <h3 class="padtop15 text-color-blue "> Datos de acceso </h3> 
 
                 <div class="padtop15" >
-                    <input type="email" name="corre" placeholder="Correo Electronico" class="width-100pc border-reg"> 
+                    <input type="email" name="correo" placeholder="Correo Electronico" class="width-100pc border-reg"> 
                     <span> *Este campo no puede estar vacio</span> 
                 </div>
 

@@ -18,14 +18,14 @@
     <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh">
         <section class="100pc">
           <h2 class="">Usted está creando un producto: </h2>
-          <form action="/crearProducto"  method="post">
+          <form action="/crearProducto"  method="post" enctype="multipart/form-data">
             <div class="display-flex justify-content-space-between " >
-            <label for="">Nombre </label>
+            <label for="">Nombre :</label>
             <input type="text" name="nombre"  >
           </div>
             <br>
             <div class="display-flex justify-content-space-between " >
-            <label for=""> Descripción </label>
+            <label for=""> Descripción : </label>
             <input type="text" name="descripcion"  >
           </div>
             <br>
@@ -40,7 +40,7 @@
           </div>  
             <br>
             <div class="display-flex justify-content-space-between " >
-            <label for=""> Presentación </label>
+            <label for=""> Presentación :</label>
             <select name="presentacion">
               <option> Unidad </option>
               <option> Caja de 4 </option>
@@ -48,11 +48,17 @@
               <option> Kilos </option>
             </select>
           </div>
+          <br>
+            <div class="display-flex justify-content-space-between " >
+            <label for=""> Imagen Producto :</label>
+            <input type="file" name="imagen"  >
+          </div>
             <br>
             <div class="display-flex justify-content-space-between " >
-            <label for=""> Precio </label>
+            <label for=""> Precio :</label>
             <input type="text" name="precio"  >
           </div>
+          
             <br>
             <button type="submit">Guardar</button>
           </form>

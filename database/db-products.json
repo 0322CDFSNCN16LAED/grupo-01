@@ -133,5 +133,14 @@
         "presentacion": "caja de 8 unidades",
         "imagen": "nugget.jpg",
         "reemplaza": "pollo"
+    },
+    {
+        "nombre": "Pollo crispy",
+        "descripcion": "hotdogs",
+        "reemplaza": "pollo",
+        "presentacion": "Caja de 4",
+        "precio": "10000",
+        "id": 17,
+        "imagen": "1655074853927.jpg"
     }
 ]

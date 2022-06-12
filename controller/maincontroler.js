@@ -40,13 +40,22 @@ const controller = {
     },
 
     guardarProducto : (req,res) => {
+
+        
+        if(req.file){
         const nuevoProducto = req.body ;
         nuevoProducto.id = db.creacionId() ;
+        nuevoProducto.imagen = req.file.filename
         productos.push(nuevoProducto) ;
         db.writeAndSave(productos);
     
         res.redirect("/listaProductos") ;
-    },
+
+    }else{
+        res.render("create-form-products")
+    }
+    }
+   ,
 
 
     editarProducto: (req,res) => {
@@ -95,12 +104,17 @@ const controller = {
     },
 
     guardarUsuario : (req,res) => {
+        if(req.file){
         const nuevoUsuario = req.body ;
+        nuevoUsuario.imagenusuario = req.file.filename
         nuevoUsuario.id = db.creacionIdUser() ;
         users.push(nuevoUsuario) ;
         db.writeAndSaveUser(users); 
     
         res.redirect("/userList") ;       
+    }else {
+        res.render("/register")
+    }
 
 } ,
 
