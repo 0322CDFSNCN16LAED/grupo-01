@@ -26,10 +26,10 @@
     {
         "nombre": "Josefina",
         "apellido": "Aliano",
-        "nacimiento ": "2022-06-01",
+        "nacimiento": "2022-06-01",
         "sexo": "F",
         "celular": "1169499315",
-        "corre": "josefinaaliano@hotmail.com",
+        "correo": "josefinaaliano@hotmail.com",
         "contraseña": "tupac2022",
         "password": "tupac2022",
         "categoria-interes ": "Hogar",
@@ -38,10 +38,10 @@
     {
         "nombre": "Maximiliano",
         "apellido": "Giommi",
-        "nacimiento ": "1989-08-29",
+        "nacimiento": "1989-08-29",
         "sexo": "M",
         "celular": "111111111111",
-        "corre": "m.giommi@hotmail.com",
+        "correo": "m.giommi@hotmail.com",
         "contraseña": "koki1989",
         "password": "koki1989",
         "categoria-interes ": "Moda",
@@ -50,25 +50,13 @@
     {
         "nombre": "Vanina",
         "apellido": "Labaqui",
-        "nacimiento ": "1985-09-09",
+        "nacimiento": "1985-09-09",
         "sexo": "F",
         "celular": "2222222222",
-        "corre": "vaninalabaqui@hotmail.com",
+        "correo": "vaninalabaqui@hotmail.com",
         "contraseña": "laarito1408",
         "password": "lazarito1408",
-        "categoria-interes ": "Jugueteria",
+        "categoria-interes": "Jugueteria",
         "id": 5
-    },
-    {
-        "nombre": "Guido ",
-        "apellido": "Polo",
-        "nacimiento ": "1989-06-02",
-        "sexo": "M",
-        "celular": "999999999999",
-        "corre": "polilla@hotmail.com",
-        "contraseña": "rata1",
-        "password": "rata1",
-        "categoria-interes ": "Moda",
-        "id": 6
     }
 ]

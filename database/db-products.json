@@ -45,15 +45,6 @@
         "reemplaza": "cerdo"
     },
     {
-        "id": 6,
-        "nombre": "NUGGETS piolas",
-        "descripcion": "Agua,",
-        "precio": "750",
-        "presentacion": "caja",
-        "imagen": "nugget.jpg",
-        "reemplaza": "pollo"
-    },
-    {
         "id": 7,
         "nombre": "QUESO ESTILO GRIEGO",
         "descripcion": "Agua, aceite de coco (29%), almidón, sal marina, regulador de acidez: glucono delta-lactone, aromas, extracto de aceituna, vitamina B12",
