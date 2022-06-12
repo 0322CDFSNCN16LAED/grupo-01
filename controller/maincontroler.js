@@ -3,6 +3,7 @@ const fs = require ("fs");
 const path = require ("path");
 const db = require ("../database/db.js")
 const productos = db.getAll() ;
+const users = db.getAllUsers() ;
 
 
 const controller = {
@@ -15,9 +16,7 @@ const controller = {
         res.render("login")
     },
 
-    register : (req,res)=> {
-        res.render("register")
-    },
+   
 
     listarProductos : (req,res)=>{
         res.render("listaProductos", {productos : productos})
@@ -77,10 +76,37 @@ const controller = {
         res.redirect("/listaProductos");
         
     },
-        
-        
 
-} 
+    listarUsuario : (req,res)=>{
+        res.render("usersList", {users : users})
+    },
+
+    detalleUsuario : (req,res)=>{
+        let id = req.params.id ;
+        let usuarioDetalle= db.getOneUser(id); 
+        
+        res.render("detalleusuario", {usuarioDetalle : usuarioDetalle})
+    },
+
+
+
+    createUsuario : (req,res) => {
+        res.render("register")
+    },
+
+    guardarUsuario : (req,res) => {
+        const nuevoUsuario = req.body ;
+        nuevoUsuario.id = db.creacionIdUser() ;
+        users.push(nuevoUsuario) ;
+        db.writeAndSaveUser(users); 
+    
+        res.redirect("/userList") ;       
+
+} ,
+
+
+
+}
     
    
 
