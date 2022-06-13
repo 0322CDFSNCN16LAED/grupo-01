@@ -1,31 +1,5 @@
 [
     {
-        "id": 1,
-        "nombre": "José",
-        "apellido": "Labaqui",
-        "nacimiento": "1989/09/11",
-        "sexo": "M",
-        "celular": "1162322306",
-        "imagenusuario": "",
-        "correo": "jose.labaqui@hotmail.com",
-        "contraseña": "jose1408",
-        "password": "jose1408",
-        "categoria-interes": "Chorizos"
-    },
-    {
-        "id": 2,
-        "nombre": "Daniel",
-        "apellido": "Bertora",
-        "nacimiento": "1989/09/02",
-        "sexo": "F",
-        "celular": "1162322307",
-        "imagenusuario": "",
-        "correo": "daniel.bertora@hotmail.com",
-        "contraseña": "daniel1408",
-        "password": "daniel1408",
-        "categoria-interes": "Chorizos"
-    },
-    {
         "nombre": "Josefina",
         "apellido": "Aliano",
         "nacimiento": "2022-06-01",

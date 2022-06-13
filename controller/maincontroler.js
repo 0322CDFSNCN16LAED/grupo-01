@@ -1,4 +1,5 @@
 const express = require("express");
+const { redirect } = require("express/lib/response.js");
 const fs = require ("fs");
 const path = require ("path");
 const db = require ("../database/db.js")
@@ -107,7 +108,7 @@ const controller = {
         if(req.file){
         const nuevoUsuario = req.body ;
         nuevoUsuario.imagenusuario = req.file.filename
-        nuevoUsuario.id = db.creacionIdUser() ;
+        nuevoUsuario.id = db.creacionIdUser();
         users.push(nuevoUsuario) ;
         db.writeAndSaveUser(users); 
     
@@ -119,7 +120,11 @@ const controller = {
 } ,
 
 eliminarUsuario : (req,res)=>{
-    const id = req.params.id    
+    const id = req.params.id
+    usersFilter = users.filter((user)=> user.id != id);
+    db.writeAndSaveUser(usersFilter); 
+    res.redirect("/userList");
+    
 
 
 }
