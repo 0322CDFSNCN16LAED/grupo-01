@@ -133,8 +133,33 @@ eliminarUsuario : (req,res)=>{
     
 
 
-}
+},
+editUser : (req,res) => {
+    let id = req.params.id ;
+    let userToEdit= db.getOneUser(id);
+    res.render("editUser", {userToEdit : userToEdit});
+    
+},
+userEdited : (req,res) => {
+    let id = req.params.id ;
+     let userEdited= users.find(user => user.id == id);
+     
+     userEdited.nombre = req.body.nombre ;
+     userEdited.apellido = req.body.apellido ;
+     userEdited.nacimiento = req.body.nacimiento ;
+     userEdited.sexo = req.body.sexo ;
+     userEdited.celular = req.body.celular ;
+     userEdited.correo = req.body.correo ;
+     userEdited.categoriaInteres = req.body.categoriaInteres ;
+     if(req.file){
+     userEdited.imagenusuario = req.file.filename
+     }
 
+      
+     db.writeAndSaveUser(users); 
+
+     res.redirect("/userList");
+ },
 
 
 }

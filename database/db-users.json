@@ -7,9 +7,9 @@
         "celular": "1169499315",
         "imagenusuario": "",
         "correo": "josefinaaliano@hotmail.com",
-        "contraseña": "tupac2022",
+        "contrasena": "tupac2022",
         "password": "tupac2022",
-        "categoria-interes ": "Hogar",
+        "categoriaInteres": "Hogar",
         "id": 3
     },
     {
@@ -20,9 +20,9 @@
         "celular": "111111111111",
         "imagenusuario": "",
         "correo": "m.giommi@hotmail.com",
-        "contraseña": "koki1989",
+        "contrasena": "koki1989",
         "password": "koki1989",
-        "categoria-interes ": "Moda",
+        "categoriaInteres": "Moda",
         "id": 4
     },
     {
@@ -33,9 +33,9 @@
         "celular": "2222222222",
         "imagenusuario": "",
         "correo": "vaninalabaqui@hotmail.com",
-        "contraseña": "laarito1408",
+        "contrasena": "laarito1408",
         "password": "lazarito1408",
-        "categoria-interes": "Jugueteria",
+        "categoriaInteres": "Jugueteria",
         "id": 5
     },
     {
@@ -45,9 +45,9 @@
         "sexo": "F",
         "celular": "2342403274",
         "correo": "jose.labaqui@hotmail.com",
-        "contraseÃ±a": "jose2022",
+        "contrasena": "jose2022",
         "password": "jose2022",
-        "categoria-interes ": "Jugueteria",
+        "categoriaInteres": "Jugueteria",
         "imagenusuario": "1655068255053.png",
         "id": 6
     },
@@ -58,24 +58,22 @@
         "sexo": "M",
         "celular": "2342403274",
         "correo": "jose.labaqui@hotmail.com",
-        "contraseÃ±a": "daniel2022",
+        "contrasena": "daniel2022",
         "password": "daniel2022",
-        "categoria-interes ": "Moda",
+        "categoriaInteres": "Moda",
         "imagenusuario": "1655072146862.png",
         "id": 7
     },
     {
-        "nombre": "dani",
+        "nombre": "cambio?",
         "apellido": "bertora",
         "nacimiento": "2022-06-18",
-        "sexo": "M",
-        "celular": "222222222",
-        "correo": "dadadad@hotmail.com",
-        "contraseÃ±a": "da",
+        "sexo": "F",
+        "celular": "1221212121",
+        "correo": "alaa@hotmail.com",
+        "contrasena": "da",
         "password": "da",
-        "categoria-interes ": [
-            "Electro",
-            "Moda",
+        "categoriaInteres": [
             "Hogar",
             "Jugueteria"
         ],

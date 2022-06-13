@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/head.ejs") %>
+    <title>Green Meat</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/home-tablet.css">
+    <link rel="stylesheet" href="/css/home-desktop.css">
+    <link rel="stylesheet" href="/css/home-tablet.css">
+    <link rel="stylesheet" href="/css/home-desktop.css">
+
+</head>
+
+<body class="width-100vw height-100vh font-family-lilita bg-pagina display-flex flex-column min-heigth-100vh">
+
+    <%- include("./partials/header.ejs") %>  
+    <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh text-color-blue">
+      <section class="100pc">
+        <h2 class="">Usted está editando el usuario: <%= userToEdit.nombre + " " + userToEdit.apellido %> </h2>
+        <form action="/editUser/<%=userToEdit.id%>?_method=PUT" enctype="multipart/form-data"  method="POST">
+          <div class="display-flex justify-content-space-between margin-top-10px " >
+            <label for="">Nuevo nombre</label>
+            <input class="margin-bottom-10px border-radius-3px width-90pc" type="text" name="nombre" value= <%= userToEdit.nombre %> >
+          </div>
+          <br>
+          <div class="display-flex justify-content-space-between margin-top-10px " >
+            <label for="">Nuevo apellido</label>
+            <input class="margin-bottom-10px border-radius-3px width-90pc" type="text" name="apellido" value= <%= userToEdit.apellido %> >
+          </div>
+          <br>
+          <div class="display-flex justify-content-start margin-top-10px " >
+            <label for="">Fecha de nacimiento</label>
+            <input type="date" name="nacimiento" class="margin-bottom-10px border-radius-3px margin-left-5px" value= <%= userToEdit.nacimiento %> >
+          </div>
+          <br>
+          <div class="display-flex justify-content-space-between " >
+            <label for=""> Sexo: </label>
+            <select class="width-90pc margin-bottom-10px border-radius-3px width-90pc" name="sexo">
+              <option <% if(userToEdit.sexo == "M") {%> selected <% } %>  > M</option>
+              <option <% if(userToEdit.sexo == "F") {%> selected <% } %>> F</option>
+              <option <% if(userToEdit.sexo == "Otro") {%> selected <% } %>> Otro</option>
+          </select>
+          </div>
+          <br>
+          <div class="display-flex justify-content-space-between margin-top-10px " >
+            <label for="">Celular</label>
+            <input class="margin-bottom-10px border-radius-3px width-90pc" type="text" name="celular" value= <%= userToEdit.celular %> >
+          </div>
+          <br>
+          <div class="display-flex justify-content-space-between " >
+            <label for=""> Imagen de usuario:</label>
+            <input class="width-90pc margin-bottom-10px border-radius-3px width-90pc" type="file" name="imagenusuario" value= <%= userToEdit.imagenusuario %>  >
+          </div>
+          <br>
+          <div class="margin-bottom-10px">
+            <h2 class="text-color-blue" > Intereses </h2>
+            <div class="border">
+                <input type="checkbox" name="categoriaInteres" value ="Electro" id="categoria_electro" <% if(userToEdit.categoriaInteres.includes("Electro")) {%> checked <% } %>     > 
+                <label for="categoria_electro "> Hambuerguesa </label>
+            </div>
+            <div class="border">
+                <input type="checkbox" name="categoriaInteres"  value ="Moda" id="categoria_moda" <% if(userToEdit.categoriaInteres.includes("Moda")) {%> checked <% } %>> 
+                <label for="categoria_moda"> Chorizos </label>
+            </div>
+            <div class="border" >
+                <input type="checkbox" name="categoriaInteres"  value ="Hogar" id="categoria_hogar" <% if(userToEdit.categoriaInteres.includes("Hogar")) {%> checked <% } %>> 
+                <label for="categoria_hogar"> Bocados </label>
+            </div>
+            <div class="border" >
+                <input type="checkbox" name="categoriaInteres"  value ="Jugueteria" id="categoria_jugueteria" <% if(userToEdit.categoriaInteres.includes("Jugueteria")) {%> checked <% } %>> 
+                <label for="categoria_jugueteria"> Salchichas </label>
+            </div>
+          
+            <span> *Debe seleccionar al menos un item </span>
+
+        </div>
+        <br>
+          
+          <div class="display-flex justify-content-space-between " >
+            <label for=""> Correo electrónico </label>
+            <input class="margin-bottom-10px border-radius-3px width-90pc margin-left-5px" type="text" name="correo" value= <%= userToEdit.correo %> >
+          </div>
+          <br>
+          <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina" type="submit">Guardar</button>
+          <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina" type="reset">Borrar</button>
+        </form>
+        <br>
+      </section>
+
+
+  </main>
+  
+    <%- include("./partials/footer.ejs") %>
+</body>
+
+</html>

@@ -61,6 +61,8 @@ router.get("/userList", controller.listarUsuario);
 router.get("/detalleUser/:id", controller.detalleUsuario);
 router.get("/crearUsuario", controller.createUsuario);
 router.post("/crearUsuario", upload.single("imagenusuario"), controller.guardarUsuario);
+router.get("/editUser/:id", controller.editUser);
+router.put("/editUser/:id",upload.single("imagen"), controller.userEdited);
 router.delete("/eliminarUsuario/:id", controller.eliminarUsuario);
 
 

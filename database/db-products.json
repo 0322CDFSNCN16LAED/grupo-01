@@ -165,13 +165,13 @@
         "relevancia": "ninguna"
     },
     {
-        "nombre": "POLLO CRISPY",
+        "nombre": "Pollo crispy",
         "descripcion": "hotdogs",
         "reemplaza": "pollo",
         "presentacion": "Caja de 4",
         "precio": "10000",
         "id": 17,
-        "imagen": "chorizo.jpg",
+        "imagen": "1655074853927.jpg",
         "descuento": 10,
         "relevancia": "ninguna"
     }
