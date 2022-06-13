@@ -6,7 +6,9 @@
         "precio": 350,
         "presentacion": "caja de 2 unidades",
         "imagen": "burguer.png",
-        "reemplaza": "vacuno"
+        "reemplaza": "vacuno",
+        "descuento": 10,
+        "relevancia": "oferta"
     },
     {
         "id": 2,
@@ -15,7 +17,9 @@
         "precio": 450,
         "presentacion": "caja de 4 unidades",
         "imagen": "chorizo.jpg",
-        "reemplaza": "cerdo"
+        "reemplaza": "cerdo",
+        "descuento": 15,
+        "relevancia": "oferta"
     },
     {
         "id": 3,
@@ -24,16 +28,20 @@
         "precio": "500",
         "presentacion": "caja",
         "imagen": "bocados.jpg",
-        "reemplaza": "pollo"
+        "reemplaza": "pollo",
+        "descuento": 20,
+        "relevancia": "vendidos"
     },
     {
         "id": 4,
-        "nombre": "ALBONDIDAS",
+        "nombre": "ALBONDIGAS",
         "descripcion": "Agua, proteína de guisante 22,2%, aceite de oliva virgen extra 4,5%, concentrado vegetal (remolacha, zanahoria, manzana), fibra vegetal, extracto de levadura, aromas, estabilizante (metilcelulosa), sal, perejil, antioxidante (ácido ascórbico), vinagre de alcohol, hierro y vitamina B12.",
         "precio": 400,
         "presentacion": "caja de 8 unidades",
         "imagen": "albondigas.jpg",
-        "reemplaza": "vacuno"
+        "reemplaza": "vacuno",
+        "descuento": 10,
+        "relevancia": "ninguna"
     },
     {
         "id": 5,
@@ -42,7 +50,9 @@
         "precio": 550,
         "presentacion": "caja de 4 unidades",
         "imagen": "salchichas.jpg",
-        "reemplaza": "cerdo"
+        "reemplaza": "cerdo",
+        "descuento": 0,
+        "relevancia": "ninguna"
     },
     {
         "id": 7,
@@ -51,7 +61,9 @@
         "precio": 450,
         "presentacion": "10 fetas 230 gramis",
         "imagen": "queso-tipo-griego.jpg",
-        "reemplaza": "vacuno"
+        "reemplaza": "vacuno",
+        "descuento": 10,
+        "relevancia": "oferta"
     },
     {
         "id": 8,
@@ -60,7 +72,9 @@
         "precio": 950,
         "presentacion": "Cajas de 8 unidades",
         "imagen": "brochetas.jpeg",
-        "reemplaza": "vacuno"
+        "reemplaza": "vacuno",
+        "descuento": 10,
+        "relevancia": "vendidos"
     },
     {
         "id": 9,
@@ -69,7 +83,9 @@
         "precio": 850,
         "presentacion": "300 gramos",
         "imagen": "filetes-pescado.jpg",
-        "reemplaza": "pescado"
+        "reemplaza": "pescado",
+        "descuento": 10,
+        "relevancia": "vendidos"
     },
     {
         "id": 10,
@@ -78,7 +94,9 @@
         "precio": "1000",
         "presentacion": "botella",
         "imagen": "eggless.jpg",
-        "reemplaza": "pollo"
+        "reemplaza": "pollo",
+        "descuento": 10,
+        "relevancia": "vendidos"
     },
     {
         "id": 11,
@@ -87,7 +105,9 @@
         "precio": 500,
         "presentacion": "Lata de 150 gramos",
         "imagen": "atun.jpg",
-        "reemplaza": "pescado"
+        "reemplaza": "pescado",
+        "descuento": 10,
+        "relevancia": "ninguna"
     },
     {
         "id": 12,
@@ -96,7 +116,9 @@
         "precio": 850,
         "presentacion": "300 gramos",
         "imagen": "filetes-pescado.jpg",
-        "reemplaza": "pescado"
+        "reemplaza": "pescado",
+        "descuento": 10,
+        "relevancia": "ninguna"
     },
     {
         "id": 13,
@@ -105,7 +127,9 @@
         "precio": 500,
         "presentacion": "Lata de 150 gramos",
         "imagen": "atun.jpg",
-        "reemplaza": "pescado"
+        "reemplaza": "pescado",
+        "descuento": 10,
+        "relevancia": "oferta"
     },
     {
         "id": 14,
@@ -114,7 +138,9 @@
         "precio": 450,
         "presentacion": "caja de 4 unidades",
         "imagen": "chorizo.jpg",
-        "reemplaza": "cerdo"
+        "reemplaza": "cerdo",
+        "descuento": 10,
+        "relevancia": "ninguna"
     },
     {
         "id": 15,
@@ -123,7 +149,9 @@
         "precio": 450,
         "presentacion": "caja de 4 unidades",
         "imagen": "chorizo.jpg",
-        "reemplaza": "cerdo"
+        "reemplaza": "cerdo",
+        "descuento": 10,
+        "relevancia": "ninguna"
     },
     {
         "id": 16,
@@ -132,15 +160,19 @@
         "precio": 750,
         "presentacion": "caja de 8 unidades",
         "imagen": "nugget.jpg",
-        "reemplaza": "pollo"
+        "reemplaza": "pollo",
+        "descuento": 10,
+        "relevancia": "ninguna"
     },
     {
-        "nombre": "Pollo crispy",
+        "nombre": "POLLO CRISPY",
         "descripcion": "hotdogs",
         "reemplaza": "pollo",
         "presentacion": "Caja de 4",
         "precio": "10000",
         "id": 17,
-        "imagen": "1655074853927.jpg"
+        "imagen": "chorizo.jpg",
+        "descuento": 10,
+        "relevancia": "ninguna"
     }
 ]

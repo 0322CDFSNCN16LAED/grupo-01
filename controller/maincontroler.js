@@ -10,7 +10,7 @@ const users = db.getAllUsers() ;
 const controller = {
 
     home : (req,res)=>{
-        res.render("home")
+        res.render("home", {productos : productos})
     },
 
     login : (req,res)=> {
@@ -64,7 +64,7 @@ const controller = {
         let productToEdit= db.getOne(id);
         res.render("editarProducto", {productToEdit : productToEdit});
     },
-    uploadProducto: (req,res) => {
+    editProducto: (req,res) => {
        let id = req.params.id ;
         let productoEdited= productos.find(product => product.id == id);
         
@@ -73,6 +73,12 @@ const controller = {
         productoEdited.reemplaza = req.body.reemplaza ;
         productoEdited.precio = req.body.precio ;
         productoEdited.presentacion = req.body.presentacion ;
+        productoEdited.presentacion = req.body.descuento ;
+        productoEdited.presentacion = req.body.relevancia ;
+        if(req.file){
+        productoEdited.imagen = req.file.filename
+        }
+
          
         db.writeAndSave(productos); 
 

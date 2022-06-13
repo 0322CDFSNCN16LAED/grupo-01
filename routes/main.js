@@ -49,7 +49,7 @@ router.get("/listaProductos", controller.listarProductos);
 router.get("/busqueda", controller.busqueda);
 
 router.get("/editarProducto/:id", controller.editarProducto);
-router.put("/editarProducto/:id", controller.uploadProducto);
+router.put("/editarProducto/:id",productupload.single("imagen"), controller.editProducto);
 
 router.get("/crearProducto", controller.createProducto);
 router.post("/crearProducto", productupload.single("imagen"), controller.guardarProducto);

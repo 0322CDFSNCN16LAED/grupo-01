@@ -15,23 +15,23 @@
 <body class="width-100vw height-100vh font-family-lilita bg-pagina display-flex flex-column min-heigth-100vh">
 
     <%- include("./partials/header.ejs") %>  
-    <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh">
+    <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh text-color-blue">
         <section class="100pc">
           <h2 class="">Usted está creando un producto: </h2>
           <form action="/crearProducto"  method="post" enctype="multipart/form-data">
             <div class="display-flex justify-content-space-between " >
             <label for="">Nombre :</label>
-            <input type="text" name="nombre"  >
+            <input class="width-90pc" type="text" name="nombre"  >
           </div>
             <br>
             <div class="display-flex justify-content-space-between " >
             <label for=""> Descripción : </label>
-            <input type="text" name="descripcion"  >
+            <input class="width-90pc" type="text" name="descripcion"  >
           </div>
             <br>
             <div class="display-flex justify-content-space-between " >
             <label for=""> Reemplazo de : </label>
-            <select name="reemplaza">
+            <select class="width-90pc" name="reemplaza">
               <option> pollo</option>
               <option> vacuno</option>
               <option> pescado</option>
@@ -41,7 +41,7 @@
             <br>
             <div class="display-flex justify-content-space-between " >
             <label for=""> Presentación :</label>
-            <select name="presentacion">
+            <select class="width-90pc" name="presentacion">
               <option> Unidad </option>
               <option> Caja de 4 </option>
               <option> Caja de 6 </option>
@@ -51,16 +51,31 @@
           <br>
             <div class="display-flex justify-content-space-between " >
             <label for=""> Imagen Producto :</label>
-            <input type="file" name="imagen"  >
+            <input class="width-90pc" type="file" name="imagen"  >
           </div>
             <br>
             <div class="display-flex justify-content-space-between " >
             <label for=""> Precio :</label>
-            <input type="text" name="precio"  >
+            <input class="width-90pc" type="text" name="precio"  >
+          </div>
+          <br>
+          <div class="display-flex justify-content-space-between " >
+            <label for=""> Descuento :</label>
+            <input class="width-90pc" type="text" name="descuento">
+          </div>
+          <br>
+            <div class="display-flex justify-content-space-between " >
+            <label for=""> Relevancia :</label>
+            <select class="width-90pc" name="relevancia">
+              <option> oferta </option>
+              <option> vendidos </option>
+              <option> ninguna </option>
+            </select>
           </div>
           
             <br>
-            <button type="submit">Guardar</button>
+            <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina" type="submit">Guardar</button>
+            <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina" type="reset">Borrar</button>
           </form>
         </section>
 

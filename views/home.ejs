@@ -15,61 +15,66 @@
 <body class="width-100vw height-100vh font-family-lilita bg-pagina display-flex flex-column min-heigth-100vh">
 
     <%- include("./partials/header.ejs") %>  
-    <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh">
-        <section class="100pc">
-            <h2 class="">Productos destacados</h2>
-            <article class="display-flex width-100pc flex-column align-items-center articulos">
-                <article
-                    class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
-                    <img src="/images/bocadito.jpg" class="width-100pc">
-                    <div class="display-flex flex-column width-90pc">
-                        <div class="display-flex justify-content-space-between margin-top-10px width-100pc">
-                            <p class="cantidad text-color-pagina">Presentación: 350g</p>
-                            <p class="precios text-color-pagina width-30pc">$1000</p>
-                        </div>
-                        <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina width-100pc">Carne
-                            vacuna vegana</h3>
-                    </div>
-                </article>
-                <article
-                    class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
-                    <img src="/images/burguer.png" class="width-100pc">
-                    <div class="display-flex flex-column width-90pc">
-                        <div class="display-flex justify-content-space-between margin-top-10px width-100pc">
-                            <p class="cantidad text-color-pagina">Presentación: 350g</p>
-                            <p class="precios text-color-pagina width-30pc">$1000</p>
-                        </div>
-                        <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina width-100pc">Carne
-                            vacuna vegana
-                        </h3>
-                    </div>
-                </article>
-                <article
-                    class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
-                    <img src="/images/bocadito.jpg" class="width-100pc">
-                    <div class="display-flex flex-column width-90pc">
-                        <div class="display-flex justify-content-space-between margin-top-10px width-100pc">
-                            <p class="cantidad text-color-pagina">Presentación: 350g</p>
-                            <p class="precios text-color-pagina width-30pc">$1000</p>
-                        </div>
-                        <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina width-100pc">Carne
-                            vacuna vegana
-                        </h3>
-                    </div>
-                </article>
-                <article
-                    class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
-                    <img src="/images/burguer.png" class="width-100pc">
-                    <div class="display-flex flex-column width-90pc">
-                        <div class="display-flex justify-content-space-between margin-top-10px width-100pc">
-                            <p class="cantidad text-color-pagina">Presentación: 350g</p>
-                            <p class="precios text-color-pagina width-30pc">$1000</p>
-                        </div>
-                        <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina width-100pc">Carne
-                            vacuna vegana
-                        </h3>
-                    </div>
-                </article>
+    <main class=" grow margin-bottom-55px width-100pc margin-auto height-100vh">
+        <section class="100pc display-flex flex-column align-items-center">
+            <nav
+            class="width-100pc bg-verde border-bottom-black center-me  display-flex justify-content-center align-items-flex-end margin-top-10px border-top-black"><h3 class="text-color-pagina">Aprovecha estas OFERTAS</h3></nav>
+        <article class="display-flex width-90pc flex-column align-items-center articulos">
+          <% productos.forEach(producto=> {
+            if(producto.relevancia == "oferta") { %>
+          <article
+              class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
+              <a href="/detalleproducto/<%= producto.id %>">
+                <img src="/images/<%= producto.imagen %>" class="width-100pc">
+              </a>
+              <div class="display-flex flex-column align-items-center width-90pc">
+                  <div class="display-flex align-items-center justify-content-end margin-top-10px width-100pc">
+                      <p class="precios text-color-pagina width-30pc tachado display-flex justify-content-center"><%= "$" + producto.precio %></p>
+                  </div>
+                  <div class="display-flex flex-row width-100pc align-items-center justify-content-space-between">
+                    <p class="cantidad text-color-pagina">Presentación: <%= producto.presentacion %> </p>  
+                    <div class="display-flex flex-row width-100pc align-items-center justify-content-end">
+                      <p class="descuento text-color-pagina font-size-12"><%= producto.descuento + "% OFF" %></p>
+                      <p class="descuento text-color-pagina font-size-16 margin-left-5px"><%= "$" + (producto.precio * (100 - producto.descuento) / 100 ) %></p>
+                    </div>  
+                  </div>
+                  <div class="display-flex flex-row width-100pc align-items-center justify-content-space-between">
+                      <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina"><%= producto.nombre %></h3>
+                     
+                  </div>
+              </div>
+          </article>
+          <% }}); %>
+        </article>
+        <nav
+            class="width-100pc bg-verde border-bottom-black center-me  display-flex justify-content-center align-items-flex-end margin-top-10px border-top-black"><h3 class="text-color-pagina">Estos son nuestros productos más vendidos</h3></nav>
+        <article class="display-flex width-90pc flex-column align-items-center articulos">
+          <% productos.forEach(producto=> {
+            if(producto.relevancia == "vendidos") { %>
+          <article
+              class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
+              <a href="/detalleproducto/<%= producto.id %>">
+                <img src="/images/<%= producto.imagen %>" class="width-100pc">
+              </a>
+              <div class="display-flex flex-column align-items-center width-90pc">
+                  <div class="display-flex align-items-center justify-content-end margin-top-10px width-100pc">
+                      <p class="precios text-color-pagina width-30pc tachado display-flex justify-content-center"><%= "$" + producto.precio %></p>
+                  </div>
+                  <div class="display-flex flex-row width-100pc align-items-center justify-content-space-between">
+                    <p class="cantidad text-color-pagina">Presentación: <%= producto.presentacion %> </p>  
+                    <div class="display-flex flex-row width-100pc align-items-center justify-content-end">
+                      <p class="descuento text-color-pagina font-size-12"><%= producto.descuento + "% OFF" %></p>
+                      <p class="descuento text-color-pagina font-size-16 margin-left-5px"><%= "$" + (producto.precio * (100 - producto.descuento) / 100 ) %></p>
+                    </div>  
+                  </div>
+                  <div class="display-flex flex-row width-100pc align-items-center justify-content-space-between">
+                      <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina"><%= producto.nombre %></h3>
+                     
+                  </div>
+              </div>
+          </article>
+          <% }}); %>
+        </article>
 
         </section>
 

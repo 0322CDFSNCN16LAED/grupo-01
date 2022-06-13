@@ -447,5 +447,9 @@ body {
       .tarjeta {
               border: solid #707375 1px;
       }
+      .tachado {
+        text-decoration-line: line-through;
+      }
+      
       
       

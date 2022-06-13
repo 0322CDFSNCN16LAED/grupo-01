@@ -15,7 +15,74 @@
 <body class="width-100vw height-100vh font-family-lilita bg-pagina display-flex flex-column min-heigth-100vh">
 
     <%- include("./partials/header.ejs") %>  
-    <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh">
+    <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh text-color-blue">
+      <section class="100pc">
+        <h2 class="">Usted está editando el producto: <%= productToEdit.nombre %> </h2>
+        <form action="/editarProducto/<%=productToEdit.id%>?_method=PUT" enctype="multipart/form-data"  method="POST">
+          <div class="display-flex justify-content-space-between margin-top-10px " >
+            <label for="">Nuevo nombre</label>
+            <input class="margin-bottom-10px border-radius-3px width-90pc" type="text" name="nombre" value= <%= productToEdit.nombre %> >
+          </div>
+          <br>
+          <div class="display-flex justify-content-space-between " >
+          <label for=""> Descripción : </label>
+          <input class="margin-bottom-10px border-radius-3px width-90pc" type="text" name="descripcion" value= <%= productToEdit.descripcion %> >
+        </div>
+          <br>
+          <div class="display-flex justify-content-space-between " >
+          <label for=""> Reemplazo de : </label>
+          <select class="width-90pc margin-bottom-10px border-radius-3px width-90pc" name="reemplaza"">
+            <option <% if(productToEdit.reemplaza == "pollo") {%> selected <% } %>  > pollo</option>
+            <option <% if(productToEdit.reemplaza == "vacuno") {%> selected <% } %>> vacuno</option>
+            <option <% if(productToEdit.reemplaza == "pescado") {%> selected <% } %>> pescado</option>
+            <option <% if(productToEdit.reemplaza == "cerdo") {%> selected <% } %>> cerdo</option>
+          </select>
+        </div>  
+          <br>
+          <div class="display-flex justify-content-space-between " >
+          <label for=""> Presentación :</label>
+          <select  class="width-90pc margin-bottom-10px border-radius-3px width-90pc" name="presentacion">
+            <option> Unidad </option>
+            <option> Caja de 4 </option>
+            <option> Caja de 6 </option>
+            <option> Kilos </option>
+          </select>
+        </div>
+        <br>
+          <div class="display-flex justify-content-space-between " >
+          <label for=""> Imagen Producto :</label>
+          <input class="width-90pc margin-bottom-10px border-radius-3px width-90pc" type="file" name="imagen" value= <%= productToEdit.imagen %>  >
+        </div>
+          <br>
+          <div class="display-flex justify-content-space-between " >
+          <label for=""> Precio :</label>
+          <input class="width-90pc margin-bottom-10px border-radius-3px width-90pc" type="text" name="precio" value= <%= productToEdit.precio %>  >
+        </div>
+        <br>
+        <div class="display-flex justify-content-space-between " >
+          <label for=""> Descuento :</label>
+          <input class="width-90pc margin-bottom-10px border-radius-3px width-90pc" type="text" name="descuento" value= <%= productToEdit.descuento %>>
+        </div>
+        <br>
+          <div class="display-flex justify-content-space-between " >
+          <label for=""> Relevancia :</label>
+          <select class="width-90pc margin-bottom-10px border-radius-3px width-90pc" name="relevancia">
+            <option <% if(productToEdit.relevancia == "oferta") {%> selected <% } %>> oferta </option>
+            <option <% if(productToEdit.relevancia == "vendidos") {%> selected <% } %>> vendidos </option>
+            <option <% if(productToEdit.relevancia == "ninguna") {%> selected <% } %>> ninguna </option>
+          </select>
+        </div>
+        
+          <br>
+          <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina" type="submit">Guardar</button>
+          <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina" type="reset">Borrar</button>
+        </form>
+      </section>
+
+
+  </main>
+  <!-- Esto es un comentario 
+     <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh">
         <section class="100pc">
           <h2 class="">Usted está editando el producto: <%= productToEdit.nombre %> </h2>
           <form action="/editarProducto/<%=productToEdit.id%>?_method=PUT"  method="POST">
@@ -34,6 +101,14 @@
             <label for="">Ingrese aquí el precio nuevo del producto</label>
             <input class="margin-bottom-10px border-radius-3px" type="text" name="precio" value= <%= productToEdit.precio %> >
             <br>
+            <br>
+            <label for="">Ingrese aquí el descuento nuevo del producto</label>
+            <input class="margin-bottom-10px border-radius-3px" type="text" name="precio" value= <%= productToEdit.descuento %> >
+            <br>
+            <br>
+            <label for="">Ingrese aquí la relevancia que le desea asignar al producto</label>
+            <input class="margin-bottom-10px border-radius-3px" type="text" name="precio" value= <%= productToEdit.descuento %> >
+            <br>
             <div>
               <button type="submit" class="bg-verde border-none border-radius-3px padding-5px text-color-pagina">Enviar</button>
               <button type="reset" class="bg-verde border-none border-radius-3px padding-5px text-color-pagina">Borrar</button>
@@ -45,6 +120,7 @@
 
 
     </main>
+    -->
     <%- include("./partials/footer.ejs") %>
 </body>
 

@@ -157,7 +157,9 @@ const productos = [
         "precio": 350,
         "presentacion": "caja de 2 unidades",
         "imagen": "burguer.png",
-        "reemplaza": "vacuno"
+        "reemplaza": "vacuno",
+        "descuento": 10,
+        "relevancia": "oferta"
     },
     {
         "id": 2,
@@ -166,44 +168,42 @@ const productos = [
         "precio": 450,
         "presentacion": "caja de 4 unidades",
         "imagen": "chorizo.jpg",
-        "reemplaza": "cerdo"
+        "reemplaza": "cerdo",
+        "descuento": 15,
+        "relevancia": "oferta"
     },
     {
         "id": 3,
-        "nombre": "BOCADOS NO POLLO",
-        "descripcion": "Agua, proteína de soja* concentrada 27.3%, aceite de oliva 2.5%, sal, aromas, especias <2% y vitamina B12.",
-        "precio": 500,
-        "presentacion": "caja de 160 gramos",
+        "nombre": "BOCADOS RICOS",
+        "descripcion": "Agua,",
+        "precio": "500",
+        "presentacion": "caja",
         "imagen": "bocados.jpg",
-        "reemplaza": "pollo"
+        "reemplaza": "pollo",
+        "descuento": 20,
+        "relevancia": "vendidos"
     },
     {
         "id": 4,
-        "nombre": "ALBONDIDAS",
+        "nombre": "ALBONDIGAS",
         "descripcion": "Agua, proteína de guisante 22,2%, aceite de oliva virgen extra 4,5%, concentrado vegetal (remolacha, zanahoria, manzana), fibra vegetal, extracto de levadura, aromas, estabilizante (metilcelulosa), sal, perejil, antioxidante (ácido ascórbico), vinagre de alcohol, hierro y vitamina B12.",
         "precio": 400,
         "presentacion": "caja de 8 unidades",
         "imagen": "albondigas.jpg",
-        "reemplaza": "vacuno"
+        "reemplaza": "vacuno",
+        "descuento": 10,
+        "relevancia": "ninguna"
     },
     {
         "id": 5,
         "nombre": "SALCHICHAS",
-        "descripcion": "Agua, concentrado de proteína de soja 18,3%, aceite de karité 5,9%, aceite de oliva virgen extra 3,5%, aromas, estabilizante (metilcelulosa), extractos vegetales de manzana, remolacha, rábano, hibisco 
-y zanahoria, sal, fibra vegetal, antioxidante (ácido ascórbico), recubierta comestible [estabilizante (alginato de calcio)], perejil, hierro y vitamina B12.",
+        "descripcion": "Agua, concentrado de proteína de soja 18,3%, aceite de karité 5,9%, aceite de oliva virgen extra 3,5%, aromas, estabilizante (metilcelulosa), extractos vegetales de manzana, ",
         "precio": 550,
         "presentacion": "caja de 4 unidades",
         "imagen": "salchichas.jpg",
-        "reemplaza": "cerdo"
-    },
-    {
-        "id": 6,
-        "nombre": "NUGGETS",
-        "descripcion": "Agua, concentrado de proteína de soja 14,2%, harina de arroz, harina de maíz, aceite de girasol, almidón de patata y de maíz, aromas, estabilizante fibra vegetal, vinagre de alcohol, sal, dextrosa y vitamina B12.",
-        "precio": 750,
-        "presentacion": "caja de 8 unidades",
-        "imagen": "nugget.jpg",
-        "reemplaza": "pollo"
+        "reemplaza": "cerdo",
+        "descuento": 0,
+        "relevancia": "ninguna"
     },
     {
         "id": 7,
@@ -212,7 +212,9 @@ y zanahoria, sal, fibra vegetal, antioxidante (ácido ascórbico), recubierta co
         "precio": 450,
         "presentacion": "10 fetas 230 gramis",
         "imagen": "queso-tipo-griego.jpg",
-        "reemplaza": "vacuno"
+        "reemplaza": "vacuno",
+        "descuento": 10,
+        "relevancia": "oferta"
     },
     {
         "id": 8,
@@ -221,7 +223,9 @@ y zanahoria, sal, fibra vegetal, antioxidante (ácido ascórbico), recubierta co
         "precio": 950,
         "presentacion": "Cajas de 8 unidades",
         "imagen": "brochetas.jpeg",
-        "reemplaza": "vacuno"
+        "reemplaza": "vacuno",
+        "descuento": 10,
+        "relevancia": "vendidos"
     },
     {
         "id": 9,
@@ -230,16 +234,20 @@ y zanahoria, sal, fibra vegetal, antioxidante (ácido ascórbico), recubierta co
         "precio": 850,
         "presentacion": "300 gramos",
         "imagen": "filetes-pescado.jpg",
-        "reemplaza": "pescado"
+        "reemplaza": "pescado",
+        "descuento": 10,
+        "relevancia": "vendidos"
     },
     {
         "id": 10,
-        "nombre": "HUEVO LIQUIDO VEGANO",
-        "descripcion": "Agua filtrada, concentrado de proteína de altramuces, aceite de girasol alto en ácido oleico, betaglucano sin gluten, sabores naturales, lactato de calcio (fuente vegana), enzima vegana, pirofosfato tetrasódico, agar, goma xantana, extractos naturales de cúrcuma, extractos naturales de zanahoria, nisina ( un conservante natural).",
-        "precio": 850,
-        "presentacion": "botella de 473ml",
+        "nombre": "HUEVO",
+        "descripcion": "Agua",
+        "precio": "1000",
+        "presentacion": "botella",
         "imagen": "eggless.jpg",
-        "reemplaza": "pollo"
+        "reemplaza": "pollo",
+        "descuento": 10,
+        "relevancia": "vendidos"
     },
     {
         "id": 11,
@@ -248,7 +256,9 @@ y zanahoria, sal, fibra vegetal, antioxidante (ácido ascórbico), recubierta co
         "precio": 500,
         "presentacion": "Lata de 150 gramos",
         "imagen": "atun.jpg",
-        "reemplaza": "pescado"
+        "reemplaza": "pescado",
+        "descuento": 10,
+        "relevancia": "ninguna"
     },
     {
         "id": 12,
@@ -257,7 +267,9 @@ y zanahoria, sal, fibra vegetal, antioxidante (ácido ascórbico), recubierta co
         "precio": 850,
         "presentacion": "300 gramos",
         "imagen": "filetes-pescado.jpg",
-        "reemplaza": "pescado"
+        "reemplaza": "pescado",
+        "descuento": 10,
+        "relevancia": "ninguna"
     },
     {
         "id": 13,
@@ -266,7 +278,9 @@ y zanahoria, sal, fibra vegetal, antioxidante (ácido ascórbico), recubierta co
         "precio": 500,
         "presentacion": "Lata de 150 gramos",
         "imagen": "atun.jpg",
-        "reemplaza": "pescado"
+        "reemplaza": "pescado",
+        "descuento": 10,
+        "relevancia": "oferta"
     },
     {
         "id": 14,
@@ -275,7 +289,9 @@ y zanahoria, sal, fibra vegetal, antioxidante (ácido ascórbico), recubierta co
         "precio": 450,
         "presentacion": "caja de 4 unidades",
         "imagen": "chorizo.jpg",
-        "reemplaza": "cerdo"
+        "reemplaza": "cerdo",
+        "descuento": 10,
+        "relevancia": "ninguna"
     },
     {
         "id": 15,
@@ -284,7 +300,9 @@ y zanahoria, sal, fibra vegetal, antioxidante (ácido ascórbico), recubierta co
         "precio": 450,
         "presentacion": "caja de 4 unidades",
         "imagen": "chorizo.jpg",
-        "reemplaza": "cerdo"
+        "reemplaza": "cerdo",
+        "descuento": 10,
+        "relevancia": "ninguna"
     },
     {
         "id": 16,
@@ -293,7 +311,20 @@ y zanahoria, sal, fibra vegetal, antioxidante (ácido ascórbico), recubierta co
         "precio": 750,
         "presentacion": "caja de 8 unidades",
         "imagen": "nugget.jpg",
-        "reemplaza": "pollo"
+        "reemplaza": "pollo",
+        "descuento": 10,
+        "relevancia": "ninguna"
+    },
+    {
+        "nombre": "Pollo crispy",
+        "descripcion": "hotdogs",
+        "reemplaza": "pollo",
+        "presentacion": "Caja de 4",
+        "precio": "10000",
+        "id": 17,
+        "imagen": "1655074853927.jpg",
+        "descuento": 10,
+        "relevancia": "ninguna"
     }
 ] */
     module.exports = productos
