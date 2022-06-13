@@ -16,7 +16,7 @@
 
 </header>
     <main >
-        <form method="GET" action="/">
+        <form method="POST" action="/crearUsuario" enctype="multipart/form-data">
             
             <section class="registratecon">
                 <h1 class="text-color-blue"> Registrarse</h1>
@@ -42,20 +42,20 @@
                 <h2 class="padtop15 text-color-blue " > O crea un usuario </h2>
                 <h3 class="padtop15 text-color-blue"  > Datos personales </h3> 
                 <div class="display-flex justify-content-space-between flex-wrap-wrap padtop15" >
-                    <input type="text" name="nombreyapelido" placeholder="Nombre" class="width-45pc border-reg "> 
+                    <input type="text" name="nombre" placeholder="Nombre" class="width-45pc border-reg "> 
                     
-                    <input type="text" name="nombreyapelido" placeholder="Apellido" class="width-45pc border-reg"> 
+                    <input type="text" name="apellido" placeholder="Apellido" class="width-45pc border-reg"> 
                    
                 </div>
 
                 <div class="flex-register padtop15 ">
                     <div>
                         <p class="text-color-blue">Fecha de nacimiento </p>
-                        <input type="date" name="date " class="border-reg" >   
+                        <input type="date" name="nacimiento" class="border-reg" >   
                 </div>
                 <div>
-                    <p class="text-color-blue"> Sexo </p>
-                    <select class="border-reg">
+                    <p class="text-color-blue" > Sexo </p>
+                    <select class="border-reg" name="sexo">
                         <option> F </option>
                         <option> M </option>
                         <option> Otro </option>
@@ -64,20 +64,28 @@
                 </div>
                     <div>
                         <p class="text-color-blue"> Celular </p>
-                        <input type="text" name="" placeholder="Celular" class="border-reg"> 
+                        <input type="text" name="celular" placeholder="Celular" class="border-reg"> 
                     
                     </div>
                 </div>
 
+            </div>
+            <div>
+                <p class="text-color-blue"> Imagen usuario</p>
+                <input type="file" name="imagenusuario"  class="border-reg"> 
+            
+            </div>
+        </div>
+
                 <h3 class="padtop15 text-color-blue "> Datos de acceso </h3> 
 
                 <div class="padtop15" >
-                    <input type="email" name="" placeholder="Correo Electronico" class="width-100pc border-reg"> 
+                    <input type="email" name="correo" placeholder="Correo Electronico" class="width-100pc border-reg"> 
                     <span> *Este campo no puede estar vacio</span> 
                 </div>
 
                 <div>
-                    <input type="password" name="password"  placeholder="Contraseña" class="width-100pc border-reg" > 
+                    <input type="password" name="contraseña"  placeholder="Contraseña" class="width-100pc border-reg" > 
                     <span> *Este campo tiene un error</span>
                 </div>
                 <div>
@@ -86,7 +94,7 @@
                 </div>  
 
             </section>
-        </form>
+        
          
         
           
@@ -119,7 +127,7 @@
             <section>
                 <div class="padtop20 padbottom20">
                     <div class="width-100pc">
-                        <button type="submit" value="Enviar"   class="  border-reg width-100pc margreg black"> Registrate </button>
+                        <button type="submit" value="Enviar"   class="  border-reg width-100pc margreg black" > Registrate </button>
                     </div>
                 <div>
                 <button type="reset" value="Borrar"  class="  border-reg width-100pc black"> Borrar </button>

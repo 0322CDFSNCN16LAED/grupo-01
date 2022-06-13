@@ -3,6 +3,7 @@ const fs = require ("fs");
 const path = require ("path");
 const db = require ("../database/db.js")
 const productos = db.getAll() ;
+const users = db.getAllUsers() ;
 
 
 const controller = {
@@ -15,9 +16,7 @@ const controller = {
         res.render("login")
     },
 
-    register : (req,res)=> {
-        res.render("register")
-    },
+   
 
     listarProductos : (req,res)=>{
         res.render("listaProductos", {productos : productos})
@@ -41,13 +40,22 @@ const controller = {
     },
 
     guardarProducto : (req,res) => {
+
+        
+        if(req.file){
         const nuevoProducto = req.body ;
         nuevoProducto.id = db.creacionId() ;
+        nuevoProducto.imagen = req.file.filename
         productos.push(nuevoProducto) ;
         db.writeAndSave(productos);
     
         res.redirect("/listaProductos") ;
-    },
+
+    }else{
+        res.render("create-form-products")
+    }
+    }
+   ,
 
 
     editarProducto: (req,res) => {
@@ -77,10 +85,48 @@ const controller = {
         res.redirect("/listaProductos");
         
     },
-        
-        
 
-} 
+    listarUsuario : (req,res)=>{
+        res.render("usersList", {users : users})
+    },
+
+    detalleUsuario : (req,res)=>{
+        let id = req.params.id ;
+        let usuarioDetalle= db.getOneUser(id); 
+        
+        res.render("detalleusuario", {usuarioDetalle : usuarioDetalle})
+    },
+
+
+
+    createUsuario : (req,res) => {
+        res.render("register")
+    },
+
+    guardarUsuario : (req,res) => {
+        if(req.file){
+        const nuevoUsuario = req.body ;
+        nuevoUsuario.imagenusuario = req.file.filename
+        nuevoUsuario.id = db.creacionIdUser() ;
+        users.push(nuevoUsuario) ;
+        db.writeAndSaveUser(users); 
+    
+        res.redirect("/userList") ;       
+    }else {
+        res.render("/register")
+    }
+
+} ,
+
+eliminarUsuario : (req,res)=>{
+    const id = req.params.id    
+
+
+}
+
+
+
+}
     
    
 

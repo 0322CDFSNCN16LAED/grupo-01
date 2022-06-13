@@ -18,13 +18,18 @@
     <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh">
         <section class="100pc">
           <h2 class="">Usted está creando un producto: </h2>
-          <form action="/crearProducto"  method="post">
-            <label for="">Nombre </label>
+          <form action="/crearProducto"  method="post" enctype="multipart/form-data">
+            <div class="display-flex justify-content-space-between " >
+            <label for="">Nombre :</label>
             <input type="text" name="nombre"  >
+          </div>
             <br>
-            <label for=""> Descripción </label>
+            <div class="display-flex justify-content-space-between " >
+            <label for=""> Descripción : </label>
             <input type="text" name="descripcion"  >
+          </div>
             <br>
+            <div class="display-flex justify-content-space-between " >
             <label for=""> Reemplazo de : </label>
             <select name="reemplaza">
               <option> pollo</option>
@@ -32,17 +37,28 @@
               <option> pescado</option>
               <option> cerdo</option>
             </select>
+          </div>  
             <br>
-            <label for=""> Presentación </label>
+            <div class="display-flex justify-content-space-between " >
+            <label for=""> Presentación :</label>
             <select name="presentacion">
               <option> Unidad </option>
               <option> Caja de 4 </option>
               <option> Caja de 6 </option>
               <option> Kilos </option>
             </select>
+          </div>
+          <br>
+            <div class="display-flex justify-content-space-between " >
+            <label for=""> Imagen Producto :</label>
+            <input type="file" name="imagen"  >
+          </div>
             <br>
-            <label for=""> Precio </label>
+            <div class="display-flex justify-content-space-between " >
+            <label for=""> Precio :</label>
             <input type="text" name="precio"  >
+          </div>
+          
             <br>
             <button type="submit">Guardar</button>
           </form>

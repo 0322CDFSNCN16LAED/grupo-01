@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<%- include("./partials/head.ejs") %>
+<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/register.css">
+<link rel="stylesheet" href="/css/home-tablet.css">
+<link rel="stylesheet" href="/css/home-desktop.css">
+<link rel="stylesheet" href="/css/laptop.css">
+</head>
+
+<body class="width-100vw height-100vh font-family-lilita bg-pagina display-flex flex-column min-heigth-100vh">
+
+<header>
+  <%- include("./partials/header.ejs") %>
+
+</header>
+<body>
+    <h2> Listado de Usuarios </h2>
+    
+    <% users.forEach(user => { %> 
+        <a class="display-flex " href="/detalleUser/<%=user.id%>">
+            <p class="width-45pc"> <%=user.nombre  %>  </p>
+            <p> <%=user.apellido  %>  </p>
+        </a>  
+    <% }) %> 
+
+     
+</body>
+<footer
+class="width-100pc bg-verde display-flex flex-column justify-content-center align-items-center padding-10px border-top-black border-bottom-black ">
+<div class="display-flex flex-row justify-content-space-around">
+    <a href="https://www.instagram.com/"><i class="font-size-18 text-color-pagina fab fa-instagram"></i></a>
+    <a href="https://es-la.facebook.com/"><i
+            class="font-size-18 margin-left-10px text-color-pagina fab fa-facebook-square"></i></a>
+    <a href="https://twitter.com/?lang=es"><i
+            class="font-size-18 margin-left-10px text-color-pagina fab fa-twitter"></i></a>
+    <a href="/contact"><i class="font-size-18 margin-left-10px text-color-pagina far fa-envelope"></i></a>
+</div>
+<p class="text-color-pagina font-size-12"><i class="text-color-pagina far fa-copyright"></i>2022 Todos los
+    derechos reservados</p>
+</footer>
+</html>
