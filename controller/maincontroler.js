@@ -118,6 +118,12 @@ const controller = {
 
 } ,
 
+eliminarUsuario : (req,res)=>{
+    const id = req.params.id    
+
+
+}
+
 
 
 }
