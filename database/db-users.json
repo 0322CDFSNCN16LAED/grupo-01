@@ -63,5 +63,37 @@
         "categoriaInteres": "Moda",
         "imagenusuario": "1655072146862.png",
         "id": 7
+    },
+    {
+        "nombre": "Damian",
+        "apellido": "Aliano",
+        "nacimiento": "1990-03-10",
+        "sexo": "F",
+        "celular": "1111111111",
+        "correo": "damito@hotmail.com",
+        "contrasena": "damito",
+        "password": "damito",
+        "categoriaInteres ": [
+            "Electro",
+            "Moda"
+        ],
+        "imagenusuario": "1655170687068.jpg",
+        "id": 8
+    },
+    {
+        "nombre": "Fernu",
+        "apellido": "Spelan",
+        "nacimiento": "1990-02-02",
+        "sexo": "Otro",
+        "celular": "2343406699",
+        "correo": "fer@hotmail.com",
+        "contrasena": "89",
+        "password": "89",
+        "categoriaInteres": [
+            "Moda",
+            "Jugueteria"
+        ],
+        "imagenusuario": "1655170993645.jpg",
+        "id": 9
     }
 ]

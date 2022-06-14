@@ -23,10 +23,10 @@
     },
     {
         "id": 3,
-        "nombre": "BOCADOS RICOS",
+        "nombre": "BOCADOS RIQUISIMOS",
         "descripcion": "Agua,",
-        "precio": "500",
-        "presentacion": "caja",
+        "precio": "900",
+        "presentacion": "vendidos",
         "imagen": "bocados.jpg",
         "reemplaza": "pollo",
         "descuento": 20,

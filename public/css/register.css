@@ -1,5 +1,7 @@
 
-
+*{
+  transition: all 1s;
+}
 
 .margintop {
     border-top: black solid 5px;
@@ -90,14 +92,11 @@ span{
   background-color: #6E8C56;
 }
 
-.rotate{
-  transition: all 1s;
-}
 
 
-.rotate:hover {
+.hovercolor:hover i{
     
-  transform: rotateZ(360deg);
+  transform: rotate(360deg);
 }
 
 

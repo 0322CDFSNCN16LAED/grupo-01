@@ -45,6 +45,9 @@ body {
 .width-20pc {
         width: 20%;
 }
+.width-126px {
+        width: 130px;
+}
 .min-width-16px {
         min-width: 16px;
 }
@@ -62,6 +65,9 @@ body {
 }
 .max-heigth-150px {
         max-height: 150px;
+}
+.max-width-80pc {
+        max-width: 80%;
 }
 .display-none {
         display: none;
