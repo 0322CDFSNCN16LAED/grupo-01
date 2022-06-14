@@ -20,22 +20,22 @@
         <h2 class="">Usted está editando el usuario: <%= userToEdit.nombre + " " + userToEdit.apellido %> </h2>
         <form action="/editUser/<%=userToEdit.id%>?_method=PUT" enctype="multipart/form-data"  method="POST">
           <div class="display-flex justify-content-space-between margin-top-10px " >
-            <label for="">Nuevo nombre</label>
-            <input class="margin-bottom-10px border-radius-3px width-90pc" type="text" name="nombre" value= <%= userToEdit.nombre %> >
+            <label for="" class="width-137px">Nuevo nombre</label>
+            <input class="margin-bottom-10px border-radius-3px width-90pc grow" type="text" name="nombre" value= <%= userToEdit.nombre %> >
           </div>
           <br>
           <div class="display-flex justify-content-space-between margin-top-10px " >
-            <label for="">Nuevo apellido</label>
+            <label for="" class="width-137px">Nuevo apellido</label>
             <input class="margin-bottom-10px border-radius-3px width-90pc" type="text" name="apellido" value= <%= userToEdit.apellido %> >
           </div>
           <br>
           <div class="display-flex justify-content-start margin-top-10px " >
-            <label for="">Fecha de nacimiento</label>
-            <input type="date" name="nacimiento" class="margin-bottom-10px border-radius-3px margin-left-5px" value= <%= userToEdit.nacimiento %> >
+            <label for="" class="width-137px">Fecha de nacimiento</label>
+            <input type="date" name="nacimiento" class="margin-bottom-10px border-radius-3px margin-left-5px width-92pc" value= <%= userToEdit.nacimiento %> >
           </div>
           <br>
           <div class="display-flex justify-content-space-between " >
-            <label for=""> Sexo: </label>
+            <label for="" class="width-137px"> Sexo: </label>
             <select class="width-90pc margin-bottom-10px border-radius-3px width-90pc" name="sexo">
               <option <% if(userToEdit.sexo == "M") {%> selected <% } %>  > M</option>
               <option <% if(userToEdit.sexo == "F") {%> selected <% } %>> F</option>
@@ -44,12 +44,12 @@
           </div>
           <br>
           <div class="display-flex justify-content-space-between margin-top-10px " >
-            <label for="">Celular</label>
+            <label for="" class="width-137px">Celular</label>
             <input class="margin-bottom-10px border-radius-3px width-90pc" type="text" name="celular" value= <%= userToEdit.celular %> >
           </div>
           <br>
           <div class="display-flex justify-content-space-between " >
-            <label for=""> Imagen de usuario:</label>
+            <label for="" class="width-137px"> Imagen de usuario:</label>
             <input class="width-90pc margin-bottom-10px border-radius-3px width-90pc" type="file" name="imagenusuario" value= <%= userToEdit.imagenusuario %>  >
           </div>
           <br>
@@ -57,19 +57,19 @@
             <h2 class="text-color-blue" > Intereses </h2>
             <div class="border">
                 <input type="checkbox" name="categoriaInteres" value ="Electro" id="categoria_electro" <% if(userToEdit.categoriaInteres.includes("Electro")) {%> checked <% } %>     > 
-                <label for="categoria_electro "> Hambuerguesa </label>
+                <label for="categoria_electro " class="width-137px"> Hambuerguesa </label>
             </div>
             <div class="border">
                 <input type="checkbox" name="categoriaInteres"  value ="Moda" id="categoria_moda" <% if(userToEdit.categoriaInteres.includes("Moda")) {%> checked <% } %>> 
-                <label for="categoria_moda"> Chorizos </label>
+                <label for="categoria_moda" class="width-137px"> Chorizos </label>
             </div>
             <div class="border" >
                 <input type="checkbox" name="categoriaInteres"  value ="Hogar" id="categoria_hogar" <% if(userToEdit.categoriaInteres.includes("Hogar")) {%> checked <% } %>> 
-                <label for="categoria_hogar"> Bocados </label>
+                <label for="categoria_hogar" class="width-137px"> Bocados </label>
             </div>
             <div class="border" >
                 <input type="checkbox" name="categoriaInteres"  value ="Jugueteria" id="categoria_jugueteria" <% if(userToEdit.categoriaInteres.includes("Jugueteria")) {%> checked <% } %>> 
-                <label for="categoria_jugueteria"> Salchichas </label>
+                <label for="categoria_jugueteria" class="width-137px"> Salchichas </label>
             </div>
           
             <span> *Debe seleccionar al menos un item </span>
@@ -78,7 +78,7 @@
         <br>
           
           <div class="display-flex justify-content-space-between " >
-            <label for=""> Correo electrónico </label>
+            <label for="" class="width-137px"> Correo electrónico </label>
             <input class="margin-bottom-10px border-radius-3px width-90pc margin-left-5px" type="text" name="correo" value= <%= userToEdit.correo %> >
           </div>
           <br>
