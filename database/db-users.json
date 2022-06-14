@@ -63,21 +63,5 @@
         "categoriaInteres": "Moda",
         "imagenusuario": "1655072146862.png",
         "id": 7
-    },
-    {
-        "nombre": "cambio?",
-        "apellido": "bertora",
-        "nacimiento": "2022-06-18",
-        "sexo": "F",
-        "celular": "1221212121",
-        "correo": "alaa@hotmail.com",
-        "contrasena": "da",
-        "password": "da",
-        "categoriaInteres": [
-            "Hogar",
-            "Jugueteria"
-        ],
-        "imagenusuario": "1655084083655.png",
-        "id": 8
     }
 ]

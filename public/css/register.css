@@ -80,3 +80,25 @@ span{
     border: 1px solid red;
 }
 
+
+.hovercolor{
+  transition: all 1s;
+}
+
+
+.hovercolor:hover{
+  background-color: #6E8C56;
+}
+
+.show{
+  display: none;
+  transition: all 1s;
+}
+
+
+.show:hover{
+  display: block;
+}
+
+
+

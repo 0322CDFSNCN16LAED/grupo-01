@@ -15,13 +15,13 @@
   <%- include("./partials/header.ejs") %>
 
 </header>
-    <main >
+    <main class="padleft20 padright20">
         <form method="POST" action="/crearUsuario" enctype="multipart/form-data">
             
             <section class="registratecon">
                 <h1 class="text-color-blue"> Registrarse</h1>
                 <div class="margintop">
-                    <h2 class="text-color-blue" >Registate con : </h2>
+                    <h2 class="text-color-blue" >Registrate con : </h2>
                 </div>
                 <div class="display-flex justify-content-space-between flex-wrap-wrap align-self-center marginbottom">
                     <div class="face-gmail justify-content-space-between ">
@@ -42,20 +42,20 @@
                 <h2 class="padtop15 text-color-blue " > O crea un usuario </h2>
                 <h3 class="padtop15 text-color-blue"  > Datos personales </h3> 
                 <div class="display-flex justify-content-space-between flex-wrap-wrap padtop15" >
-                    <input type="text" name="nombre" placeholder="Nombre" class="width-45pc border-reg "> 
+                    <input type="text" name="nombre" placeholder="Nombre" class="width-45pc border-reg height-30px "> 
                     
-                    <input type="text" name="apellido" placeholder="Apellido" class="width-45pc border-reg"> 
+                    <input type="text" name="apellido" placeholder="Apellido" class="width-45pc border-reg height-30px "> 
                    
                 </div>
 
                 <div class="flex-register padtop15 ">
                     <div>
                         <p class="text-color-blue">Fecha de nacimiento </p>
-                        <input type="date" name="nacimiento" class="border-reg" >   
+                        <input type="date" name="nacimiento" class="border-reg height-30px width-100pc " >   
                 </div>
                 <div>
                     <p class="text-color-blue" > Sexo </p>
-                    <select class="border-reg" name="sexo">
+                    <select class="border-reg height-30px width-100pc " name="sexo">
                         <option> F </option>
                         <option> M </option>
                         <option> Otro </option>
@@ -63,16 +63,17 @@
                     </select>
                 </div>
                     <div>
-                        <p class="text-color-blue"> Celular </p>
-                        <input type="text" name="celular" placeholder="Celular" class="border-reg"> 
+                        <p class="text-color-blue "> Celular </p>
+                        <input type="text" name="celular" placeholder="Celular" class="border-reg height-30px width-100pc "> 
                     
                     </div>
                 </div>
 
             </div>
-            <div>
-                <p class="text-color-blue"> Imagen usuario</p>
-                <input type="file" name="imagenusuario"  class="border-reg"> 
+            <br>
+            <div class="display-flex flex-wrap-wrap justify-content-center">
+                <p class="text-color-blue width-100pc center-me"> Imagen usuario</p>
+                <input type="file" name="imagenusuario"  class="border-reg height-30px width-100pc"> 
             
             </div>
         </div>
@@ -80,16 +81,16 @@
                 <h3 class="padtop15 text-color-blue "> Datos de acceso </h3> 
 
                 <div class="padtop15" >
-                    <input type="email" name="correo" placeholder="Correo Electronico" class="width-100pc border-reg"> 
+                    <input type="email" name="correo" placeholder="Correo Electronico" class="width-100pc border-reg height-30px"> 
                     <span> *Este campo no puede estar vacio</span> 
                 </div>
 
                 <div>
-                    <input type="password" name="contrasena"  placeholder="Contraseña" class="width-100pc border-reg" > 
+                    <input type="password" name="contrasena"  placeholder="Contraseña" class="width-100pc border-reg height-30px " > 
                     <span> *Este campo tiene un error</span>
                 </div>
                 <div>
-                    <input type="password" name="password" placeholder="Confirmar contraseña" class="width-100pc border-reg" >
+                    <input type="password" name="password" placeholder="Confirmar contraseña" class="width-100pc border-reg height-30px " >
                     <span> *No coinciden </span> 
                 </div>  
 
@@ -125,12 +126,18 @@
 
           
             <section>
-                <div class="padtop20 padbottom20">
-                    <div class="width-100pc">
-                        <button type="submit" value="Enviar"   class="  border-reg width-100pc margreg black" > Registrate </button>
+                <div class="padtop20 padbottom20 cambio">
+                    <div class="width-100pc  ">
+                        <button type="submit" value="Enviar"   class="  justify-content-center display-flex flex-wrap-wrap border-reg width-100pc margreg black height-30px font-size-26 hovercolor"  > 
+                            <p>Guardar</p> 
+                            <i class="fas fa-save "></i>
+                        </button>
                     </div>
                 <div>
-                <button type="reset" value="Borrar"  class="  border-reg width-100pc black"> Borrar </button>
+                <button type="reset" value="Borrar"  class="  justify-content-center display-flex flex-wrap-wrap border-reg width-100pc black height-30px font-size-26  hovercolor"> 
+                    <p>Borrar </p>
+                    <i class="fas fa-eraser"></i>
+                    </button>
             </div>
             </div>
 
