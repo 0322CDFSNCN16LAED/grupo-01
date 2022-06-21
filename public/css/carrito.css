@@ -18,8 +18,11 @@ article{
     border: 1px solid black;
     color: black;
     }
+.producto-mati:hover{
+    border: none;
+    box-shadow: 2px 2px 4px;
 
-
+}
 .w100 {
     width: 100%;
     
