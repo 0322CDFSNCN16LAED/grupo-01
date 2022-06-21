@@ -22,6 +22,14 @@
         align-items: center;
         flex-wrap: wrap;
     }
+    .articulo:hover{
+    background-color: white;
+    font-weight: 600;
+    border: 1px solid black;
+    color: black;
+    }
+
+    }
     .articulo {
         width: 45%;
     }
@@ -36,4 +44,3 @@
     }
 
 
-}

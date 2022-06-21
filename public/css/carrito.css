@@ -12,6 +12,13 @@ article{
     padding-bottom: 10px;
     font-size: 20px;
 }
+.padgopay:hover{
+    background-color: white;
+    font-weight: 600;
+    border: 1px solid black;
+    color: black;
+    }
+
 
 .w100 {
     width: 100%;
@@ -30,7 +37,8 @@ transition: color 1s;
 }
 
 .tacho:hover {
-    color: red;
+    color: black;
+    font-weight: 600;
 }
 
 .circle{
@@ -40,6 +48,12 @@ transition: color 1s;
     border-radius: 50%;
     background-color: #C4C4C4;
 }
+div.contenedor {
+    width: 33.33%;
+    display: flex;
+    justify-content: center
+  }
+
 
 
 
