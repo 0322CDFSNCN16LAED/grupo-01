@@ -5,11 +5,9 @@ body {
   width: 100%;
   margin: 0%;
   padding: 0%;
-  font-family: "Lilita One", sans-serif;
   font-size: 16px;
   background-color: #ffe600;
   padding: auto;
-  
 }
 
 .header {
@@ -312,7 +310,7 @@ header div i {
   margin-bottom: 1px;
   color: green;
   font-weight: bold;
-  background-color: #707375 ;
+  background-color: #707375;
   border-radius: 8px;
   align-content: center;
   text-align: center;
@@ -325,7 +323,7 @@ header div i {
   align-content: center;
 }
 .boton {
-  background-color: #707375 ;
+  background-color: #707375;
   border: solid 1px black;
   text-align: center;
 }
@@ -334,7 +332,7 @@ header div i {
   border: solid 1px green;
 }
 .boton {
-  background-color: #707375 ;
+  background-color: #707375;
   border: solid 1px black;
   transition: color 15s;
 }
@@ -421,4 +419,3 @@ header div i {
   background-color: black;
   border: none;
 }
-
