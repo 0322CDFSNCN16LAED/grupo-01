@@ -4,9 +4,23 @@ const path = require("path")
 const { append } = require("express/lib/response");
 const { home } = require("../controller/maincontroler");
 
+
 const router = express.Router();
 
 const controller = require("../controller/maincontroler");
+const {check, body, validationResult} = require('express-validator');
+
+
+
+const validateRegister = [
+    body('nombre').notEmpty() .withMessage('Debes completar este campo'),
+    body('apellido').notEmpty() .withMessage('Debes completar este campo'),
+    body('sexo').notEmpty().withMessage('Debes completar este campo'),
+    body('celular').notEmpty() .withMessage('Debes completar este campo')
+]
+router.post('/crearUsuario', validateRegister, controller.createUsuario);
+
+
 
 const userStorage = multer.diskStorage({
     destination : (req, file, callback) => {

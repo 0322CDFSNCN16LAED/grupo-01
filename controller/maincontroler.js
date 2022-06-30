@@ -161,9 +161,19 @@ userEdited : (req,res) => {
      res.redirect("/userList");
  },
 
+ StoreUser: (req, res) => {
+    let errores = validationResult(req)
+    if(errores.isEmpty()){
+        return res.render ('register', 
+        {mensajeDeError : errores.mapped() })
+
+        }
+    }
+
 
 }
-    
+
+
    
 
 
