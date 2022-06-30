@@ -5,6 +5,7 @@ const { append } = require("express/lib/response");
 const { home } = require("../controller/maincontroler");
 
 
+
 const router = express.Router();
 
 const controller = require("../controller/maincontroler");
@@ -79,7 +80,12 @@ router.get("/editUser/:id", controller.editUser);
 router.put("/editUser/:id",upload.single("imagen"), controller.userEdited);
 router.delete("/eliminarUsuario/:id", controller.eliminarUsuario);
 
+router.get('/', controller.login)
 
+router.post('/login',[
+    check('email').isEmail().withMessage ('El email no es válido'),
+    check ('password').isLength({min: 8}).withMessage ('La contraseña debe tener al menos 8 carácteres')
+],controller.processLogin);
 
 
 

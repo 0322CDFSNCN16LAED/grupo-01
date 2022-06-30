@@ -16,7 +16,40 @@ const controller = {
     login : (req,res)=> {
         res.render("login")
     },
+    processLogin: function(req, res){
+        let errors = validationResult(req);
 
+        if(errors.isEmpty()) {
+            let usersJSON = fs.readFileSync ('users.json') // { falta agregar aca por eso me da error abajo}
+            let users;
+            if (usersJSON == "") {
+                users = [];
+            } else {
+                users = JSON.parse (usersJSON)
+            }
+
+            for (let i = 0; i< users.length; i++) {
+                if (users[i].email == req.body.email ){
+                    if (bcrypt.compareSync(req.body.password, users [i].password))
+                        let usuarioALoguearse = users[i];
+                        break;
+                }
+            }
+        }
+
+        if (usuarioALoguearse == undefined){
+            return res.render ('login', {errors: [
+                {msg: 'credenciales incorrectas'}
+            ]});
+        }
+
+            req.session.usuarioLogueado = usuarioALoguearse;
+            res.render ('exitoso');
+            
+        } else {
+            return res.render ('login', {errors: errors.errors})
+        }
+    },
    
 
     listarProductos : (req,res)=>{
@@ -162,10 +195,10 @@ userEdited : (req,res) => {
  },
 
  StoreUser: (req, res) => {
-    let errores = validationResult(req)
-    if(errores.isEmpty()){
+    let errors = validationResult(req)
+    if(errors.isEmpty()){
         return res.render ('register', 
-        {mensajeDeError : errores.mapped() })
+        {mensajeDeError : errors.mapped() })
 
         }
     }
