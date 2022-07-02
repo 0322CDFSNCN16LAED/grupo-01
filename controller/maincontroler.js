@@ -170,7 +170,7 @@ const controller = {
 
         }else{
 
-            res.send('bienvenido');
+            res.render('register', {errors : errors.mapped(0)});
         }
 } ,
 

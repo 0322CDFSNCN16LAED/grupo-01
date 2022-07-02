@@ -48,16 +48,20 @@
                         <h3 class="padtop15 text-color-blue"  > Datos personales </h3> 
                         <div class="display-flex justify-content-space-between flex-wrap-wrap padtop15" >
                             <input type="text" name="nombre" placeholder="Nombre" class="width-45pc border-reg height-30px "> 
-                            <% if (locals.errors && errors.nombre) { %>
-                                <div class="text-danger">
-                                  <% errors.nombre.msg %> 
-                                </div>
-                                <% } %>   
-                            <input type="text" name="apellido" placeholder="Apellido" class="width-45pc border-reg height-30px "> 
+                            <% if (locals.errors && errors.nombre) {%>
+                                <p class="span"><%= errors.nombre.msg %></p> 
+                              <% }%>    
+                            <input type="text" name="apellido" placeholder="Apellido" class="width-45pc border-reg height-30px ">
+                            <% if (locals.errors && errors.email) {%>
+                                <p class="span"><%= apellido.email.msg %></p> 
+                              <% }%>   
                         </div>
                         <div class="flex-register padtop15">
                             <p class="text-color-blue">Fecha de nacimiento </p>
-                            <input type="date" name="nacimiento" class="border-reg height-30px width-20pc " >   
+                            <input type="date" name="nacimiento" class="border-reg height-30px width-20pc " >
+                            <% if (locals.errors && errors.nacimiento) {%>
+                                <p class="span"><%= errors.nacimientomsg %></p> 
+                              <% }%>     
                         </div>
                         <div>
                             <p class="text-color-blue" > Sexo </p>
@@ -66,10 +70,16 @@
                                 <option> M </option>
                                 <option> Otro </option>
                             </select>
+                            <% if (locals.errors && errors.sexo) {%>
+                                <p class="span"><%= errors.sexo.msg %></p> 
+                              <% }%>  
                         </div>
                         <div>
                             <p class="text-color-blue "> Celular </p>
-                            <input type="text" name="celular" placeholder="Celular" class="border-reg height-30px width-40pc "> 
+                            <input type="text" name="celular" placeholder="Celular" class="border-reg height-30px width-40pc ">
+                            <% if (locals.errors && errors.celular) {%>
+                                <p class="span"><%= errors.celular.msg %></p> 
+                              <% }%>   
                         </div>
                         <br>
                         <div class="display-flex flex-wrap-wrap justify-content-center">
@@ -86,6 +96,9 @@
                         <div>
                             <input type="password" name="contrasena"  placeholder="Contraseña" class="width-40pc border-reg height-30px " > 
                             <span> *Este campo tiene un error</span>
+                            <% if (locals.errors && errors.contrasena) {%>
+                                <p class="span"><%= errors.contrasena.msg %></p> 
+                              <% }%>  
                         </div>
                         <div>
                             <input type="password" name="password" placeholder="Confirmar contraseña" class="width-40pc border-reg height-30px " >
@@ -110,6 +123,9 @@
                                 <label for="categoria_jugueteria"> Salchichas </label>
                             </div>
                             <span> *Debe seleccionar al menos un item </span>
+                            <% if (locals.errors && errors.categoriaInteres) {%>
+                                <p class="span"><%= errors.categoriaInteres.msg %></p> 
+                              <% }%>  
                         </div>
                         <div>
                             <div class="padtop20 padbottom20 cambio">
