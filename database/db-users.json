@@ -107,5 +107,18 @@
         "password": "",
         "imagenusuario": "1655825296245.pdf",
         "id": 10
+    },
+    {
+        "nombre": "Matias",
+        "apellido": "Rodriguez",
+        "nacimiento": "2022-06-27",
+        "sexo": "F",
+        "celular": "2995351227",
+        "correo": "lic.mnrodriguez@gmail.com",
+        "contrasena": "$2a$10$Y.gABel2pG4o1yaNT9F5bO52Psw08vcfji5XkAh2khGp8VoGaOfF.",
+        "password": "123",
+        "categoriaInteres": "Jugueteria",
+        "imagenusuario": "1656789929664.pdf",
+        "id": 11
     }
 ]

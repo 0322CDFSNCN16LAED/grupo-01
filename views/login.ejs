@@ -14,26 +14,24 @@
   <%- include("./partials/header.ejs") %>
 
 </header>
-    <% if (typeof errors != 'undefined' ) { %>
-      <p style="color:red"> ERROR</p>
-      <ul>
-          <% for (let i = 0; i < errors.length; i++)
-            <li>
-              <%=errors[i].msg%>
-            </li>
-          <% } %>
-      </ul>
-    <% } %> 
+  
 <br>
 <main class="width-100vw  font-family-lilita bg-pagina display-flex flex-column min-heigth-100vh" >
     <form method="POST" action="/login" class="form">
          <h2 class="h2">Ingresá</h2>
       <div class="div-login">
-        <input type="email" name="email"  placeholder="Correo Electronico" class="anchototal" > 
+        <input type="text" name="email"  placeholder="Correo Electronico" class="anchototal" >
+        <% if (locals.errors && errors.email) {%>
+          <p class="span"><%= errors.email.msg %></p> 
+        <% }%>  
+
 </div> <br>    
 
 <div class="div-login">
             <input type="Password" name="Password"  placeholder="Password" class="anchototal" > 
+            <% if (locals.errors && errors.password) {%>
+              <p class="span"><%= errors.password.msg %></p> 
+            <% }%>
         </div>
         <br>
     </div >

@@ -1,8 +1,11 @@
 const express = require("express");
+const { validationResult } = require("express-validator");
 const { redirect } = require("express/lib/response.js");
 const fs = require ("fs");
 const path = require ("path");
-const db = require ("../database/db.js")
+const db = require ("../database/db.js");
+const bcryptjs = require ('bcryptjs');
+
 const productos = db.getAll() ;
 const users = db.getAllUsers() ;
 
@@ -16,44 +19,51 @@ const controller = {
     login : (req,res)=> {
         res.render("login")
     },
-    processLogin: function(req, res){
-        let errors = validationResult(req);
+    processlogin : (req,res)=>{
 
-        if(errors.isEmpty()) {
-            let usersJSON = fs.readFileSync ('users.json') // { falta agregar aca por eso me da error abajo}
-            let users;
-            if (usersJSON == "") {
-                users = [];
-            } else {
-                users = JSON.parse (usersJSON)
+        const email = req.body.email;
+        const password = req.body.Password;
+
+        userFind = users.find(user =>user.correo == email);
+
+        let errors = validationResult(req)
+
+        if(errors.isEmpty){
+
+        if(userFind) {
+            if (bcryptjs.compareSync(password ,userFind.contrasena)){
+
+                req.session.usuarioALoguearse = userFind
+                res.redirect("/")
+            }else {
+                res.render("login", { errors : { password : { msg : "credenciales invalidas"}}})
             }
-
-            for (let i = 0; i< users.length; i++) {
-                if (users[i].email == req.body.email ){
-                    if (bcrypt.compareSync(req.body.password, users [i].password))
-                        let usuarioALoguearse = users[i];
-                        break;
-                }
+            }else {
+                res.render("login", { errors : { email : { msg : "usuario inexistente"}}})
             }
-        }
+    }
 
-        if (usuarioALoguearse == undefined){
-            return res.render ('login', {errors: [
-                {msg: 'credenciales incorrectas'}
-            ]});
-        }
 
-            req.session.usuarioLogueado = usuarioALoguearse;
-            res.render ('exitoso');
-            
-        } else {
-            return res.render ('login', {errors: errors.errors})
-        }
+
     },
-   
+      
+                
+        
+        //if (usuarioALoguearse == undefined){
+          //  return res.render ('login', {errors: [
+            //    {msg: 'credenciales incorrectas'}
+           // ]});
+       
+    
 
+      //      req.session.usuarioLogueado = usuarioALoguearse;
+        //    res.render ('exitoso');
+            
+
+    
     listarProductos : (req,res)=>{
         res.render("listaProductos", {productos : productos})
+    
     },
 
     detalleproducto : (req,res)=>{
@@ -141,21 +151,27 @@ const controller = {
 
     createUsuario : (req,res) => {
         res.render("register")
+
     },
 
     guardarUsuario : (req,res) => {
-        if(req.file){
-        const nuevoUsuario = req.body ;
-        nuevoUsuario.imagenusuario = req.file.filename
-        nuevoUsuario.id = db.creacionIdUser();
-        users.push(nuevoUsuario) ;
-        db.writeAndSaveUser(users); 
-    
-        res.redirect("/userList") ;       
-    }else {
-        res.render("/register")
-    }
+       let errors = validationResult(req);
+        if (errors.isEmpty()){
+            if(req.file){
+                const nuevoUsuario = req.body ;
+                nuevoUsuario.imagenusuario = req.file.filename
+                nuevoUsuario.id = db.creacionIdUser();
+                nuevoUsuario.contrasena = bcryptjs.hashSync(req.body.contrasena ,10)
+                users.push(nuevoUsuario) ;
+                db.writeAndSaveUser(users); 
 
+                res.redirect("/userList") ;
+            }
+
+        }else{
+
+            res.send('bienvenido');
+        }
 } ,
 
 eliminarUsuario : (req,res)=>{
@@ -193,15 +209,6 @@ userEdited : (req,res) => {
 
      res.redirect("/userList");
  },
-
- StoreUser: (req, res) => {
-    let errors = validationResult(req)
-    if(errors.isEmpty()){
-        return res.render ('register', 
-        {mensajeDeError : errors.mapped() })
-
-        }
-    }
 
 
 }

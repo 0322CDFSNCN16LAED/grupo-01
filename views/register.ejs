@@ -48,7 +48,11 @@
                         <h3 class="padtop15 text-color-blue"  > Datos personales </h3> 
                         <div class="display-flex justify-content-space-between flex-wrap-wrap padtop15" >
                             <input type="text" name="nombre" placeholder="Nombre" class="width-45pc border-reg height-30px "> 
-                            
+                            <% if (locals.errors && errors.nombre) { %>
+                                <div class="text-danger">
+                                  <% errors.nombre.msg %> 
+                                </div>
+                                <% } %>   
                             <input type="text" name="apellido" placeholder="Apellido" class="width-45pc border-reg height-30px "> 
                         </div>
                         <div class="flex-register padtop15">
