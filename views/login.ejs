@@ -28,10 +28,13 @@
 </div> <br>    
 
 <div class="div-login">
-            <input type="Password" name="Password"  placeholder="Password" class="anchototal" > 
+            <input type="Password" name="Password"  placeholder="Password" class="anchototal" ><br>
+            <label for="">Recordame</label>
+            <input type="checkbox" name="recordame"><br>
             <% if (locals.errors && errors.password) {%>
               <p class="span"><%= errors.password.msg %></p> 
             <% }%>
+            
         </div>
         <br>
     </div >

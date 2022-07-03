@@ -34,6 +34,11 @@ const controller = {
             if (bcryptjs.compareSync(password ,userFind.contrasena)){
 
                 req.session.usuarioALoguearse = userFind
+
+                if (req.body.recordame != undefined) {
+                    res.cookie('recordame', userFind.email, { maxAge: 60000 })
+                }
+
                 res.redirect("/")
             }else {
                 res.render("login", { errors : { password : { msg : "credenciales invalidas"}}})
