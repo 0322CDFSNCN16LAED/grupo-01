@@ -120,5 +120,18 @@
         "categoriaInteres": "Jugueteria",
         "imagenusuario": "1656789929664.pdf",
         "id": 11
+    },
+    {
+        "nombre": "Dani",
+        "apellido": "Dani",
+        "nacimiento": "2022-07-07",
+        "sexo": "M",
+        "celular": "22222222222",
+        "correo": "dani@hotmail.com",
+        "contrasena": "$2a$10$1Z1Kw6D.fND3KO9TqgBVt.3GnsVsa2wdOhNigCpHtrTSWnVd4lsMa",
+        "password": "danidani",
+        "categoriaInteres": "Moda",
+        "imagenusuario": "1658028876015.jpg",
+        "id": 12
     }
 ]

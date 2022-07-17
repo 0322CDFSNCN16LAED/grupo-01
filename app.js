@@ -7,11 +7,14 @@ const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
-app.use(cookieParser());
+//app.use(cookieParser());
 const bcryptjs = require ('bcryptjs')
 const sesion = require('express-session')
 app.use(sesion({secret:'shh, es un secreto'}));
-
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
+app.use(userLoggedMiddleware);
+const userMasterLoggedMiddleware = require("./middlewares/userMasterLoggedMiddleware");
+app.use(userMasterLoggedMiddleware);
 app.listen(3000, () => {
   console.log("Servidor corriendo en puerto 3000");
 });

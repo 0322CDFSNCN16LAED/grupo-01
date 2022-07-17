@@ -33,7 +33,8 @@ const controller = {
         if(userFind) {
             if (bcryptjs.compareSync(password ,userFind.contrasena)){
 
-                req.session.usuarioALoguearse = userFind
+                req.session.usuarioLogueado = userFind
+
 
                 if (req.body.recordame != undefined) {
                     res.cookie('recordame', userFind.email, { maxAge: 60000 })

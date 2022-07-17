@@ -57,7 +57,7 @@
     <button type="submit" value="Volver al inicio" class="bg-verde border-none border-radius-3px margin-bottom-5px padding-5px text-color-pagina"> Volver al inicio <i class="fas fa-home"></i> </button>
   </a>
   <br>
-
+  <% if(masterLogged) {%> 
   <a href="/editarProducto/<%=productoDetalle.id%>">  
     <button type="submit" value="Volver al inicio" class="bg-verde border-none border-radius-3px margin-bottom-5px padding-5px text-color-pagina"> Editar  </button>
   </a>
@@ -67,7 +67,7 @@
     <button type="submit" value="Volver al inicio" class="bg-verde border-none border-radius-3px margin-bottom-5px padding-5px text-color-pagina"> Eliminar  </button>
  
 </form>
-
+ <% } %> 
   </section>
 
 
