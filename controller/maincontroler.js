@@ -13,13 +13,18 @@ const users = db.getAllUsers() ;
 const controller = {
 
     home : (req,res)=>{
+        const productos = db.getAll() ;
         res.render("home", {productos : productos})
     },
 
     login : (req,res)=> {
+        
         res.render("login")
     },
     processlogin : (req,res)=>{
+
+        
+        const users = db.getAllUsers()
 
         const email = req.body.email;
         const password = req.body.Password;
@@ -33,11 +38,11 @@ const controller = {
         if(userFind) {
             if (bcryptjs.compareSync(password ,userFind.contrasena)){
 
-                req.session.usuarioLogueado = userFind
+                req.session.usuarioLogueado = userFind;
 
 
                 if (req.body.recordame != undefined) {
-                    res.cookie('recordame', userFind.email, { maxAge: 60000 })
+                    res.cookie('recordame', req.body.email, { maxAge: (1000 *60 ) * 2 })
                 }
 
                 res.redirect("/")
@@ -68,6 +73,8 @@ const controller = {
 
     
     listarProductos : (req,res)=>{
+        const productos = db.getAll() ;
+        
         res.render("listaProductos", {productos : productos})
     
     },
@@ -90,7 +97,7 @@ const controller = {
     },
 
     guardarProducto : (req,res) => {
-
+        const productos = db.getAll() ;
         
         if(req.file){
         const nuevoProducto = req.body ;
@@ -114,6 +121,7 @@ const controller = {
         res.render("editarProducto", {productToEdit : productToEdit});
     },
     editProducto: (req,res) => {
+        const productos = db.getAll() ;
        let id = req.params.id ;
         let productoEdited= productos.find(product => product.id == id);
         
@@ -135,6 +143,7 @@ const controller = {
     },
 
     eliminarProducto: (req,res) => {
+        const productos = db.getAll() ;
         const id = req.params.id ;
         const filtrados = productos.filter((product) => product.id != id) ;
         db.writeAndSave(filtrados); 
@@ -143,6 +152,7 @@ const controller = {
     },
 
     listarUsuario : (req,res)=>{
+        const users = db.getAllUsers()
         res.render("usersList", {users : users})
     },
 
@@ -156,11 +166,14 @@ const controller = {
 
 
     createUsuario : (req,res) => {
+
+        
         res.render("register")
 
     },
 
     guardarUsuario : (req,res) => {
+        const users = db.getAllUsers()
        let errors = validationResult(req);
         if (errors.isEmpty()){
             if(req.file){
@@ -171,7 +184,7 @@ const controller = {
                 users.push(nuevoUsuario) ;
                 db.writeAndSaveUser(users); 
 
-                res.redirect("/userList") ;
+                res.redirect("/") ;
             }
 
         }else{
@@ -181,6 +194,7 @@ const controller = {
 } ,
 
 eliminarUsuario : (req,res)=>{
+    const users = db.getAllUsers()
     const id = req.params.id
     usersFilter = users.filter((user)=> user.id != id);
     db.writeAndSaveUser(usersFilter); 
@@ -196,6 +210,7 @@ editUser : (req,res) => {
     
 },
 userEdited : (req,res) => {
+    const users = db.getAllUsers()
     let id = req.params.id ;
      let userEdited= users.find(user => user.id == id);
      

@@ -1,9 +1,20 @@
-function recordameMiddleware (req, res, next){
-    next();
+const db = require ("../database/db.js");
 
-    if(req.cookies.recordame != undefined && req.session.userFind == undefined ){
+
+function recordameMiddleware (req, res, next){
     
+    const emailInCookie = req.cookies.recordame ;
+    
+    
+
+    const userFromCookie = db.getAllUsers().find(user => emailInCookie == user.correo);
+    
+     if (userFromCookie){
+        req.session.usuarioLogueado = userFind = userFromCookie
     }
+
+
+   next();
 
 }
 
