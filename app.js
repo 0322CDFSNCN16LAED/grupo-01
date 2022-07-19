@@ -13,6 +13,8 @@ app.use(cookieParser());
 const bcryptjs = require ('bcryptjs')
 const sesion = require('express-session')
 app.use(sesion({secret:'shh, es un secreto'}));
+const recordameMiddleware = require("./middlewares/recordameMiddleware");
+app.use(recordameMiddleware);
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 app.use(userLoggedMiddleware);
 const userMasterLoggedMiddleware = require("./middlewares/userMasterLoggedMiddleware");

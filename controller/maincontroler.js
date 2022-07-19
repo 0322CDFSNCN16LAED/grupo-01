@@ -42,7 +42,7 @@ const controller = {
 
 
                 if (req.body.recordame != undefined) {
-                    res.cookie('recordame', req.body.email, { maxAge: (1000 *60 ) * 2 })
+                    res.cookie('recordame', req.body.email, { maxAge: 60000 })
                 }
 
                 res.redirect("/")
