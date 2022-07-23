@@ -4,7 +4,7 @@ const db = require ("../database/db.js");
 function recordameMiddleware (req, res, next){
     
   const emailInCookie = req.cookies.recordame ;
-    const userFromCookie = db.getAllUsers().find(user => emailInCookie == user.correo);
+const userFromCookie = db.getAllUsers().find(user => emailInCookie == user.correo);
 
     console.log(userFromCookie)
     
