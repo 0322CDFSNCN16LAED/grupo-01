@@ -1,16 +1,5 @@
 [
     {
-        "id": 1,
-        "nombre": "VEGAN BURGUER",
-        "descripcion": "Agua, proteína de guisante 21,8%, aceite de oliva virgen extra 4,5%, concentrado vegetal (remolacha, zanahoria, manzana), fibra vegetal, extracto de levadura, aromas, estabilizante (metilcelulosa), sal, antioxidante (ácido ascórbico), vinagre de alcohol, hierro y vitamina B12",
-        "precio": 350,
-        "presentacion": "caja de 2 unidades",
-        "imagen": "burguer.png",
-        "reemplaza": "vacuno",
-        "descuento": 10,
-        "relevancia": "oferta"
-    },
-    {
         "id": 2,
         "nombre": "VEGAN CHORIZO",
         "descripcion": "Agua, concentrado de proteína de soja 18,4%*, aceite de karité 5,5%, aceite de oliva virgen extra 3,5%, aromas, extractos vegetales de rábano y zanahoria, estabilizante (metilcelulosa), antioxidante (ácido ascórbico), sal, fibra vegetal, recubierta comestible [estabilizante (alginato de calcio)], colorante (extracto de pimentón), hierro y vitamina B12 ",
@@ -23,7 +12,7 @@
     },
     {
         "id": 3,
-        "nombre": "BOCADOS RIQUISIMOS",
+        "nombre": "BOCADOS",
         "descripcion": "Agua,",
         "precio": "900",
         "presentacion": "vendidos",
@@ -132,17 +121,6 @@
         "relevancia": "ninguna"
     },
     {
-        "id": 15,
-        "nombre": "VEGAN CHORIZO",
-        "descripcion": "Agua, concentrado de proteína de soja 18,4%*, aceite de karité 5,5%, aceite de oliva virgen extra 3,5%, aromas, extractos vegetales de rábano y zanahoria, estabilizante (metilcelulosa), antioxidante (ácido ascórbico), sal, fibra vegetal, recubierta comestible [estabilizante (alginato de calcio)], colorante (extracto de pimentón), hierro y vitamina B12 ",
-        "precio": 450,
-        "presentacion": "caja de 4 unidades",
-        "imagen": "chorizo.jpg",
-        "reemplaza": "cerdo",
-        "descuento": 10,
-        "relevancia": "ninguna"
-    },
-    {
         "id": 16,
         "nombre": "NUGGETS",
         "descripcion": "Agua, concentrado de proteína de soja 14,2%, harina de arroz, harina de maíz, aceite de girasol, almidón de patata y de maíz, aromas, estabilizante fibra vegetal, vinagre de alcohol, sal, dextrosa y vitamina B12.",
@@ -154,14 +132,14 @@
         "relevancia": "ninguna"
     },
     {
-        "nombre": "Pollo crispy",
-        "descripcion": "hotdogs",
+        "nombre": "Producto",
+        "descripcion": "Este",
         "reemplaza": "pollo",
-        "presentacion": "Caja de 4",
-        "precio": "10000",
+        "presentacion": "vendidos",
+        "precio": "1000",
+        "descuento": "10",
+        "relevancia": "vendidos",
         "id": 17,
-        "imagen": "1655074853927.jpg",
-        "descuento": 10,
-        "relevancia": "ninguna"
+        "imagen": "1658194435811.jpg"
     }
 ]

@@ -6,7 +6,9 @@
    <a href="/"><img src="/images/logo.jpg" class="bg-pagina  max-heigth-200px"></a> 
       <div class="display-flex flex-column width-60pc align-items-center">
           <div class="display-none align-self-end iconos-header">
-              <a href="/login"><i class="font-size-18 fas fa-user  text-color-blue bg-pagina"></i></a>
+              <% if(isLogged) { %>
+              <a href="/editUser/<%= userLogged.id %> "><i class="font-size-18 fas fa-user  text-color-blue bg-pagina"></i></a>
+              <% } %> 
               <a href="/carrito" class="margin-left-5px"><i
                       class="font-size-18 fas fa-shopping-cart text-color-blue bg-pagina"></i></a>
           </div>
@@ -20,8 +22,10 @@
           <nav class="width-100pc display-none barra-nav-tablet">
               <ul
                   class="width-100pc display-flex align-items-center justify-content-end nav-sin-estilo height-100pc">
+                  <% if(!isLogged) { %> 
                   <li><a class="lista-sin-subrayar text-color-blue" href=/crearUsuario>Registrate</a></li>
                   <li><a class="lista-sin-subrayar text-color-blue margin-left-7px" href=/login>Ingresa</a></li>
+                  <% } %> 
                   <li><a class="lista-sin-subrayar text-color-blue margin-left-7px" href=/help>Ayuda</a></li>
               </ul>
           </nav>
@@ -124,8 +128,10 @@
                   class="text-color-pagina fas fa-angle-down"></i></li>
           <li><a class="lista-sin-subrayar text-color-pagina" href=/reemplazos>Reemplazos</a><i
                   class="text-color-pagina fas fa-angle-down"></i></li>
-          <li><a class="lista-sin-subrayar text-color-pagina" href=/crearProducto>Vender</a><i
+          <% if(masterLogged) {   %> 
+                  <li><a class="lista-sin-subrayar text-color-pagina" href=/crearProducto>Vender</a><i
                   class="text-color-pagina fas fa-angle-down"></i></li>
+          <% } %> 
           <li><a class="lista-sin-subrayar text-color-pagina" href=/contacto>Contacto</a></li>
       </ul>
   </nav>

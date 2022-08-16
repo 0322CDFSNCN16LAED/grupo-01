@@ -38,32 +38,7 @@
         "categoriaInteres": "Jugueteria",
         "id": 5
     },
-    {
-        "nombre": "María del",
-        "apellido": "Rodriguez",
-        "nacimiento": "1961-06-20",
-        "sexo": "F",
-        "celular": "2342403274",
-        "correo": "jose.labaqui@hotmail.com",
-        "contrasena": "jose2022",
-        "password": "jose2022",
-        "categoriaInteres": "Jugueteria",
-        "imagenusuario": "1655068255053.png",
-        "id": 6
-    },
-    {
-        "nombre": "Daniel",
-        "apellido": "Labaqui",
-        "nacimiento": "1959-05-20",
-        "sexo": "M",
-        "celular": "2342403274",
-        "correo": "jose.labaqui@hotmail.com",
-        "contrasena": "daniel2022",
-        "password": "daniel2022",
-        "categoriaInteres": "Moda",
-        "imagenusuario": "1655072146862.png",
-        "id": 7
-    },
+    
     {
         "nombre": "Damian",
         "apellido": "Aliano",
@@ -95,5 +70,56 @@
         ],
         "imagenusuario": "1655170993645.jpg",
         "id": 9
+    },
+    {
+        "nombre": "",
+        "apellido": "",
+        "nacimiento": "",
+        "sexo": "F",
+        "celular": "",
+        "correo": "",
+        "contrasena": "",
+        "password": "",
+        "imagenusuario": "1655825296245.pdf",
+        "id": 10
+    },
+    {
+        "nombre": "Matias",
+        "apellido": "Rodriguez",
+        "nacimiento": "2022-06-27",
+        "sexo": "F",
+        "celular": "2995351227",
+        "correo": "lic.mnrodriguez@gmail.com",
+        "contrasena": "$2a$10$Y.gABel2pG4o1yaNT9F5bO52Psw08vcfji5XkAh2khGp8VoGaOfF.",
+        "password": "123",
+        "categoriaInteres": "Jugueteria",
+        "imagenusuario": "1656789929664.pdf",
+        "id": 11
+    },
+    {
+        "nombre": "Dani",
+        "apellido": "Dani",
+        "nacimiento": "2022-07-07",
+        "sexo": "M",
+        "celular": "22222222222",
+        "correo": "dani@hotmail.com",
+        "contrasena": "$2a$10$1Z1Kw6D.fND3KO9TqgBVt.3GnsVsa2wdOhNigCpHtrTSWnVd4lsMa",
+        "password": "danidani",
+        "categoriaInteres": "Moda",
+        "imagenusuario": "1658028876015.jpg",
+        "id": 12
+    },
+    {
+        "nombre": "José",
+        "apellido": "Labaqui",
+        "nacimiento": "2022-07-05",
+        "sexo": "M",
+        "celular": "1169499315",
+        "correo": "jose.labaqui@hotmail.com",
+        "contrasena": "$2a$10$mLe8H4AekquV62L7l0AtBeCZgN2f7MIDs5NNZq9Fiq78c30Y3qs0y",
+        "password": "josejose",
+        "categoriaInteres": "Hogar",
+        "imagenusuario": "1658075707908.xlsx",
+        "id": 13
     }
 ]

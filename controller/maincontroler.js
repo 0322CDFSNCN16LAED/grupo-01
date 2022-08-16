@@ -1,8 +1,11 @@
 const express = require("express");
+const { validationResult } = require("express-validator");
 const { redirect } = require("express/lib/response.js");
 const fs = require ("fs");
 const path = require ("path");
-const db = require ("../database/db.js")
+const db = require ("../database/db.js");
+const bcryptjs = require ('bcryptjs');
+
 const productos = db.getAll() ;
 const users = db.getAllUsers() ;
 
@@ -10,17 +13,70 @@ const users = db.getAllUsers() ;
 const controller = {
 
     home : (req,res)=>{
+        const productos = db.getAll() ;
         res.render("home", {productos : productos})
     },
 
     login : (req,res)=> {
+        
         res.render("login")
     },
+    processlogin : (req,res)=>{
 
-   
+        
+        const users = db.getAllUsers()
 
+        const email = req.body.email;
+        const password = req.body.Password;
+
+        userFind = users.find(user =>user.correo == email);
+
+        let errors = validationResult(req)
+
+        if(errors.isEmpty){
+
+        if(userFind) {
+            if (bcryptjs.compareSync(password ,userFind.contrasena)){
+
+                req.session.usuarioLogueado = userFind;
+
+
+                if (req.body.recordame != undefined) {
+                    res.cookie('recordame', req.body.email, { maxAge: 60000 })
+                }
+
+                res.redirect("/")
+            }else {
+                res.render("login", { errors : { password : { msg : "credenciales invalidas"}}})
+            }
+            }else {
+                res.render("login", { errors : { email : { msg : "usuario inexistente"}}})
+            }
+    }
+
+
+
+    },
+      
+                
+        
+        //if (usuarioALoguearse == undefined){
+          //  return res.render ('login', {errors: [
+            //    {msg: 'credenciales incorrectas'}
+           // ]});
+       
+    
+
+      //      req.session.usuarioLogueado = usuarioALoguearse;
+        //    res.render ('exitoso');
+            
+
+    
     listarProductos : (req,res)=>{
+        const productos = db.getAll() ;
+        
         res.render("listaProductos", {productos : productos})
+    
     },
 
     detalleproducto : (req,res)=>{
@@ -41,7 +97,7 @@ const controller = {
     },
 
     guardarProducto : (req,res) => {
-
+        const productos = db.getAll() ;
         
         if(req.file){
         const nuevoProducto = req.body ;
@@ -65,6 +121,7 @@ const controller = {
         res.render("editarProducto", {productToEdit : productToEdit});
     },
     editProducto: (req,res) => {
+        const productos = db.getAll() ;
        let id = req.params.id ;
         let productoEdited= productos.find(product => product.id == id);
         
@@ -86,6 +143,7 @@ const controller = {
     },
 
     eliminarProducto: (req,res) => {
+        const productos = db.getAll() ;
         const id = req.params.id ;
         const filtrados = productos.filter((product) => product.id != id) ;
         db.writeAndSave(filtrados); 
@@ -94,6 +152,7 @@ const controller = {
     },
 
     listarUsuario : (req,res)=>{
+        const users = db.getAllUsers()
         res.render("usersList", {users : users})
     },
 
@@ -107,25 +166,35 @@ const controller = {
 
 
     createUsuario : (req,res) => {
+
+        
         res.render("register")
+
     },
 
     guardarUsuario : (req,res) => {
-        if(req.file){
-        const nuevoUsuario = req.body ;
-        nuevoUsuario.imagenusuario = req.file.filename
-        nuevoUsuario.id = db.creacionIdUser();
-        users.push(nuevoUsuario) ;
-        db.writeAndSaveUser(users); 
-    
-        res.redirect("/userList") ;       
-    }else {
-        res.render("/register")
-    }
+        const users = db.getAllUsers()
+       let errors = validationResult(req);
+        if (errors.isEmpty()){
+            if(req.file){
+                const nuevoUsuario = req.body ;
+                nuevoUsuario.imagenusuario = req.file.filename
+                nuevoUsuario.id = db.creacionIdUser();
+                nuevoUsuario.contrasena = bcryptjs.hashSync(req.body.contrasena ,10)
+                users.push(nuevoUsuario) ;
+                db.writeAndSaveUser(users); 
 
+                res.redirect("/") ;
+            }
+
+        }else{
+
+            res.render('register', {errors : errors.mapped(0)});
+        }
 } ,
 
 eliminarUsuario : (req,res)=>{
+    const users = db.getAllUsers()
     const id = req.params.id
     usersFilter = users.filter((user)=> user.id != id);
     db.writeAndSaveUser(usersFilter); 
@@ -141,6 +210,7 @@ editUser : (req,res) => {
     
 },
 userEdited : (req,res) => {
+    const users = db.getAllUsers()
     let id = req.params.id ;
      let userEdited= users.find(user => user.id == id);
      
@@ -163,7 +233,8 @@ userEdited : (req,res) => {
 
 
 }
-    
+
+
    
 
 
