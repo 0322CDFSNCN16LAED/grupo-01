@@ -77,17 +77,6 @@
         "relevancia": "vendidos"
     },
     {
-        "id": 9,
-        "nombre": "FILETES ESTILO PESCADO",
-        "descripcion": "Proteína de Soja Texturizada, Proteína Aislada de Soja, Konjac, Almidón de Tapioca, Almidón de Patata, Aceite Vegetal de maíz, Sal, Azúcar, Algas Nori",
-        "precio": 850,
-        "presentacion": "300 gramos",
-        "imagen": "filetes-pescado.jpg",
-        "reemplaza": "pescado",
-        "descuento": 10,
-        "relevancia": "vendidos"
-    },
-    {
         "id": 10,
         "nombre": "HUEVO",
         "descripcion": "Agua",
