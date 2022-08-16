@@ -1,46 +1,43 @@
 @media (min-width: 576px) {
-    .burger-menu {
-        display: none;
-    }
-    .iconos-header {
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 4px;
-    }
-    .barra-nav-tablet {
-        display: flex;
-    }
-    .elemento-mejor {
-        font-size: 16px;
-    }
-    .mundo-mejor {
-        font-size: 18px;
-    }
-    .articulos {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    .articulo:hover{
-    background-color: white;
+  .burger-menu {
+    display: none;
+  }
+  .iconos-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 4px;
+  }
+  .barra-nav-tablet {
+    display: flex;
+  }
+  .elemento-mejor {
+    font-size: 16px;
+  }
+  .mundo-mejor {
+    font-size: 18px;
+  }
+  .articulos {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .articulo:hover {
+    background-color: #6e8c56;
     font-weight: 600;
     border: 1px solid black;
     color: black;
-    }
-
-    }
-    .articulo {
-        width: 45%;
-    }
-    .descripciones {
-        font-size: 16px;
-    }
-    .precios {
-        font-size: 12px;
-    }
-    .cantidad {
-        font-size: 12px
-    }
-
-
+  }
+}
+.articulo {
+  width: 45%;
+}
+.descripciones {
+  font-size: 16px;
+}
+.precios {
+  font-size: 12px;
+}
+.cantidad {
+  font-size: 12px;
+}
