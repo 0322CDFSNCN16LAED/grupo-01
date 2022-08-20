@@ -56,17 +56,17 @@
   
   </form>
   <a href="/">  
-    <button type="submit" value="Volver al inicio" class="bg-verde border-none border-radius-3px margin-bottom-5px padding-5px text-color-pagina"> Volver al inicio <i class="fas fa-home"></i> </button>
+    <button type="submit" value="Volver al inicio" class="bg-verde border-none border-radius-3px margin-bottom-5px padding-5px text-color-pagina boton2"> Volver al inicio <i class="fas fa-home"></i> </button>
   </a>
   <br>
   <% if(masterLogged) {%> 
   <a href="/editarProducto/<%=productoDetalle.id%>">  
-    <button type="submit" value="Volver al inicio" class="bg-verde border-none border-radius-3px margin-bottom-5px padding-5px text-color-pagina"> Editar  </button>
+    <button type="submit" value="Editar" class="bg-verde border-none border-radius-3px margin-bottom-5px padding-5px text-color-pagina boton2"> Editar  </button>
   </a>
 
   <form action="/eliminarProducto/<%=productoDetalle.id%>?_method=delete" method="post">
   
-    <button type="submit" value="Volver al inicio" class="bg-verde border-none border-radius-3px margin-bottom-5px padding-5px text-color-pagina"> Eliminar  </button>
+    <button type="submit" value="Eliminar" class="bg-verde border-none border-radius-3px margin-bottom-5px padding-5px text-color-pagina boton2"> Eliminar  </button>
  
 </form>
  <% } %> 

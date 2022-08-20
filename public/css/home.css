@@ -371,7 +371,7 @@ body {
   animation-direction: alternate;
 }
 .box-shadow-comun {
-  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  box-shadow: 0px 0px 10px rgb(50, 50, 50);
 }
 .section-beneficios-all {
   display: flex;
@@ -448,7 +448,43 @@ body {
 .tachado {
   text-decoration-line: line-through;
 }
-.form-box{
+.form-box {
   width: 80%;
+}
 
+.boton {
+  font-size: 30px;
+  color: #ffe600;
+  margin: 8px;
+  justify-content: center;
+  border: none;
+}
+.boton:hover {
+  font-size: 40px;
+  color: #ffffff;
+}
+.boton {
+  font-size: 30px;
+  color: #ffe600;
+  transition: color 0.5s;
+}
+.boton2 {
+  font-size: 20px;
+  color: #ffe600;
+  margin: 8px;
+  justify-content: center;
+  border: none;
+  border-radius: 6px;
+  box-shadow: none;
+}
+.boton2:hover {
+  font-size: 25px;
+  color: #ffffff;
+  box-shadow: 0px 0px 5px rgb(50, 50, 50);
+}
+.boton2 {
+  font-size: 20px;
+  color: #ffe600;
+  transition: color 0.5s;
+  box-shadow: none;
 }
