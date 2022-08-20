@@ -52,15 +52,15 @@
                                 <p class="span"><%= errors.nombre.msg %></p> 
                               <% }%>    
                             <input type="text" name="apellido" placeholder="Apellido" class="width-45pc border-reg height-30px ">
-                            <% if (locals.errors && errors.email) {%>
-                                <p class="span"><%= apellido.email.msg %></p> 
+                            <% if (locals.errors && errors.apellido) {%>
+                                <p class="span"><%= errors.apellido.msg %></p> 
                               <% }%>   
                         </div>
                         <div class="flex-register padtop15">
                             <p class="text-color-blue">Fecha de nacimiento </p>
                             <input type="date" name="nacimiento" class="border-reg height-30px width-20pc " >
                             <% if (locals.errors && errors.nacimiento) {%>
-                                <p class="span"><%= errors.nacimientomsg %></p> 
+                                <p class="span"><%= errors.nacimiento.msg %></p> 
                               <% }%>     
                         </div>
                         <div>
@@ -90,12 +90,14 @@
         
                         <div class="padtop15" >
                             <input type="email" name="correo" placeholder="Correo Electronico" class="width-60pc border-reg height-30px"> 
-                            <span> *Este campo no puede estar vacio</span> 
+                            <% if (locals.errors && errors.correo) {%>
+                                <p class="span"><%= errors.correo.msg %></p> 
+                              <% }%>  
                         </div>
         
                         <div>
                             <input type="password" name="contrasena"  placeholder="Contraseña" class="width-40pc border-reg height-30px " > 
-                            <span> *Este campo tiene un error</span>
+                            
                             <% if (locals.errors && errors.contrasena) {%>
                                 <p class="span"><%= errors.contrasena.msg %></p> 
                               <% }%>  
@@ -122,7 +124,7 @@
                                 <input type="checkbox" name="categoriaInteres"  value ="Jugueteria" id="categoria_jugueteria"> 
                                 <label for="categoria_jugueteria"> Salchichas </label>
                             </div>
-                            <span> *Debe seleccionar al menos un item </span>
+                            
                             <% if (locals.errors && errors.categoriaInteres) {%>
                                 <p class="span"><%= errors.categoriaInteres.msg %></p> 
                               <% }%>  

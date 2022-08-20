@@ -50,9 +50,11 @@
 </section>
 </section>
 <section class="display-flex flex-column margin-10px border-radius-3px align-items-center">
-  <a href="/carrito">  
+  <form action="/carrito/<%=productoDetalle.id%>" method="post">
+  
     <button type="submit" value="Borrar" class="bg-verde border-none border-radius-3px margin-bottom-5px padding-5px text-color-pagina"> Agregar al carrito <i class="fas fa-shopping-cart"></i> </button>
-  </a>
+  
+  </form>
   <a href="/">  
     <button type="submit" value="Volver al inicio" class="bg-verde border-none border-radius-3px margin-bottom-5px padding-5px text-color-pagina"> Volver al inicio <i class="fas fa-home"></i> </button>
   </a>

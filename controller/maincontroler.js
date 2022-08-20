@@ -87,7 +87,15 @@ const controller = {
     },
 
     carrito : (req,res)=>{
-        res.render("carrito")
+        
+        res.render("carrito", {productoDetalle : productoDetalle})
+    },
+
+    addCarrito : (req,res)=>{
+        let id = req.params.id ;
+        let productoDetalle= db.getOne(id); 
+        
+        res.render("carrito", {productoDetalle : productoDetalle})
     },
     busqueda : (req,res) => {
         

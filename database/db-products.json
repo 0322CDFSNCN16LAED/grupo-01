@@ -141,16 +141,5 @@
         "reemplaza": "pollo",
         "descuento": 10,
         "relevancia": "ninguna"
-    },
-    {
-        "nombre": "Producto",
-        "descripcion": "Este",
-        "reemplaza": "pollo",
-        "presentacion": "vendidos",
-        "precio": "1000",
-        "descuento": "10",
-        "relevancia": "vendidos",
-        "id": 17,
-        "imagen": "1658194435811.jpg"
     }
 ]

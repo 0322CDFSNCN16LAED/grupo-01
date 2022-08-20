@@ -80,6 +80,8 @@ router.put("/editarProducto/:id",productupload.single("imagen"), controller.edit
 
 router.get("/crearProducto", masterMiddleware, controller.createProducto);
 router.post("/crearProducto", productupload.single("imagen"), controller.guardarProducto);
+router.post("/carrito", controller.carrito);
+router.post("/carrito/:id", controller.addCarrito);
 router.delete("/eliminarProducto/:id", controller.eliminarProducto);
 
 
