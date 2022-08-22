@@ -1,5 +1,3 @@
-const sequelize = require("sequelize");
-const { DataTypes } = require("sequelize/types");
 
 module.exports = (sequelize, DataTypes) => {
 
@@ -7,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     {
         idFactura: DataTypes.INTEGER,
         idUsuario : {
-            type: Sequelize.DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             references: {
               model: {
                 tableName: 'Usuarios',
@@ -26,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
         banco : DataTypes.STRING,
         cuota : DataTypes.INTEGER(3),
         idTipoPago : {
-            type: Sequelize.DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             references: {
               model: {
                 tableName: 'TipoPago',

@@ -22,7 +22,7 @@
   <div class="display-flex flex-column width-90pc">
     <h3 class="descripciones margin-top-5px margin-bottom-5px text-color-pagina width-100pc"><%= productoDetalle.nombre %></h3>  
     <p class="descripciones margin-top-5px margin-bottom-5px text-color-pagina width-100pc"><%= productoDetalle.descripcion %></p>
-    <p class="descripciones margin-top-5px margin-bottom-5px text-color-pagina width-100pc"><%= "Este producto reemplaza a la carne de " + productoDetalle.reemplaza %></p>
+    <p class="descripciones margin-top-5px margin-bottom-5px text-color-pagina width-100pc"><%= "Este producto reemplaza a la carne de " + productoDetalle.idReemplaza %></p>
     <p class="text-color-pagina margin-top-5px margin-bottom-5px">Presentación: <%= productoDetalle.presentacion %> </p>
     <p class="text-color-pagina margin-top-5px margin-bottom-5px "><%= "Adquirilo por solo $" + productoDetalle.precio %></p>
   </div>
@@ -50,7 +50,7 @@
 </section>
 </section>
 <section class="display-flex flex-column margin-10px border-radius-3px align-items-center">
-  <form action="/carrito/<%=productoDetalle.id%>" method="post">
+  <form action="/carrito/<%=productoDetalle.idProducto%>" method="post">
   
     <button type="submit" value="Borrar" class="bg-verde border-none border-radius-3px margin-bottom-5px padding-5px text-color-pagina"> Agregar al carrito <i class="fas fa-shopping-cart"></i> </button>
   
@@ -60,11 +60,11 @@
   </a>
   <br>
   <% if(masterLogged) {%> 
-  <a href="/editarProducto/<%=productoDetalle.id%>">  
+  <a href="/editarProducto/<%=productoDetalle.idProducto%>">  
     <button type="submit" value="Editar" class="bg-verde border-none border-radius-3px margin-bottom-5px padding-5px text-color-pagina boton2"> Editar  </button>
   </a>
 
-  <form action="/eliminarProducto/<%=productoDetalle.id%>?_method=delete" method="post">
+  <form action="/eliminarProducto/<%=productoDetalle.idProducto%>?_method=delete" method="post">
   
     <button type="submit" value="Eliminar" class="bg-verde border-none border-radius-3px margin-bottom-5px padding-5px text-color-pagina boton2"> Eliminar  </button>
  

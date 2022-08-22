@@ -64,6 +64,7 @@ const productupload = multer({storage : productStorage });
 
 
 
+
 router.get("/", controller.home);
 
 //proceso de login
@@ -72,6 +73,7 @@ router.post('/login',validateLogin, controller.processlogin);
 
 router.get("/detalleproducto/:id", controller.detalleproducto);
 router.get("/carrito", controller.carrito);
+
 router.get("/listaProductos", controller.listarProductos);
 router.get("/busqueda", controller.busqueda);
 

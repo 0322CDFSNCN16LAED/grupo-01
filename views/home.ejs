@@ -24,7 +24,7 @@
             if(producto.relevancia == "oferta") { %>
           <article
               class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
-              <a href="/detalleproducto/<%= producto.id %>">
+              <a href="/detalleproducto/<%= producto.idProducto %>">
                 <img src="/images/<%= producto.imagen %>" class="width-100pc">
               </a>
               <div class="display-flex flex-column align-items-center width-90pc">
@@ -53,7 +53,7 @@
             if(producto.relevancia == "vendidos") { %>
           <article
               class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
-              <a href="/detalleproducto/<%= producto.id %>">
+              <a href="/detalleproducto/<%= producto.idProducto %>">
                 <img src="/images/<%= producto.imagen %>" class="width-100pc">
               </a>
               <div class="display-flex flex-column align-items-center width-90pc">

@@ -1,5 +1,4 @@
-const sequelize = require("sequelize");
-const { DataTypes } = require("sequelize/types");
+
 
 module.exports = (sequelize, DataTypes) => {
 

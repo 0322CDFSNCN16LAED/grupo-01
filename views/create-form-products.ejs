@@ -21,17 +21,17 @@
           <form action="/crearProducto"  method="post" enctype="multipart/form-data">
             <div class="display-flex justify-content-space-between width-100pc " >
             <label for="" class="width-126px">Nombre :</label>
-            <input class="width-90pc" type="text" name="nombre"  >
+            <input class="width-90pc" type="text" name="nombre" id="name" >
           </div>
             <br>
             <div class="display-flex justify-content-space-between width-100pc " >
             <label for="" class="width-126px"> Descripción: </label>
-            <input class="width-90pc" type="text" name="descripcion"  >
+            <input class="width-90pc" type="text" name="descripcion" id="descripcion" >
           </div>
             <br>
             <div class="display-flex justify-content-space-between width-100pc" >
             <label for=""class="width-126px"> Reemplazo de: </label>
-            <select class="width-90pc" name="reemplaza">
+            <select class="width-90pc" name="idReemplaza2" id="idReemplaza">
               <option> pollo</option>
               <option> vacuno</option>
               <option> pescado</option>
@@ -41,7 +41,7 @@
             <br>
             <div class="display-flex justify-content-space-between width-100pc" >
             <label for=""class="width-126px"> Presentación :</label>
-            <select class="width-90pc" name="presentacion">
+            <select class="width-90pc" name="presentacion" id="presentacion">
               <option> Unidad </option>
               <option> Caja de 4 </option>
               <option> Caja de 6 </option>
@@ -51,27 +51,45 @@
           <br>
             <div class="display-flex justify-content-space-between width-100pc" >
             <label for=""class="width-126px"> Imagen Producto :</label>
-            <input class="width-90pc" type="file" name="imagen"  >
+            <input class="width-90pc" type="file" name="imagen" id="imagen" >
           </div>
             <br>
             <div class="display-flex justify-content-space-between width-100pc" >
             <label for=""class="width-126px"> Precio :</label>
-            <input class="width-90pc" type="text" name="precio"  >
+            <input class="width-90pc" type="text" name="precio" id="precio" >
           </div>
           <br>
           <div class="display-flex justify-content-space-between width-100pc" >
             <label for=""class="width-126px"> Descuento :</label>
-            <input class="width-90pc" type="text" name="descuento">
+            <input class="width-90pc" type="text" name="descuento" id="descuento">
           </div>
           <br>
             <div class="display-flex justify-content-space-between width-100pc" >
             <label for=""class="width-126px"  > Relevancia :</label>
-            <select class="width-90pc" name="relevancia">
+            <select class="width-90pc" name="relevancia" id="relevancia">
               <option> oferta </option>
               <option> vendidos </option>
               <option> ninguna </option>
             </select>
+            </div>
+            <br>
+            <div class="display-flex justify-content-space-between width-100pc" >
+            <label for=""class="width-126px"> Vidas que salva :</label>
+            <input class="width-90pc" type="text" name="vidasQueSalva" id="vidasQueSalva" >
           </div>
+          <br>  
+          
+          <div class="display-flex justify-content-space-between width-100pc" >
+          <label for=""class="width-126px"> Litros H2o ahorrados :</label>
+          <input class="width-90pc" type="text" name="ltsH2oAhorrada" id="ltsH2oAhorrada" >
+        </div>
+        <br>  
+        
+        <div class="display-flex justify-content-space-between width-100pc" >
+        <label for=""class="width-126px"> Kilos dioxido ahorrados :</label>
+        <input class="width-90pc" type="text" name="kgCo2Ahorrado" id="kgCo2Ahorrado" >
+      </div>
+      <br>  
           
             <br>
             <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina" type="submit">Guardar</button>

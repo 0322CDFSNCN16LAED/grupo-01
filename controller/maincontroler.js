@@ -5,6 +5,11 @@ const fs = require ("fs");
 const path = require ("path");
 const db = require ("../database/db.js");
 const bcryptjs = require ('bcryptjs');
+const dbp = require("../database/models")
+const { v4 } = require("uuid")
+const uuid = v4
+
+
 
 const productos = db.getAll() ;
 const users = db.getAllUsers() ;
@@ -12,11 +17,14 @@ const users = db.getAllUsers() ;
 
 const controller = {
 
+   
     home : (req,res)=>{
-        const productos = db.getAll() ;
-        res.render("home", {productos : productos})
+        dbp.Productos.findAll()
+        .then(function(productos){
+            res.render("home", {productos : productos})
+        })
     },
-
+    
     login : (req,res)=> {
         
         res.render("login")
@@ -72,18 +80,23 @@ const controller = {
             
 
     
+   
     listarProductos : (req,res)=>{
-        const productos = db.getAll() ;
-        
-        res.render("listaProductos", {productos : productos})
+        dbp.Productos.findAll()
+        .then(function(productos){
+            res.render("listaProductos", {productos : productos})
+        })
     
     },
 
     detalleproducto : (req,res)=>{
         let id = req.params.id ;
-        let productoDetalle= db.getOne(id); 
+        dbp.Productos.findByPk(id)
+        .then((productoDetalle)=>{
+            res.render("detalleproducto", {productoDetalle : productoDetalle})
+        })
         
-        res.render("detalleproducto", {productoDetalle : productoDetalle})
+        
     },
 
     carrito : (req,res)=>{
@@ -104,51 +117,53 @@ const controller = {
         res.render("create-form-products")
     },
 
-    guardarProducto : (req,res) => {
-        const productos = db.getAll() ;
-        
-        if(req.file){
-        const nuevoProducto = req.body ;
-        nuevoProducto.id = db.creacionId() ;
-        nuevoProducto.imagen = req.file.filename
-        productos.push(nuevoProducto) ;
-        db.writeAndSave(productos);
+ 
+   guardarProducto : (req,res) => {
+  
     
+    if(req.file){
+   dbp.Productos.create({
+        ...req.body,
+        imagen : req.file.filename,
+        
+        idProducto : 55 ,
+        idReemplaza : 1,
+    })
+    .then((producto)=>{
         res.redirect("/listaProductos") ;
+})   
 
-    }else{
-        res.render("create-form-products")
-    }
-    }
-   ,
+}else{
+    res.render("create-form-products")
+}
+}
+,
+   
 
 
     editarProducto: (req,res) => {
         let id = req.params.id ;
-        let productToEdit= db.getOne(id);
-        res.render("editarProducto", {productToEdit : productToEdit});
+        dbp.Productos.findByPk(id)
+        .then((productToEdit)=>{
+            res.render("editarProducto", {productToEdit : productToEdit});
+        })
+        
     },
     editProducto: (req,res) => {
-        const productos = db.getAll() ;
-       let id = req.params.id ;
-        let productoEdited= productos.find(product => product.id == id);
         
-        productoEdited.nombre = req.body.nombre ;
-        productoEdited.descripcion = req.body.descripcion ;
-        productoEdited.reemplaza = req.body.reemplaza ;
-        productoEdited.precio = req.body.precio ;
-        productoEdited.presentacion = req.body.presentacion ;
-        productoEdited.presentacion = req.body.descuento ;
-        productoEdited.presentacion = req.body.relevancia ;
-        if(req.file){
-        productoEdited.imagen = req.file.filename
-        }
-
-         
-        db.writeAndSave(productos); 
-
-        res.redirect("/listaProductos");
+        
+        dbp.Productos.update({
+            ...req.body
+        }, {
+            where : {idProducto : req.params.id}
+        })
+        .then((productoEdited)=>{
+            res.redirect("/listaProductos");
+        })
+        
+       
     },
+
 
     eliminarProducto: (req,res) => {
         const productos = db.getAll() ;

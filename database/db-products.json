@@ -45,12 +45,12 @@
     },
     {
         "id": 7,
-        "nombre": "QUESO ESTILO GRIEGO",
-        "descripcion": "Agua, aceite de coco (29%), almidón, sal marina, regulador de acidez: glucono delta-lactone, aromas, extracto de aceituna, vitamina B12",
-        "precio": 450,
-        "presentacion": "10 fetas 230 gramis",
+        "nombre": "QUESO",
+        "descripcion": "Agua,",
+        "precio": "25000.00",
+        "presentacion": "oferta",
         "imagen": "queso-tipo-griego.jpg",
-        "reemplaza": "vacuno",
+        "reemplaza": "pollo",
         "descuento": 10,
         "relevancia": "oferta"
     },

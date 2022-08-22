@@ -22,10 +22,10 @@
       class="width-100pc bg-verde border-bottom-black center-me  display-flex justify-content-center align-items-flex-end margin-top-10px border-top-black"><h3 class="text-color-pagina">Productos que reemplazan al pollo</h3></nav>
       <article class="display-flex width-90pc flex-column align-items-center articulos">
         <% productos.forEach(producto=> {
-          if(producto.reemplaza == "pollo") { %>
+          if(producto.idReemplaza == 1) { %>
         <article
             class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
-            <a href="/detalleproducto/<%= producto.id %>">
+            <a href="/detalleproducto/<%= producto.idProducto %>">
               <img src="/images/<%= producto.imagen %>" class="width-100pc">
             </a>
             <div class="display-flex flex-column align-items-center width-90pc">
@@ -52,10 +52,10 @@
       class="width-100pc bg-verde border-bottom-black center-me  display-flex justify-content-center align-items-flex-end margin-top-10px border-top-black"><h3 class="text-color-pagina">Productos que reemplazan a la carne vacuna</h3></nav>
       <article class="display-flex width-90pc flex-column align-items-center articulos">
         <% productos.forEach(producto=> {
-          if(producto.reemplaza == "cerdo") { %>
+          if(producto.idReemplaza == 4) { %>
         <article
             class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
-            <a href="/detalleproducto/<%= producto.id %>">
+            <a href="/detalleproducto/<%= producto.idProducto %>">
               <img src="/images/<%= producto.imagen %>" class="width-100pc">
             </a>
             <div class="display-flex flex-column align-items-center width-90pc">
@@ -81,10 +81,10 @@
       class="width-100pc bg-verde border-bottom-black center-me  display-flex justify-content-center align-items-flex-end margin-top-10px border-top-black"><h3 class="text-color-pagina">Productos que reemplazan a la carne de cerdo</h3></nav>
       <article class="display-flex width-90pc flex-column align-items-center articulos">
         <% productos.forEach(producto=> {
-          if(producto.reemplaza == "vacuno") { %>
+          if(producto.idReemplaza == 2) { %>
         <article
             class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
-            <a href="/detalleproducto/<%= producto.id %>">
+            <a href="/detalleproducto/<%= producto.idProducto %>">
               <img src="/images/<%= producto.imagen %>" class="width-100pc">
             </a>
             <div class="display-flex flex-column align-items-center width-90pc">
@@ -110,10 +110,10 @@
       class="width-100pc bg-verde border-bottom-black center-me  display-flex justify-content-center align-items-flex-end margin-top-10px border-top-black"><h3 class="text-color-pagina">Productos que reemplazan a la carne de pescado</h3></nav>
       <article class="display-flex width-90pc flex-column align-items-center articulos">
         <% productos.forEach(producto=> {
-          if(producto.reemplaza == "pescado") { %>
+          if(producto.idReemplaza == 3) { %>
         <article
             class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
-            <a href="/detalleproducto/<%= producto.id %>">
+            <a href="/detalleproducto/<%= producto.idProducto %>">
               <img src="/images/<%= producto.imagen %>" class="width-100pc">
             </a>
             <div class="display-flex flex-column align-items-center width-90pc">

@@ -1,5 +1,3 @@
-const sequelize = require("sequelize");
-const { DataTypes } = require("sequelize/types");
 
 module.exports = (sequelize, DataTypes) => {
 
@@ -9,19 +7,14 @@ module.exports = (sequelize, DataTypes) => {
         nombre : DataTypes.INTEGER,
         
     },{
-        tableName : "Usuarios",
+        tableName : "Reemplaza",
         timestamps : true,
         createdAt : "created_at",
         updateAt : "update_at"
 
     });
 
-    Reemplaza.associate = function(models){
-        Reemplaza.hasMany(models.Productos,{
-          as :"productos",
-          foreignKey :"idReemplaza"
-        })
-      }
+ 
 
 
     return Reemplaza

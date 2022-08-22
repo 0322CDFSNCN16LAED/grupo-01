@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { debugPort } = require("process");
 
 const productsFilePath = path.join(__dirname, "./db-products.json");
 const usersFilePath = path.join(__dirname, "./db-users.json");
@@ -19,6 +20,7 @@ module.exports = {
     },
     creacionId : function () {
         return this.getAll()[this.getAll().length - 1].id + 1
+        
     },
     creacionIdUser : function () {
         return this.getAllUsers()[this.getAllUsers().length - 1].id + 1
