@@ -1,3 +1,4 @@
+const { listarProductos } = require("../../controller/maincontroler");
 
 
 module.exports = (sequelize, DataTypes) => {
@@ -36,8 +37,15 @@ module.exports = (sequelize, DataTypes) => {
 
     });
 
+    Producto.associate = function(models){
 
-  
+      Producto.belongsTo(models.Reemplaza, {
+        as :"reemplaza",
+        foreignKey : "idReemplaza"
+      })
+
+    }
+   
 
     return Producto
 

@@ -40,7 +40,7 @@
                   </div>  
                 </div>
                 <div class="display-flex flex-row width-100pc align-items-center justify-content-space-between">
-                    <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina"><%= producto.nombre %></h3>
+                  <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina"><%= producto.nombre %></h3>   
                    
                 </div>
             </div>
@@ -52,7 +52,7 @@
       class="width-100pc bg-verde border-bottom-black center-me  display-flex justify-content-center align-items-flex-end margin-top-10px border-top-black"><h3 class="text-color-pagina">Productos que reemplazan a la carne vacuna</h3></nav>
       <article class="display-flex width-90pc flex-column align-items-center articulos">
         <% productos.forEach(producto=> {
-          if(producto.idReemplaza == 4) { %>
+          if(producto.idReemplaza == 2) { %>
         <article
             class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
             <a href="/detalleproducto/<%= producto.idProducto %>">
@@ -70,8 +70,7 @@
                   </div>  
                 </div>
                 <div class="display-flex flex-row width-100pc align-items-center justify-content-space-between">
-                    <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina"><%= producto.nombre %></h3>
-                   
+                    <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina"><%= producto.nombre %></h3> 
                 </div>
             </div>
         </article>
@@ -81,7 +80,7 @@
       class="width-100pc bg-verde border-bottom-black center-me  display-flex justify-content-center align-items-flex-end margin-top-10px border-top-black"><h3 class="text-color-pagina">Productos que reemplazan a la carne de cerdo</h3></nav>
       <article class="display-flex width-90pc flex-column align-items-center articulos">
         <% productos.forEach(producto=> {
-          if(producto.idReemplaza == 2) { %>
+          if(producto.idReemplaza == 4) { %>
         <article
             class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
             <a href="/detalleproducto/<%= producto.idProducto %>">
@@ -128,7 +127,8 @@
                   </div>  
                 </div>
                 <div class="display-flex flex-row width-100pc align-items-center justify-content-space-between">
-                    <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina"><%= producto.nombre %></h3>
+                    <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina"><%= producto.nombre %>   </h3>
+                    
                    
                 </div>
             </div>

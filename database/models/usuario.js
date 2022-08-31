@@ -4,7 +4,10 @@ module.exports = (sequelize, DataTypes) => {
 
     const Usuario = sequelize.define("Usuarios",
     {
-          idUsuario : DataTypes.INTEGER,
+          idUsuario :
+          { type : DataTypes.INTEGER,
+                        primaryKey : true,
+          },
           nombre : DataTypes.INTEGER,
           apellido : DataTypes.STRING,  
           nacimiento : DataTypes.DATE,
@@ -18,8 +21,8 @@ module.exports = (sequelize, DataTypes) => {
     },{
         tableName : "Usuarios",
         timestamps : true,
-        createdAt : "created_at",
-        updateAt : "update_at"
+        createdAt : "createdAt",
+        updatedAt : "updateAt"
 
     });
 

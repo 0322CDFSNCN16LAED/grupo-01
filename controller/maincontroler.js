@@ -82,8 +82,8 @@ const controller = {
     
    
     listarProductos : (req,res)=>{
-        dbp.Productos.findAll()
-        .then(function(productos){
+        dbp.Productos.findAll({include : [{association : "reemplaza"}]})
+        .then(function(productos){ 
             res.render("listaProductos", {productos : productos})
         })
     
@@ -114,7 +114,11 @@ const controller = {
         
     },
     createProducto : (req,res) => {
-        res.render("create-form-products")
+        dbp.Reemplaza.findAll()
+        .then((reemplaza)=>{
+            res.render("create-form-products", {reemplaza : reemplaza})
+        })
+        
     },
 
  
@@ -122,12 +126,10 @@ const controller = {
   
     
     if(req.file){
-   dbp.Productos.create({
+    dbp.Productos.create({
         ...req.body,
         imagen : req.file.filename,
         
-        idProducto : 55 ,
-        idReemplaza : 1,
     })
     .then((producto)=>{
         res.redirect("/listaProductos") ;
@@ -175,15 +177,21 @@ const controller = {
     },
 
     listarUsuario : (req,res)=>{
-        const users = db.getAllUsers()
-        res.render("usersList", {users : users})
+        dbp.Usuarios.findAll()
+        .then((users)=>{
+            res.render("usersList", {users : users})
+        })
+       
     },
 
     detalleUsuario : (req,res)=>{
         let id = req.params.id ;
-        let usuarioDetalle= db.getOneUser(id); 
+        dbp.Usuarios.findByPk(id)
+        .then((usuarioDetalle)=>{
+            res.render("detalleusuario", {usuarioDetalle : usuarioDetalle})
+        })
         
-        res.render("detalleusuario", {usuarioDetalle : usuarioDetalle})
+        
     },
 
 
@@ -196,16 +204,19 @@ const controller = {
     },
 
     guardarUsuario : (req,res) => {
-        const users = db.getAllUsers()
-       let errors = validationResult(req);
+        
+        let errors = validationResult(req);
         if (errors.isEmpty()){
             if(req.file){
-                const nuevoUsuario = req.body ;
-                nuevoUsuario.imagenusuario = req.file.filename
-                nuevoUsuario.id = db.creacionIdUser();
-                nuevoUsuario.contrasena = bcryptjs.hashSync(req.body.contrasena ,10)
-                users.push(nuevoUsuario) ;
-                db.writeAndSaveUser(users); 
+                
+                dbp.Usuarios.create({
+                    ...req.body,
+                    imagen : req.file.filename,
+                    contraseña : req.body.contrasena
+                   
+
+                })
+                
 
                 res.redirect("/") ;
             }
@@ -227,32 +238,30 @@ eliminarUsuario : (req,res)=>{
 
 },
 editUser : (req,res) => {
+    
     let id = req.params.id ;
-    let userToEdit= db.getOneUser(id);
-    res.render("editUser", {userToEdit : userToEdit});
+    dbp.Usuarios.findByPk(id)
+    .then((userToEdit)=>{
+        res.render("editUser", {userToEdit : userToEdit});
+    })
+    
+    
     
 },
 userEdited : (req,res) => {
-    const users = db.getAllUsers()
-    let id = req.params.id ;
-     let userEdited= users.find(user => user.id == id);
+    dbp.Usuarios.update({
+        ...req.body   
+    }, {
+        where : {idUsuario : req.params.id}
+    })
+    .then((usuarioEdited)=>{
+        res.redirect("/userList");
+    })
+    
+
+
      
-     userEdited.nombre = req.body.nombre ;
-     userEdited.apellido = req.body.apellido ;
-     userEdited.nacimiento = req.body.nacimiento ;
-     userEdited.sexo = req.body.sexo ;
-     userEdited.celular = req.body.celular ;
-     userEdited.correo = req.body.correo ;
-     userEdited.categoriaInteres = req.body.categoriaInteres ;
-     if(req.file){
-     userEdited.imagenusuario = req.file.filename
-     }
-
-      
-     db.writeAndSaveUser(users); 
-
-     res.redirect("/userList");
- },
+}
 
 
 }

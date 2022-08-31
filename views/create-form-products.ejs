@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/home-desktop.css">
     <link rel="stylesheet" href="/css/home-tablet.css">
     <link rel="stylesheet" href="/css/home-desktop.css">
+    <script src="/js/createProductsValidations.js"> </script>
 
 </head>
 
@@ -18,24 +19,29 @@
     <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh text-color-blue">
         <section class="100pc">
           <h2 class="">Usted está creando un producto: </h2>
-          <form action="/crearProducto"  method="post" enctype="multipart/form-data">
+          <form action="/crearProducto"  method="post" enctype="multipart/form-data" class="formulario"">
             <div class="display-flex justify-content-space-between width-100pc " >
-            <label for="" class="width-126px">Nombre :</label>
-            <input class="width-90pc" type="text" name="nombre" id="name" >
-          </div>
+              <label for="" class="width-126px">Nombre :</label>
+              <input class="width-90pc" type="text" name="nombre" id="name" >
+              <span class="error"></span>  
+            </div>
             <br>
             <div class="display-flex justify-content-space-between width-100pc " >
             <label for="" class="width-126px"> Descripción: </label>
             <input class="width-90pc" type="text" name="descripcion" id="descripcion" >
+            <span class="error "></span>  
           </div>
             <br>
             <div class="display-flex justify-content-space-between width-100pc" >
             <label for=""class="width-126px"> Reemplazo de: </label>
-            <select class="width-90pc" name="idReemplaza2" id="idReemplaza">
-              <option> pollo</option>
-              <option> vacuno</option>
-              <option> pescado</option>
-              <option> cerdo</option>
+            
+              <select class="width-90pc" name="idReemplaza" id="idReemplaza">
+
+               <% reemplaza.forEach( reemplaza => { %>
+
+                  <option value="<%= reemplaza.idReemplaza %> "> <%= reemplaza.nombre %> </option>
+  
+                <% }) %>
             </select>
           </div>  
             <br>
@@ -51,7 +57,7 @@
           <br>
             <div class="display-flex justify-content-space-between width-100pc" >
             <label for=""class="width-126px"> Imagen Producto :</label>
-            <input class="width-90pc" type="file" name="imagen" id="imagen" >
+            <input class="width-90pc" type="file" name="imagen" id="imagen" accept=".png, .jpg, .jpeg, .png, .gif">
           </div>
             <br>
             <div class="display-flex justify-content-space-between width-100pc" >

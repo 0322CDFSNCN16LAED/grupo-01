@@ -16,18 +16,31 @@ const masterMiddleware = require ("../middlewares/masterMiddleware")
 
 
 const validateRegister = [
-    body('nombre').notEmpty() .withMessage('Debes completar este campo'),
-    body('apellido').notEmpty() .withMessage('Debes completar este campo'),
-    body("nacimiento").notEmpty().withMessage("debes completar este campo"),
-    body('sexo').notEmpty().withMessage('Debes completar este campo'),
-    body('celular').notEmpty() .withMessage('Debes completar este campo'),
-    body("correo").isEmail().withMessage("debes completar un correo válido"),
-    body("contrasena").notEmpty().withMessage("debe tener al menos 8 caracteres"),
-    body("categoriaInteres").notEmpty().withMessage("debes seleccionar al menos una opción"),
+    body('nombre').notEmpty().withMessage('Debes completar el campo nombre') 
+    .isLength({min: 2}).withMessage('Debe tener al menos dos caracteres') 
+    ,
+    body('apellido').notEmpty() .withMessage('Debes completar el campo apellido'),
+    body("nacimiento").notEmpty().withMessage("Debe completar el campo nacimiento"),
+    body('sexo').notEmpty().withMessage('Debes completar el campo sexo'),
+    body('celular').notEmpty() .withMessage('Debes completar el campo celular'),
+    
+    body('email').isEmail().withMessage("Debes completar un correo válido"),
+    body('contrasena').notEmpty().withMessage("Debes completar el campo contraseña ")
+    .isLength({min: 8}).withMessage('Debe tener al menos ocho caracteres') 
+    ,
+    body("categoriaInteres").notEmpty().withMessage("Debes seleccionar al menos una opción"),
 ]
 const validateLogin = [
     check('email').isEmail().withMessage ('El email no es válido'),
     check ('password').isLength({min: 8}).withMessage ('La contraseña debe tener al menos 8 carácteres')
+]
+
+
+const validaterProducter = [
+    body('nombre').notEmpty().withMessage('Debes completar este campo')
+    .isLength({min:5}) .withMessage('Debe tener al menos 5 caracteres') ,
+    body('descrpcion').isLength() .withMessage('Debe tener al menos 20 caracteres'),
+    
 ]
 
 
@@ -81,7 +94,7 @@ router.get("/editarProducto/:id", masterMiddleware, controller.editarProducto);
 router.put("/editarProducto/:id",productupload.single("imagen"), controller.editProducto);
 
 router.get("/crearProducto", masterMiddleware, controller.createProducto);
-router.post("/crearProducto", productupload.single("imagen"), controller.guardarProducto);
+router.post("/crearProducto", productupload.single("imagen"),  controller.guardarProducto);
 router.post("/carrito", controller.carrito);
 router.post("/carrito/:id", controller.addCarrito);
 router.delete("/eliminarProducto/:id", controller.eliminarProducto);
@@ -95,7 +108,7 @@ router.get("/detalleUser/:id", authMiddleware, controller.detalleUsuario);
 
 
 router.get("/crearUsuario", guestMiddleware, controller.createUsuario);
-router.post("/crearUsuario", upload.single("imagenusuario"),validateRegister, controller.guardarUsuario);
+router.post("/crearUsuario", upload.single("imagenusuario"), validateRegister, controller.guardarUsuario);
 router.get("/editUser/:id", authMiddleware, controller.editUser);
 router.put("/editUser/:id",upload.single("imagen"), controller.userEdited);
 router.delete("/eliminarUsuario/:id", controller.eliminarUsuario);

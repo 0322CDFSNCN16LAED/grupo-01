@@ -488,3 +488,30 @@ body {
   transition: color 0.5s;
   box-shadow: none;
 }
+
+
+.is-invalid input,
+.is-invalid select
+{
+
+  border-color : red
+
+}
+
+.is-valid input,
+.is-valid select
+{
+
+  border-color : green
+
+}
+
+.error{
+
+  display: none;
+}
+
+.is-invalid .error {
+
+  display: block;
+}

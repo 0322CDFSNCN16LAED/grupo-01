@@ -3,14 +3,18 @@ module.exports = (sequelize, DataTypes) => {
 
     const Reemplaza = sequelize.define("Reemplaza",
     {
-        idReemplaza : DataTypes.INTEGER,
+        idReemplaza : { type : DataTypes.INTEGER,
+        primaryKey : true
+        },
+
         nombre : DataTypes.INTEGER,
+        
         
     },{
         tableName : "Reemplaza",
         timestamps : true,
-        createdAt : "created_at",
-        updateAt : "update_at"
+        createdAt : "createdAt",
+        updatedAt : "updateAt"
 
     });
 
