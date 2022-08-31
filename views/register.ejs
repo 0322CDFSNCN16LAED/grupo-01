@@ -130,27 +130,38 @@
                         </div>  
                         <div>
                             <h2 class="text-color-blue" > Intereses </h2>
-                            <div class="border">
+                            <div class="">
+                                
                                 <input type="checkbox" name="categoriaInteres"  value ="Electro" id="categoria_electro"  > 
                                 <label for="categoria_electro "> Hambuerguesa </label>
+                                <span class="error"></span>
+                                
                             </div>
-                            <div class="border">
+                            <div class="">
                                 <input type="checkbox" name="categoriaInteres"  value ="Moda" id="categoria_moda"> 
                                 <label for="categoria_moda"> Chorizos </label>
+                                <span class="error"></span>
                             </div>
-                            <div class="border" >
+                            <div class="">
                                 <input type="checkbox" name="categoriaInteres"  value ="Hogar" id="categoria_hogar"> 
                                 <label for="categoria_hogar"> Bocados </label>
+                                <span class="error"></span>
                             </div>
-                            <div class="border" >
+                            <div class="">
                                 <input type="checkbox" name="categoriaInteres"  value ="Jugueteria" id="categoria_jugueteria"> 
                                 <label for="categoria_jugueteria"> Salchichas </label>
+                                <span class="error"></span>
+
+
                             </div>
                             
                             <% if (locals.errors && errors.categoriaInteres) {%>
                                 <p class="span"><%= errors.categoriaInteres.msg %></p> 
                               <% }%>  
                         </div>
+
+                        
+                        
                         <div>
                             <div class="padtop20 padbottom20 cambio">
                                 <div class="width-100pc  ">

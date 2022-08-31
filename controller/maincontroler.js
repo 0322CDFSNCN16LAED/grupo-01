@@ -16,8 +16,6 @@ const users = db.getAllUsers() ;
 
 
 const controller = {
-
-   
     home : (req,res)=>{
         dbp.Productos.findAll()
         .then(function(productos){
@@ -30,10 +28,7 @@ const controller = {
         res.render("login")
     },
     processlogin : (req,res)=>{
-
-        
         const users = db.getAllUsers()
-
         const email = req.body.email;
         const password = req.body.Password;
 
@@ -66,21 +61,6 @@ const controller = {
 
     },
       
-                
-        
-        //if (usuarioALoguearse == undefined){
-          //  return res.render ('login', {errors: [
-            //    {msg: 'credenciales incorrectas'}
-           // ]});
-       
-    
-
-      //      req.session.usuarioLogueado = usuarioALoguearse;
-        //    res.render ('exitoso');
-            
-
-    
-   
     listarProductos : (req,res)=>{
         dbp.Productos.findAll({include : [{association : "reemplaza"}]})
         .then(function(productos){ 
@@ -95,8 +75,7 @@ const controller = {
         .then((productoDetalle)=>{
             res.render("detalleproducto", {productoDetalle : productoDetalle})
         })
-        
-        
+ 
     },
 
     carrito : (req,res)=>{
@@ -123,8 +102,7 @@ const controller = {
 
  
    guardarProducto : (req,res) => {
-  
-    
+
     if(req.file){
     dbp.Productos.create({
         ...req.body,
@@ -140,10 +118,7 @@ const controller = {
 }
 }
 ,
-   
-
-
-    editarProducto: (req,res) => {
+        editarProducto: (req,res) => {
         let id = req.params.id ;
         dbp.Productos.findByPk(id)
         .then((productToEdit)=>{

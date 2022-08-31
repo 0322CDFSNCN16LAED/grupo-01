@@ -65,7 +65,7 @@ const validations = [
         validations : [		
         {		
             errorMsg : "Debe seleccionar un avatar"	,
-           validator : (input)=> input.value != "",
+            validator : (input)=> input.value != "",
         },	
       
 
@@ -74,7 +74,7 @@ const validations = [
         ]		
     },
     
-]
+    ]		
 
 
 window.onload = function () {
@@ -83,8 +83,8 @@ window.onload = function () {
     const formulario = document.querySelector(".formulario")
 
     
+    
     formulario.addEventListener("submit", (evt)=> { 
-
         evt.preventDefault();
         const errores = [ ]
 

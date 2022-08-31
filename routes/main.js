@@ -94,7 +94,7 @@ router.get("/editarProducto/:id", masterMiddleware, controller.editarProducto);
 router.put("/editarProducto/:id",productupload.single("imagen"), controller.editProducto);
 
 router.get("/crearProducto", masterMiddleware, controller.createProducto);
-router.post("/crearProducto", productupload.single("imagen"),  controller.guardarProducto);
+router.post("/crearProducto", productupload.single("imagen"), validaterProducter, controller.guardarProducto);
 router.post("/carrito", controller.carrito);
 router.post("/carrito/:id", controller.addCarrito);
 router.delete("/eliminarProducto/:id", controller.eliminarProducto);
