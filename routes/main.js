@@ -25,10 +25,19 @@ const validateRegister = [
     body('celular').notEmpty() .withMessage('Debes completar el campo celular'),
     
     body('email').isEmail().withMessage("Debes completar un correo válido"),
-    body('contrasena').notEmpty().withMessage("Debes completar el campo contraseña ")
+    body('contrasena')
+    .notEmpty().withMessage("Debes completar el campo contraseña ")
     .isLength({min: 8}).withMessage('Debe tener al menos ocho caracteres') 
+    //.matches(/^(?=.\d)(?=.[!@#$%^&])(?=.[a-z])(?=.*[A-Z]).{8,}$/).withMessage('Debe contener ciertos caracteres') 
     ,
     body("categoriaInteres").notEmpty().withMessage("Debes seleccionar al menos una opción"),
+    //body("password").custom((value, { req }) => {
+      //  if (value !== req.body.password) {
+      //    throw new Error("Las contraseñas no coincidennnnn");
+      // } else {
+       //   return true;
+       // }
+      //}),
 ]
 const validateLogin = [
     check('email').isEmail().withMessage ('El email no es válido'),

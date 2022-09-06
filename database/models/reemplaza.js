@@ -18,9 +18,16 @@ module.exports = (sequelize, DataTypes) => {
 
     });
 
- 
+    Reemplaza.associate = (models) => {
+
+      Reemplaza.hasMany(models.Productos, {
+          as :"productos",
+          foreignKey : "idReemplaza"
+        });
+  
+      }
 
 
     return Reemplaza
 
-  }
+  };

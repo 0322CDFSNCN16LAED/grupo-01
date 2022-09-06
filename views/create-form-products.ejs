@@ -25,6 +25,9 @@
             <div class="display-flex justify-content-space-between width-100pc " >
               <label for="" class="width-126px">Nombre :</label>
               <input class="width-90pc" type="text" name="nombre" id="name" >
+              <% if (locals.errors && errors.nombre) {%>
+                <p class="span"><%= errors.nombre.msg %></p> 
+              <% }%> 
               <span class="error"></span>  
             </div>
             <br>
@@ -37,7 +40,7 @@
             <div class="display-flex justify-content-space-between width-100pc" >
             <label for=""class="width-126px"> Reemplazo de: </label>
             
-              <select class="width-90pc" name="idReemplaza" id="idReemplaza">
+              <select class="width-90pc" name="idReemplaza"  id="idReemplaza">
 
                <% reemplaza.forEach( reemplaza => { %>
 

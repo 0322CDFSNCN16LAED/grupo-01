@@ -95,34 +95,42 @@ const controller = {
     createProducto : (req,res) => {
         dbp.Reemplaza.findAll()
         .then((reemplaza)=>{
-            res.render("create-form-products", {reemplaza : reemplaza})
+            res.render("create-form-products", { reemplaza : reemplaza})
         })
         
     },
 
  
    guardarProducto : (req,res) => {
-
+    
     if(req.file){
-    dbp.Productos.create({
-        ...req.body,
-        imagen : req.file.filename,
-        
-    })
-    .then((producto)=>{
-        res.redirect("/listaProductos") ;
-})   
+        bp.Productos.create({
+            ...req.body,
+            imagen : req.file.filename,
+            })
+            then((producto)=>{
+            res.redirect("/listaProductos") ;
+        })   
 
-}else{
-    res.render("create-form-products")
-}
-}
+    }else{
+        
+
+        dbp.Reemplaza.findAll()
+        .then((reemplaza)=>{
+            res.render("create-form-products", { reemplaza : reemplaza})
+        })
+        }  
+    }
 ,
         editarProducto: (req,res) => {
         let id = req.params.id ;
-        dbp.Productos.findByPk(id)
+        dbp.Productos.findByPk(id, {
+            include : ["reemplaza"],
+          
+        })
         .then((productToEdit)=>{
             res.render("editarProducto", {productToEdit : productToEdit});
+
         })
         
     },
@@ -182,6 +190,10 @@ const controller = {
         
         let errors = validationResult(req);
         if (errors.isEmpty()){
+
+        
+
+
             if(req.file){
                 
                 dbp.Usuarios.create({

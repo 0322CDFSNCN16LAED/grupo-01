@@ -73,6 +73,23 @@ const validations = [
 
         ]		
     },
+    //{
+       // inputName: 'categoriaInteres',
+       // validations: [
+         //   {
+          //      errorMsg: 'Debe seleccionar al menos un interés',
+          //      validator: (input) => {
+          //          let isValid = false;
+          //          input.forEach((element) => {
+          //              if (element.checked) {
+           //                 isValid = true;
+           //             }
+//});
+               //     return isValid;
+               // },
+           // },
+       // ],
+    //},
     
     ]		
 

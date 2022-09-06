@@ -32,10 +32,16 @@
           <div class="display-flex justify-content-space-between " >
           <label for="" class="width-126px"> Reemplazo de : </label>
           <select class="width-45pc margin-bottom-10px border-radius-3px width-45pc grow margin-left-5px max-width-80pc " name="reemplaza">
-            <option <% if(productToEdit.idReemplaza == "pollo") {%> selected <% } %>  > pollo</option>
-            <option <% if(productToEdit.idReemplaza == "vacuno") {%> selected <% } %>> vacuno</option>
-            <option <% if(productToEdit.idReemplaza == "pescado") {%> selected <% } %>> pescado</option>
-            <option <% if(productToEdit.idReemplaza == "cerdo") {%> selected <% } %>> cerdo</option>
+
+           
+
+           
+
+            <option <% if(productToEdit.idReemplaza == 1) {%> selected <% } %>> Polo  </option>
+            <option <% if(productToEdit.idReemplaza == 2) {%> selected <% } %>> Vacuno  </option>
+            <option <% if(productToEdit.idReemplaza == 3) {%> selected <% } %>>  Pescado</option>
+            <option <% if(productToEdit.idReemplaza == 4) {%> selected <% } %>> <%= productToEdit.reemplaza.nombre %> </option>
+            
           </select>
         </div>  
           <br>

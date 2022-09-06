@@ -7,7 +7,7 @@ const validations = [
             validator : (input) => input.value != "" ,       
         },	
         {		
-            errorMsg : "Debe tener al menos dos caracteres"	,
+            errorMsg : "Debe tener al menos cinco caracteres"	,
             validator : (input) => input.value.length >= 5       
         },		
         ]		
