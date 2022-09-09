@@ -71,7 +71,9 @@ const controller = {
 
     detalleproducto : (req,res)=>{
         let id = req.params.id ;
-        dbp.Productos.findByPk(id)
+        dbp.Productos.findByPk(id,{
+            include : [{association : "reemplaza"}]
+        })
         .then((productoDetalle)=>{
             res.render("detalleproducto", {productoDetalle : productoDetalle})
         })
@@ -129,16 +131,18 @@ const controller = {
           
         })
         .then((productToEdit)=>{
-            res.render("editarProducto", {productToEdit : productToEdit});
+            res.render("editarProducto", {productToEdit : productToEdit });
 
         })
         
     },
     editProducto: (req,res) => {
         
+      
         
         dbp.Productos.update({
             ...req.body
+            
         }, {
             where : {idProducto : req.params.id}
         })

@@ -22,7 +22,7 @@
   <div class="display-flex flex-column width-90pc">
     <h3 class="descripciones margin-top-5px margin-bottom-5px text-color-pagina width-100pc"><%= productoDetalle.nombre %></h3>  
     <p class="descripciones margin-top-5px margin-bottom-5px text-color-pagina width-100pc"><%= productoDetalle.descripcion %></p>
-    <p class="descripciones margin-top-5px margin-bottom-5px text-color-pagina width-100pc"><%= "Este producto reemplaza a la carne de " + productoDetalle.idReemplaza %></p>
+    <p class="descripciones margin-top-5px margin-bottom-5px text-color-pagina width-100pc"><%= "Este producto reemplaza a la carne de " + productoDetalle.reemplaza.nombre %></p>
     <p class="text-color-pagina margin-top-5px margin-bottom-5px">Presentación: <%= productoDetalle.presentacion %> </p>
     <p class="text-color-pagina margin-top-5px margin-bottom-5px "><%= "Adquirilo por solo $" + productoDetalle.precio %></p>
   </div>
