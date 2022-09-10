@@ -239,11 +239,21 @@ const controller = {
 } ,
 
 eliminarUsuario : (req,res)=>{
-    const users = db.getAllUsers()
-    const id = req.params.id
-    usersFilter = users.filter((user)=> user.id != id);
-    db.writeAndSaveUser(usersFilter); 
-    res.redirect("/userList");
+    dbp.Usuarios.findByPk(req.params.id).then((usuario)=>{
+
+           
+
+        usuario.destroy().then(()=>{
+
+            res.redirect("/userList");
+
+        })
+
+    
+
+})  
+
+    
     
 
 
@@ -261,7 +271,8 @@ editUser : (req,res) => {
 },
 userEdited : (req,res) => {
     dbp.Usuarios.update({
-        ...req.body   
+        ...req.body   ,
+        contraseña : req.body.contrasena
     }, {
         where : {idUsuario : req.params.id}
     })

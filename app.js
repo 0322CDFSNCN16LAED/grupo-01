@@ -27,8 +27,15 @@ app.use(express.urlencoded({ extented: false }));
 app.use(express.json());
 app.set("view engine", "ejs");
 const mainRoutes = require("./routes/main");
+const apiRoutes = require("./routes/apis/apiRoutes");
 const { cookie } = require("express/lib/response");
 app.use("/", mainRoutes);
+
+app.use("/apis", apiRoutes);
+
+
+
+
 app.use((req, res) => {
   res.status(404).render("not-found");
 });
