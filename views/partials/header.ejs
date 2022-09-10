@@ -10,7 +10,7 @@
               <a href="/editUser/<%= userLogged.id %> "><i class="font-size-18 fas fa-user  text-color-blue bg-pagina"></i></a>
               <% } %> 
               <a href="/carrito" class="margin-left-5px"><i
-                      class="font-size-18 fas fa-shopping-cart text-color-blue bg-pagina"></i></a>
+                      class="font-size-18 fas fa-shopping-cart text-color-blue bg-pagina boton4"></i></a>
           </div>
           <form class="border-radius-3px display-flex align-items-center height-100pc bg-white width-100pc borde-blanco padding-5px buscador"
                     action="busqueda" method="get">
@@ -23,10 +23,10 @@
               <ul
                   class="width-100pc display-flex align-items-center justify-content-end nav-sin-estilo height-100pc">
                   <% if(!isLogged) { %> 
-                  <li><a class="lista-sin-subrayar text-color-blue" href=/crearUsuario>Registrate</a></li>
-                  <li><a class="lista-sin-subrayar text-color-blue margin-left-7px" href=/login>Ingresa</a></li>
+                  <li><a class="lista-sin-subrayar text-color-blue boton3" href=/crearUsuario>Registrate</a></li>
+                  <li><a class="lista-sin-subrayar text-color-blue margin-left-7px boton3" href=/login>Ingresa</a></li>
                   <% } %> 
-                  <li><a class="lista-sin-subrayar text-color-blue margin-left-7px" href=/help>Ayuda</a></li>
+                  <li><a class="lista-sin-subrayar text-color-blue margin-left-7px boton3" href=/help>Ayuda</a></li>
               </ul>
           </nav>
       </div>
@@ -124,15 +124,12 @@
   <nav
       class="width-100pc bg-verde border-bottom-black center-me  display-flex justify-content-center align-items-flex-end ">
       <ul class="width-90pc display-flex align-items-end justify-content-space-around nav-sin-estilo min-heigth-30px  text-color-white">
-          <li><a class="lista-sin-subrayar text-color-pagina" href=/listaProductos>Productos</a><i
-                  class="text-color-pagina fas fa-angle-down"></i></li>
-          <li><a class="lista-sin-subrayar text-color-pagina" href=/reemplazos>Reemplazos</a><i
-                  class="text-color-pagina fas fa-angle-down"></i></li>
+          <li><a class="lista-sin-subrayar text-color-pagina boton1" href=/listaProductos>Productos</a></li>
+          <li><a class="lista-sin-subrayar text-color-pagina boton1" href=/reemplazos>Reemplazos</a></li>
           <% if(masterLogged) {   %> 
-                  <li><a class="lista-sin-subrayar text-color-pagina" href=/crearProducto>Vender</a><i
-                  class="text-color-pagina fas fa-angle-down"></i></li>
+                  <li><a class="lista-sin-subrayar text-color-pagina boton1" href=/crearProducto>Vender</a></li>
           <% } %> 
-          <li><a class="lista-sin-subrayar text-color-pagina" href=/contacto>Contacto</a></li>
+          <li><a class="lista-sin-subrayar text-color-pagina boton1" href=/contacto>Contacto</a></li>
       </ul>
   </nav>
 </header>
