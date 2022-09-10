@@ -460,7 +460,7 @@ body {
   border: none;
 }
 .boton:hover {
-  font-size: 40px;
+  font-size: 35px;
   color: #ffffff;
 }
 .boton {
@@ -489,29 +489,20 @@ body {
   box-shadow: none;
 }
 
-
 .is-invalid input,
-.is-invalid select
-{
-
-  border-color : red
-
+.is-invalid select {
+  border-color: red;
 }
 
 .is-valid input,
-.is-valid select
-{
-
-  border-color : green
-
+.is-valid select {
+  border-color: green;
 }
 
-.error{
-
+.error {
   display: none;
 }
 
 .is-invalid .error {
-
   display: block;
 }
