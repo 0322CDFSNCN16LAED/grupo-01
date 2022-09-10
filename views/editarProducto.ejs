@@ -24,6 +24,8 @@
             <input class="margin-bottom-10px border-radius-3px width-45pc grow margin-left-5px max-width-80pc  " type="text" name="nombre" value= "<%= productToEdit.nombre %>" >
           </div>
           <br>
+         
+
           <div class="display-flex justify-content-space-between " >
           <label for="" class="width-126px"> Descripción : </label>
           <input class="margin-bottom-10px border-radius-3px width-45pc grow margin-left-5px max-width-80pc " type="text" name="descripcion" value= "<%= productToEdit.descripcion %>" >
@@ -34,13 +36,12 @@
           <select class="width-45pc margin-bottom-10px border-radius-3px width-45pc grow margin-left-5px max-width-80pc " name="idReemplaza">
 
            
-
+           <% reemplaza.forEach(reemplaza => { %>
+            <option  value=" <%= reemplaza.idReemplaza %>" <%= productToEdit.idReemplaza == reemplaza.idReemplaza ? "selected" : ""  %>  >  <%= reemplaza.nombre %>    </option>
+           <% }) %>
            
 
-            <option  value=" <%= 1 %> "<% if(productToEdit.idReemplaza == 1) {%> selected <% } %>> Pollo  </option>
-            <option value=" <%= 2 %> " <% if(productToEdit.idReemplaza == 2) {%> selected <% } %>> Vacuno  </option>
-            <option value=" <%= 3 %> " <% if(productToEdit.idReemplaza == 3) {%> selected <% } %>>  Pescado</option>
-            <option value=" <%= 4 %> " <% if(productToEdit.idReemplaza == 4) {%> selected <% } %>>  Cerdito</option>
+        
             
           </select>
         </div>  

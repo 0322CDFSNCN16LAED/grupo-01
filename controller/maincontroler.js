@@ -125,42 +125,62 @@ const controller = {
     }
 ,
         editarProducto: (req,res) => {
-        let id = req.params.id ;
-        dbp.Productos.findByPk(id, {
-            include : ["reemplaza"],
-          
-        })
-        .then((productToEdit)=>{
-            res.render("editarProducto", {productToEdit : productToEdit });
+        
+        Promise.all([
+            dbp.Productos.findByPk(req.params.id),
+            dbp.Reemplaza.findAll(),
 
-        })
+            
+
+
+        ]).then(function([productToEdit, reemplaza]){
+            console.log(reemplaza)
+            res.render("editarProducto", {productToEdit : productToEdit, reemplaza : reemplaza});
+        });
+            
+       
         
     },
     editProducto: (req,res) => {
         
-      
+        dbp.Productos.findByPk(req.params.id).then((producto)=>{
+            producto.set(req.body);
+            if (req.file){
+
+                producto.imagen = req.file.filename
+            }
+
+            producto.save().then(() =>{
+                res.redirect("/listaProductos");
+            });
+
+
+        });
         
-        dbp.Productos.update({
-            ...req.body
-            
-        }, {
-            where : {idProducto : req.params.id}
-        })
-        .then((productoEdited)=>{
-            res.redirect("/listaProductos");
-        })
+   
         
        
     },
 
 
     eliminarProducto: (req,res) => {
-        const productos = db.getAll() ;
-        const id = req.params.id ;
-        const filtrados = productos.filter((product) => product.id != id) ;
-        db.writeAndSave(filtrados); 
-        res.redirect("/listaProductos");
-        
+
+
+
+        dbp.Productos.findByPk(req.params.id).then((producto)=>{
+
+           
+
+                producto.destroy().then(()=>{
+
+                    res.redirect("/listaProductos");
+
+                })
+
+            
+
+        })  
+
     },
 
     listarUsuario : (req,res)=>{
