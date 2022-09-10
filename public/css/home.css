@@ -469,13 +469,16 @@ body {
   transition: color 0.5s;
 }
 .boton2 {
-  font-size: 20px;
+  font-size: 15px;
   color: #ffe600;
-  margin: 8px;
+  margin: auto;
+  padding: 5px;
   justify-content: center;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   box-shadow: none;
+  background-color: #6e8c56;
+  margin-bottom: 7px;
 }
 .boton2:hover {
   font-size: 25px;
@@ -487,6 +490,55 @@ body {
   color: #ffe600;
   transition: color 0.5s;
   box-shadow: none;
+}
+
+.boton3 {
+  font-size: 17px;
+  color: #6e8c56;
+  margin: 8px;
+  justify-content: center;
+  border: none;
+}
+.boton3:hover {
+  font-size: 18px;
+  color: #ffffff;
+}
+.boton3 {
+  font-size: 17px;
+  color: #6e8c56;
+  transition: color 0.5s;
+}
+.boton4 {
+  font-size: 20px;
+  color: #6e8c56;
+  justify-content: center;
+  border: none;
+}
+.boton4:hover {
+  font-size: 22px;
+  color: #ffffff;
+}
+.boton4 {
+  font-size: 20px;
+  color: #6e8c56;
+  transition: color 0.5s;
+}
+
+.boton5 {
+  font-size: 40px;
+  color: #6e8c56;
+  justify-content: center;
+  border: none;
+  margin: 20px;
+}
+.boton5:hover {
+  font-size: 45px;
+  color: #ffffff;
+}
+.boton5 {
+  font-size: 40px;
+  color: #6e8c56;
+  transition: color 0.5s;
 }
 
 .is-invalid input,
