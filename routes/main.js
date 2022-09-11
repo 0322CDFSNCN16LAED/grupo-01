@@ -96,6 +96,7 @@ router.get("/detalleproducto/:id", controller.detalleproducto);
 router.get("/carrito", controller.carrito);
 
 router.get("/listaProductos", controller.listarProductos);
+router.get("/reemplazos", controller.reemplazos);
 router.get("/busqueda", controller.busqueda);
 
 router.get("/editarProducto/:id", masterMiddleware, controller.editarProducto);

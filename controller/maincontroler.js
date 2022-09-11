@@ -65,6 +65,14 @@ const controller = {
     );
   },
 
+  reemplazos: (req, res) => {
+    dbp.Productos.findAll({ include: [{ association: "reemplaza" }] }).then(
+      function (productos) {
+        res.render("reemplazos", { productos: productos });
+      }
+    );
+  },
+
   detalleproducto: (req, res) => {
     let id = req.params.id;
     dbp.Productos.findByPk(id, {
@@ -93,11 +101,10 @@ const controller = {
 
   guardarProducto: (req, res) => {
     if (req.file) {
-      bp.Productos.create({
+      dbp.Productos.create({
         ...req.body,
         imagen: req.file.filename,
-      });
-      then((producto) => {
+      }).then((producto) => {
         res.redirect("/listaProductos");
       });
     } else {
