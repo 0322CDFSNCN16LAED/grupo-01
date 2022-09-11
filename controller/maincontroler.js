@@ -64,6 +64,13 @@ const controller = {
       }
     );
   },
+  reemplazos: (req, res) => {
+    dbp.Productos.findAll({ include: [{ association: "reemplaza" }] }).then(
+      function (productos) {
+        res.render("reemplazos", { productos: productos });
+      }
+    );
+  },
 
   detalleproducto: (req, res) => {
     let id = req.params.id;
@@ -93,7 +100,7 @@ const controller = {
 
   guardarProducto: (req, res) => {
     if (req.file) {
-      dbp.Productos.create({
+      bp.Productos.create({
         ...req.body,
         imagen: req.file.filename,
       });
@@ -174,19 +181,11 @@ const controller = {
   },
 
   eliminarUsuario: (req, res) => {
-    dbp.Usuarios.findByPk(req.params.id).then((usuario)=>{
-
-
-
-        usuario.destroy().then(()=>{
-
-            res.redirect("/userList");
-
-        })
-
-
-
-})
+    const users = db.getAllUsers();
+    const id = req.params.id;
+    usersFilter = users.filter((user) => user.id != id);
+    db.writeAndSaveUser(usersFilter);
+    res.redirect("/userList");
   },
   editUser: (req, res) => {
     let id = req.params.id;
