@@ -32,3 +32,4 @@ app.use("/", mainRoutes);
 app.use((req, res) => {
   res.status(404).render("not-found");
 });
+app.use("/", () => console.log(req.session))
