@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
 }
 
@@ -593,6 +593,12 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.tittle2 {
+  font-size: 20px;
+  color: #707375;
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .nav {
   text-align: center;
   width: 100%;
