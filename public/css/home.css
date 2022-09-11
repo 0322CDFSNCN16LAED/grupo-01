@@ -470,15 +470,15 @@ body {
 }
 
 .boton1 {
-  font-size: 20px;
+  font-size: 23px;
   color: #ffe600;
 }
 .boton1:hover {
-  font-size: 22px;
+  font-size: 25px;
   color: #ffffff;
 }
 .boton1 {
-  font-size: 20px;
+  font-size: 23px;
   color: #ffe600;
   transition: color 0.5s;
 }
@@ -577,4 +577,32 @@ body {
 .footer {
   width: 100%;
   height: 100px;
+}
+
+.tittle {
+  font-size: 40px;
+  color: #707375;
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.tittle1 {
+  font-size: 40px;
+  color: #707375;
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav {
+  text-align: center;
+  width: 100%;
+  border: solid 3px #6e8c56;
+  margin: 30px;
+}
+
+.nav2 {
+  text-align: center;
+  width: 100%;
+  border: solid 3px #6e8c56;
+  margin: 15px;
 }
