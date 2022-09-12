@@ -10,11 +10,6 @@ const { v4 } = require("uuid");
 const { generateKeySync } = require("crypto");
 const uuid = v4
 
-
-
-
-
-
 const controller = {
 
 
@@ -26,8 +21,7 @@ const controller = {
             meta : {
                 status : 200,
                 url : req.originalUrl,
-                total : usuarios.length,
-                
+                total : usuarios.length,    
             },
             data : usuarios
         });
@@ -43,90 +37,52 @@ const controller = {
         .then((usuarioDetalle)=>{
             res.status(200).json({
                 meta : {
-                    status : 200,
-                   
+                    status : 200,  
                 },
                 data : usuarioDetalle
             })
-        })
-        
-        
+        })   
     },
-
-
-
     createUsuario : (req,res) => {
-
-        
         dbp.Usuarios.create({
             ...req.body,
-            
             contraseña : req.body.contrasena
-           
-
         }).then((usuario)=>{
             res.status(200).json({
                 meta : {
-                    status : 200,
-                   
+                    status : 200,   
                 },
                 data : usuario
             })
         })
-
     },
-
-    
-
-eliminarUsuario : (req,res)=>{
-    dbp.Usuarios.destroy( {
-        where : {
-            idUsuario : req.params.id
-        }
-    } 
-        
-    )
-    .then(response=>{
-        res.json(response)
+    eliminarUsuario : (req,res)=>{
+        dbp.Usuarios.destroy( {
+            where : {
+                idUsuario : req.params.id
+            }
         })
-    
-    
-
-
-},
-
-    
-
-userEdited : (req,res) => {
-    dbp.Usuarios.update({
-        ...req.body  ,
-        contraseña : req.body.contrasena 
-    }, {
+        .then(response=>{
+            res.json(response)
+        })
+    },
+    userEdited : (req,res) => {
+        dbp.Usuarios.update({
+            ...req.body  ,
+            contraseña : req.body.contrasena
+        }, 
+        {
         where : {idUsuario : req.params.id}
-    })
-    .then((usuarioEdited)=>{
-        res.status(200).json({
-            meta : {
-                status : 200,
-               
-            },
-            data : usuarioEdited
         })
-    })
-    
-
-
-     
-}
-
-
-}
-
-
-   
-
-
-
-
+        .then((usuarioEdited)=>{
+            res.status(200).json({
+                meta : {
+                    status : 200,
+                },
+                 data : usuarioEdited
+                })
+            })
+        }
+    }
 
 module.exports = controller
