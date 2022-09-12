@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="/css/home-desktop.css">
     <link rel="stylesheet" href="/css/home-tablet.css">
     <link rel="stylesheet" href="/css/home-desktop.css">
+    <script src="/js/createProductsValidations.js"> </script>
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+
 
 </head>
 
@@ -18,30 +21,38 @@
     <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh text-color-blue">
         <section class="100pc">
           <h2 class="">Usted está creando un producto: </h2>
-          <form action="/crearProducto"  method="post" enctype="multipart/form-data">
+          <form action="/crearProducto"  method="post" enctype="multipart/form-data" class="formulario"">
             <div class="display-flex justify-content-space-between width-100pc " >
-            <label for="" class="width-126px">Nombre :</label>
-            <input class="width-90pc" type="text" name="nombre"  >
-          </div>
+              <label for="" class="width-126px">Nombre :</label>
+              <input class="width-90pc" type="text" name="nombre" id="name" >
+              <% if (locals.errors && errors.nombre) {%>
+                <p class="span"><%= errors.nombre.msg %></p> 
+              <% }%> 
+              <span class="error"></span>  
+            </div>
             <br>
             <div class="display-flex justify-content-space-between width-100pc " >
             <label for="" class="width-126px"> Descripción: </label>
-            <input class="width-90pc" type="text" name="descripcion"  >
+            <input class="width-90pc" type="text" name="descripcion" id="descripcion" >
+            <span class="error "></span>  
           </div>
             <br>
             <div class="display-flex justify-content-space-between width-100pc" >
             <label for=""class="width-126px"> Reemplazo de: </label>
-            <select class="width-90pc" name="reemplaza">
-              <option> pollo</option>
-              <option> vacuno</option>
-              <option> pescado</option>
-              <option> cerdo</option>
+            
+              <select class="width-90pc" name="idReemplaza"  id="idReemplaza">
+
+               <% reemplaza.forEach( reemplaza => { %>
+
+                  <option value="<%= reemplaza.idReemplaza %> "> <%= reemplaza.nombre %> </option>
+  
+                <% }) %>
             </select>
           </div>  
             <br>
             <div class="display-flex justify-content-space-between width-100pc" >
             <label for=""class="width-126px"> Presentación :</label>
-            <select class="width-90pc" name="presentacion">
+            <select class="width-90pc" name="presentacion" id="presentacion">
               <option> Unidad </option>
               <option> Caja de 4 </option>
               <option> Caja de 6 </option>
@@ -51,31 +62,49 @@
           <br>
             <div class="display-flex justify-content-space-between width-100pc" >
             <label for=""class="width-126px"> Imagen Producto :</label>
-            <input class="width-90pc" type="file" name="imagen"  >
+            <input class="width-90pc" type="file" name="imagen" id="imagen" accept=".png, .jpg, .jpeg, .png, .gif">
           </div>
             <br>
             <div class="display-flex justify-content-space-between width-100pc" >
             <label for=""class="width-126px"> Precio :</label>
-            <input class="width-90pc" type="text" name="precio"  >
+            <input class="width-90pc" type="text" name="precio" id="precio" >
           </div>
           <br>
           <div class="display-flex justify-content-space-between width-100pc" >
             <label for=""class="width-126px"> Descuento :</label>
-            <input class="width-90pc" type="text" name="descuento">
+            <input class="width-90pc" type="text" name="descuento" id="descuento">
           </div>
           <br>
             <div class="display-flex justify-content-space-between width-100pc" >
             <label for=""class="width-126px"  > Relevancia :</label>
-            <select class="width-90pc" name="relevancia">
+            <select class="width-90pc" name="relevancia" id="relevancia">
               <option> oferta </option>
               <option> vendidos </option>
               <option> ninguna </option>
             </select>
+            </div>
+            <br>
+            <div class="display-flex justify-content-space-between width-100pc" >
+            <label for=""class="width-126px"> Vidas que salva :</label>
+            <input class="width-90pc" type="text" name="vidasQueSalva" id="vidasQueSalva" >
           </div>
+          <br>  
+          
+          <div class="display-flex justify-content-space-between width-100pc" >
+          <label for=""class="width-126px"> Litros H2o ahorrados :</label>
+          <input class="width-90pc" type="text" name="ltsH2oAhorrada" id="ltsH2oAhorrada" >
+        </div>
+        <br>  
+        
+        <div class="display-flex justify-content-space-between width-100pc" >
+        <label for=""class="width-126px"> Kilos dioxido ahorrados :</label>
+        <input class="width-90pc" type="text" name="kgCo2Ahorrado" id="kgCo2Ahorrado" >
+      </div>
+      <br>  
           
             <br>
-            <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina" type="submit">Guardar</button>
-            <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina" type="reset">Borrar</button>
+            <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina boton2" type="submit">Guardar</button>
+            <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina boton2" type="reset">Borrar</button>
           </form>
         </section>
 

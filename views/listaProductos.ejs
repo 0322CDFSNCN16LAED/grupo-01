@@ -1,157 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<%- include("./partials/head.ejs") %>
-<link rel="stylesheet" href="/css/home.css">
+  <head>
+    <%- include("./partials/head.ejs") %>
+    <link rel="stylesheet" href="/css/home.css" />
 
-<link rel="stylesheet" href="/css/home-tablet.css">
-<link rel="stylesheet" href="/css/home-desktop.css">
-</head>
+    <link rel="stylesheet" href="/css/home-tablet.css" />
+    <link rel="stylesheet" href="/css/home-desktop.css" />
+  </head>
 
-<body class="width-100vw height-100vh font-family-lilita bg-pagina display-flex flex-column min-heigth-100vh">
-
-<header>
-  <%- include("./partials/header.ejs") %>
-
-</header>
-<br>
-<main class=" grow margin-bottom-55px width-100pc margin-auto height-100vh">
-  <h2 class="text-color-blue">Bienvenido a la lista de productos de Vegan Meat</h2>
-  <section class="100pc display-flex flex-column align-items-center">
-  <nav
-      class="width-100pc bg-verde border-bottom-black center-me  display-flex justify-content-center align-items-flex-end margin-top-10px border-top-black"><h3 class="text-color-pagina">Productos que reemplazan al pollo</h3></nav>
-      <article class="display-flex width-90pc flex-column align-items-center articulos">
-        <% productos.forEach(producto=> {
-          if(producto.reemplaza == "pollo") { %>
+  <body
+    class="width-100vw height-100vh font-family-lilita bg-pagina display-flex flex-column min-heigth-100vh"
+  >
+    <header><%- include("./partials/header.ejs") %></header>
+    <br />
+    <main class="grow margin-bottom-55px width-100pc margin-auto height-100vh">
+      <section class="100pc display-flex flex-column align-items-center">
+        <nav class="nav">
+          <h3 class="tittle">NUESTROS PRODUCTOS</h3>
+        </nav>
         <article
-            class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
-            <a href="/detalleproducto/<%= producto.id %>">
-              <img src="/images/<%= producto.imagen %>" class="width-100pc">
+          class="display-flex width-90pc flex-column align-items-center articulos"
+        >
+          <% productos.forEach(producto=> { if(producto.idReemplaza) { %>
+          <article
+            class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center"
+          >
+            <a href="/detalleproducto/<%= producto.idProducto %>">
+              <img src="/images/<%= producto.imagen %>" class="width-100pc" />
             </a>
             <div class="display-flex flex-column align-items-center width-90pc">
-                <div class="display-flex align-items-center justify-content-end margin-top-10px width-100pc">
-                    <p class="precios text-color-pagina width-30pc tachado display-flex justify-content-center"><%= "$" + producto.precio %></p>
+              <div
+                class="display-flex align-items-center justify-content-end margin-top-10px width-100pc"
+              >
+                <p
+                  class="precios text-color-pagina width-30pc tachado display-flex justify-content-center"
+                >
+                  <%= "$" + producto.precio %>
+                </p>
+              </div>
+              <div
+                class="display-flex flex-row width-100pc align-items-center justify-content-space-between"
+              >
+                <p class="cantidad text-color-pagina">
+                  Presentación: <%= producto.presentacion %>
+                </p>
+                <div
+                  class="display-flex flex-row width-100pc align-items-center justify-content-end"
+                >
+                  <p class="descuento text-color-pagina font-size-12">
+                    <%= producto.descuento + "% OFF" %>
+                  </p>
+                  <p
+                    class="descuento text-color-pagina font-size-16 margin-left-5px"
+                  >
+                    <%= "$" + (producto.precio * (100 - producto.descuento) /
+                    100 ) %>
+                  </p>
                 </div>
-                <div class="display-flex flex-row width-100pc align-items-center justify-content-space-between">
-                  <p class="cantidad text-color-pagina">Presentación: <%= producto.presentacion %> </p>  
-                  <div class="display-flex flex-row width-100pc align-items-center justify-content-end">
-                    <p class="descuento text-color-pagina font-size-12"><%= producto.descuento + "% OFF" %></p>
-                    <p class="descuento text-color-pagina font-size-16 margin-left-5px"><%= "$" + (producto.precio * (100 - producto.descuento) / 100 ) %></p>
-                  </div>  
-                </div>
-                <div class="display-flex flex-row width-100pc align-items-center justify-content-space-between">
-                    <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina"><%= producto.nombre %></h3>
-                   
-                </div>
+              </div>
+              <div
+                class="display-flex flex-row width-100pc align-items-center justify-content-space-between"
+              >
+                <h3
+                  class="descripciones margin-top-10px margin-bottom-10px text-color-pagina"
+                >
+                  <%= producto.nombre %>
+                </h3>
+              </div>
             </div>
+          </article>
+          <% }}); %>
         </article>
-        <% }}); %>
-      </article>
+      </section>
+    </main>
 
-  <nav
-      class="width-100pc bg-verde border-bottom-black center-me  display-flex justify-content-center align-items-flex-end margin-top-10px border-top-black"><h3 class="text-color-pagina">Productos que reemplazan a la carne vacuna</h3></nav>
-      <article class="display-flex width-90pc flex-column align-items-center articulos">
-        <% productos.forEach(producto=> {
-          if(producto.reemplaza == "cerdo") { %>
-        <article
-            class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
-            <a href="/detalleproducto/<%= producto.id %>">
-              <img src="/images/<%= producto.imagen %>" class="width-100pc">
-            </a>
-            <div class="display-flex flex-column align-items-center width-90pc">
-                <div class="display-flex align-items-center justify-content-end margin-top-10px width-100pc">
-                    <p class="precios text-color-pagina width-30pc tachado display-flex justify-content-center"><%= "$" + producto.precio %></p>
-                </div>
-                <div class="display-flex flex-row width-100pc align-items-center justify-content-space-between">
-                  <p class="cantidad text-color-pagina">Presentación: <%= producto.presentacion %> </p>  
-                  <div class="display-flex flex-row width-100pc align-items-center justify-content-end">
-                    <p class="descuento text-color-pagina font-size-12"><%= producto.descuento + "% OFF" %></p>
-                    <p class="descuento text-color-pagina font-size-16 margin-left-5px"><%= "$" + (producto.precio * (100 - producto.descuento) / 100 ) %></p>
-                  </div>  
-                </div>
-                <div class="display-flex flex-row width-100pc align-items-center justify-content-space-between">
-                    <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina"><%= producto.nombre %></h3>
-                   
-                </div>
-            </div>
-        </article>
-        <% }}); %>
-      </article>
-  <nav
-      class="width-100pc bg-verde border-bottom-black center-me  display-flex justify-content-center align-items-flex-end margin-top-10px border-top-black"><h3 class="text-color-pagina">Productos que reemplazan a la carne de cerdo</h3></nav>
-      <article class="display-flex width-90pc flex-column align-items-center articulos">
-        <% productos.forEach(producto=> {
-          if(producto.reemplaza == "vacuno") { %>
-        <article
-            class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
-            <a href="/detalleproducto/<%= producto.id %>">
-              <img src="/images/<%= producto.imagen %>" class="width-100pc">
-            </a>
-            <div class="display-flex flex-column align-items-center width-90pc">
-                <div class="display-flex align-items-center justify-content-end margin-top-10px width-100pc">
-                    <p class="precios text-color-pagina width-30pc tachado display-flex justify-content-center"><%= "$" + producto.precio %></p>
-                </div>
-                <div class="display-flex flex-row width-100pc align-items-center justify-content-space-between">
-                  <p class="cantidad text-color-pagina">Presentación: <%= producto.presentacion %> </p>  
-                  <div class="display-flex flex-row width-100pc align-items-center justify-content-end">
-                    <p class="descuento text-color-pagina font-size-12"><%= producto.descuento + "% OFF" %></p>
-                    <p class="descuento text-color-pagina font-size-16 margin-left-5px"><%= "$" + (producto.precio * (100 - producto.descuento) / 100 ) %></p>
-                  </div>  
-                </div>
-                <div class="display-flex flex-row width-100pc align-items-center justify-content-space-between">
-                    <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina"><%= producto.nombre %></h3>
-                   
-                </div>
-            </div>
-        </article>
-        <% }}); %>
-      </article>
-  <nav
-      class="width-100pc bg-verde border-bottom-black center-me  display-flex justify-content-center align-items-flex-end margin-top-10px border-top-black"><h3 class="text-color-pagina">Productos que reemplazan a la carne de pescado</h3></nav>
-      <article class="display-flex width-90pc flex-column align-items-center articulos">
-        <% productos.forEach(producto=> {
-          if(producto.reemplaza == "pescado") { %>
-        <article
-            class="articulo display-flex flex-column margin-10px box-shadow-comun border-radius-3px bg-blue align-items-center">
-            <a href="/detalleproducto/<%= producto.id %>">
-              <img src="/images/<%= producto.imagen %>" class="width-100pc">
-            </a>
-            <div class="display-flex flex-column align-items-center width-90pc">
-                <div class="display-flex align-items-center justify-content-end margin-top-10px width-100pc">
-                    <p class="precios text-color-pagina width-30pc tachado display-flex justify-content-center"><%= "$" + producto.precio %></p>
-                </div>
-                <div class="display-flex flex-row width-100pc align-items-center justify-content-space-between">
-                  <p class="cantidad text-color-pagina">Presentación: <%= producto.presentacion %> </p>  
-                  <div class="display-flex flex-row width-100pc align-items-center justify-content-end">
-                    <p class="descuento text-color-pagina font-size-12"><%= producto.descuento + "% OFF" %></p>
-                    <p class="descuento text-color-pagina font-size-16 margin-left-5px"><%= "$" + (producto.precio * (100 - producto.descuento) / 100 ) %></p>
-                  </div>  
-                </div>
-                <div class="display-flex flex-row width-100pc align-items-center justify-content-space-between">
-                    <h3 class="descripciones margin-top-10px margin-bottom-10px text-color-pagina"><%= producto.nombre %></h3>
-                   
-                </div>
-            </div>
-        </article>
-        <% }}); %>
-      </article>
+    <br />
+    <br />
 
-
-
- </section>
-
-
-
-</main>
-
-    <br>
-    <br>
-
-
-    
-<%- include("./partials/footer.ejs") %>
-
-
-
-</body>
+    <%- include("./partials/footer.ejs") %>
+  </body>
 </html>

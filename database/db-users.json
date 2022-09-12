@@ -38,7 +38,6 @@
         "categoriaInteres": "Jugueteria",
         "id": 5
     },
-    
     {
         "nombre": "Damian",
         "apellido": "Aliano",
@@ -121,5 +120,18 @@
         "categoriaInteres": "Hogar",
         "imagenusuario": "1658075707908.xlsx",
         "id": 13
+    },
+    {
+        "nombre": "Adolfo",
+        "apellido": "Quintero",
+        "nacimiento": "2022-07-01",
+        "sexo": "M",
+        "celular": "1169499315",
+        "correo": "adolfo@hotmail.com",
+        "contrasena": "$2a$10$A9WJpHfGvXkt1pGPuA51K.fhbfkSNDvINn/ghAqgwGaHq.nBJhfvG",
+        "password": "adolfo",
+        "categoriaInteres": "Electro",
+        "imagenusuario": "1658588824674.txt",
+        "id": 14
     }
 ]

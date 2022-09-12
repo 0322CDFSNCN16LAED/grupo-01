@@ -18,25 +18,31 @@
     <main class="grow margin-bottom-55px width-90pc margin-auto height-100vh text-color-blue">
       <section class="100pc">
         <h2 class="">Usted está editando el producto: <%= productToEdit.nombre %> </h2>
-        <form action="/editarProducto/<%=productToEdit.id%>?_method=PUT" enctype="multipart/form-data"  method="POST">
+        <form action="/editarProducto/<%=productToEdit.idProducto%>?_method=PUT" enctype="multipart/form-data"  method="POST">
           <div class="display-flex justify-content-space-between margin-top-10px " >
             <label for="" class="width-126px">Nuevo nombre : </label>
-
-            <input class="margin-bottom-10px border-radius-3px width-45pc grow margin-left-5px max-width-80pc  " type="text" name="nombre" value= <%= productToEdit.nombre %> >
+            <input class="margin-bottom-10px border-radius-3px width-45pc grow margin-left-5px max-width-80pc  " type="text" name="nombre" value= "<%= productToEdit.nombre %>" >
           </div>
           <br>
+         
+
           <div class="display-flex justify-content-space-between " >
           <label for="" class="width-126px"> Descripción : </label>
-          <input class="margin-bottom-10px border-radius-3px width-45pc grow margin-left-5px max-width-80pc " type="text" name="descripcion" value= <%= productToEdit.descripcion %> >
+          <input class="margin-bottom-10px border-radius-3px width-45pc grow margin-left-5px max-width-80pc " type="text" name="descripcion" value= "<%= productToEdit.descripcion %>" >
         </div>
           <br>
           <div class="display-flex justify-content-space-between " >
           <label for="" class="width-126px"> Reemplazo de : </label>
-          <select class="width-45pc margin-bottom-10px border-radius-3px width-45pc grow margin-left-5px max-width-80pc " name="reemplaza"">
-            <option <% if(productToEdit.reemplaza == "pollo") {%> selected <% } %>  > pollo</option>
-            <option <% if(productToEdit.reemplaza == "vacuno") {%> selected <% } %>> vacuno</option>
-            <option <% if(productToEdit.reemplaza == "pescado") {%> selected <% } %>> pescado</option>
-            <option <% if(productToEdit.reemplaza == "cerdo") {%> selected <% } %>> cerdo</option>
+          <select class="width-45pc margin-bottom-10px border-radius-3px width-45pc grow margin-left-5px max-width-80pc " name="idReemplaza">
+
+           
+           <% reemplaza.forEach(reemplaza => { %>
+            <option  value=" <%= reemplaza.idReemplaza %>" <%= productToEdit.idReemplaza == reemplaza.idReemplaza ? "selected" : ""  %>  >  <%= reemplaza.nombre %>    </option>
+           <% }) %>
+           
+
+        
+            
           </select>
         </div>  
           <br>
@@ -75,8 +81,8 @@
         </div>
         
           <br>
-          <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina" type="submit">Guardar</button>
-          <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina" type="reset">Borrar</button>
+          <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina boton2" type="submit">Guardar</button>
+          <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina boton2" type="reset">Borrar</button>
         </form>
       </section>
 
