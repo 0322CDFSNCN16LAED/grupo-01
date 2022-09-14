@@ -1,35 +1,46 @@
-import React, { Component } from "react";
 import BigCard from "../BigCard";
-import Genre from "./Genre";
+import { useEffect, useState } from "react";
 
-const EXPRESS_HOST = "http://localhost:3001";
 
-export default class GenresInDb extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            genres: [],
-        };
+export default function LastMovie({productos}) {
+    const [categorias , setCategorias] = useState([]);
+    async function fetchCategorias(){
+        const respuesta = await fetch("http://localhost:3000/apis/categorias")
+        const resultado = await respuesta.json();
+        const categorias = resultado.data
+       
+        
+        
+        setCategorias(categorias)
+       
     }
 
-    async componentDidMount() {
-        const result = await fetch(`${EXPRESS_HOST}/api/genres`);
-        const genresResult = await result.json();
-        const newGenres = genresResult.data;
-        this.setState({
-            genres: newGenres,
-        });
-    }
+   
 
-    render() {
-        return (
-            <BigCard title="Genres in Database">
-                <div className="row">
-                    {this.state.genres.map((genre) => {
-                        return <Genre {...genre} key={genre.id} />;
-                    })}
+    useEffect(()=> {
+        fetchCategorias();
+       
+    }, [])
+    
+    return (
+        <BigCard title="Categorias de productos en la base de datos">
+
+<div className="col-lg-6 mb-4">
+            <div className="card text-black ">
+                <div className="card-body">
+                {categorias.map((categoria) => {
+                return (
+               <p>
+                {categoria.nombre} : 
+                </p>
+                )
+            })}
                 </div>
-            </BigCard>
-        );
-    }
+            </div>
+        </div>
+
+        
+
+    </BigCard>
+    );
 }

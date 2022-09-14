@@ -11,7 +11,7 @@ module.exports = {
             "nombre",
            
           ],
-        }).then((categorias) => {
+        },{ include: ["productos"]}).then((categorias) => {
           res.status(200).json({
             meta: {
               status: 200,

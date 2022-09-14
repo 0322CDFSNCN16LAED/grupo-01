@@ -16,8 +16,8 @@ module.exports = {
             "relevancia",
             "imagen",
             "idReemplaza"
-          ],
-        }).then((productos) => {
+          ], 
+        } , ).then((productos) => {
           res.status(200).json({
             meta: {
               status: 200,
