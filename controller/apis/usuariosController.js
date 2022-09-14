@@ -15,7 +15,7 @@ const controller = {
 
     listarUsuario : (req,res)=>{
        dbp.Usuarios.findAll({
-        attributes : ["nombre", "apellido", "email", "sexo"],
+        attributes : ["nombre", "apellido", "email", "sexo" , "imagen"],
        }).then((usuarios)=>{
         res.status(200).json({
             meta : {

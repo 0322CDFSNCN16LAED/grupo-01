@@ -15,6 +15,7 @@ module.exports = {
             "presentacion",
             "relevancia",
             "imagen",
+            "idReemplaza"
           ],
         }).then((productos) => {
           res.status(200).json({

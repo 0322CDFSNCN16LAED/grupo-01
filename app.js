@@ -2,6 +2,7 @@ const { application } = require("express");
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
+const cors = require("cors")
 
 const app = express();
 const methodOverride = require("method-override");
@@ -18,6 +19,7 @@ const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 app.use(userLoggedMiddleware);
 const userMasterLoggedMiddleware = require("./middlewares/userMasterLoggedMiddleware");
 app.use(userMasterLoggedMiddleware);
+app.use(cors("*"))
 
 app.listen(3000, () => {
   console.log("Servidor corriendo en puerto 3000");
@@ -28,6 +30,9 @@ app.set("view engine", "ejs");
 const mainRoutes = require("./routes/main");
 const apiRoutes = require("./routes/apis/apiRoutes");
 const { cookie } = require("express/lib/response");
+
+
+
 app.use("/", mainRoutes);
 
 app.use("/apis", apiRoutes);

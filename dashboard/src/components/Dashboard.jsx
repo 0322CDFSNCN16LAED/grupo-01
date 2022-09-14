@@ -1,31 +1,82 @@
+
 import GenresInDb from "./genres/GenresInDb";
 import LastMovie from "./LastMovie";
 import MiniCard from "./MiniCard";
-
-const miniCards = [
-    {
-        id: "5",
-        title: "Movies in Database",
-        value: "25",
-        icon: "fa-film",
-    },
-    {
-        id: "24",
-        title: "Total awards",
-        color: "success",
-        value: "79",
-        icon: "fa-award",
-    },
-    {
-        id: "32",
-        title: "Actors quantity",
-        color: "warning",
-        value: "49",
-        icon: "fa-user",
-    },
-];
+import { useEffect, useState } from "react";
 
 export default function Dashboard() {
+    const [productsCount , setProductsCount] = useState([]);
+    async function fecthProductosCount(){
+
+        const respuesta = await fetch("http://localhost:3000/apis/productos")
+        const resultado = await respuesta.json();
+        console.log(resultado)
+        const productsCount = resultado.meta.total
+        setProductsCount(productsCount)
+    }
+
+    const [usuariosCount , setUsuariosCount] = useState([]);
+    async function fecthUsuariosCount(){
+
+        const respuesta = await fetch("http://localhost:3000/apis/usuarios")
+        const resultado = await respuesta.json();
+        const usuariosCount = resultado.meta.total
+        setUsuariosCount(usuariosCount)
+    }
+
+    const [categoriasCount , setCategoriasCount] = useState([]);
+
+    async function fecthCategoriasCount(){
+        const respuesta = await fetch("http://localhost:3000/apis/categorias")
+        const resultado = await respuesta.json();
+        const categoriasCount = resultado.meta.total
+        setCategoriasCount(categoriasCount)
+    }
+    
+    useEffect(()=> {
+
+        fecthProductosCount();
+        fecthUsuariosCount();
+        fecthCategoriasCount();
+    }, [])
+    
+    
+    const miniCards = [
+
+        {
+
+            id: "5",
+            title: "Productos en la base de datos",
+            value: productsCount ,
+            icon: "fa-heart",
+        },
+
+        {
+
+            id: "24",
+            title: "Total usuarios",
+            color: "success",
+            value: usuariosCount,
+            icon: "fa-user",
+
+        },
+
+        {
+
+            id: "32",
+            title: "Cantidad de categorias",
+            color: "warning",
+            value: categoriasCount,
+            icon: "fa-paw",
+
+        },
+
+    ];
+
+
+
+
+
     return (
         <>
             <div className="d-sm-flex align-items-center justify-content-between mb-4">

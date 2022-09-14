@@ -1,32 +1,50 @@
-import mandalorian from "../assets/images/mandalorian.jpg";
 import BigCard from "./BigCard";
+import { useEffect, useState } from "react";
+
 
 export default function LastMovie() {
+    const [product , setProductLast] = useState([]);
+    async function fetchLastProduct(){
+        const respuesta = await fetch("http://localhost:3000/apis/productos")
+        const resultado = await respuesta.json();
+        const productList = resultado.data
+        const product = productList.pop()
+        
+        setProductLast(product)
+    }
+
+    useEffect(()=> {
+        fetchLastProduct();
+    }, [])
+    
     return (
-        <BigCard title="Last Movie in DB">
+        <BigCard title=" Ultimo producto creado">
             <div className="text-center">
                 <img
                     className="img-fluid px-3 px-sm-4 mt-3 mb-4"
                     style={{ width: "40rem" }}
-                    src={mandalorian}
+                    src={`http://localhost:3000/images/${product.imagen}`}
                     alt=" Star Wars - Mandalorian "
                 />
-            </div>
+                </div>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolores, consequatur explicabo officia inventore libero
-                veritatis iure voluptate reiciendis a magnam, vitae, aperiam
-                voluptatum non corporis quae dolorem culpa citationem ratione
-                aperiam voluptatum non corporis ratione aperiam voluptatum quae
-                dolorem culpa ratione aperiam voluptatum?
+                Nombre : {product.nombre}
             </p>
+            <p>
+                Precio : {product.precio}
+            </p>
+            <p>
+                Descripción : {product.descripcion}
+            </p>
+
+           
             <a
                 className="btn btn-danger"
                 target="_blank"
                 rel="nofollow"
                 href="/"
             >
-                View movie detail
+                Ver detalle de producto
             </a>
         </BigCard>
     );
