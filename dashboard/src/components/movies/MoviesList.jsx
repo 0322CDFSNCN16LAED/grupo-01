@@ -15,7 +15,7 @@ export default class MoviesList extends Component {
     }
 
     async componentDidMount() {
-        const result = await fetch(`${EXPRESS_HOST}/api/movies`);
+        const result = await fetch("http://localhost:3000/apis/productos");
         const moviesResult = await result.json();
         const newMovies = moviesResult.data;
         this.setState({
@@ -28,7 +28,7 @@ export default class MoviesList extends Component {
             <React.Fragment>
                 {/*<!-- PRODUCTS LIST -->*/}
                 <h1 className="h3 mb-2 text-gray-800">
-                    All the movies in the Database
+                    Todos los productos en la base de datos
                 </h1>
 
                 {/*<!-- DataTales Example -->*/}
@@ -43,24 +43,15 @@ export default class MoviesList extends Component {
                             >
                                 <thead>
                                     <tr>
-                                        <th>Id</th>
-                                        <th>Titulo</th>
-                                        <th>Genero</th>
-                                        <th>Calificación</th>
-                                        <th>Premios</th>
-                                        <th>Duración</th>
+                                        <th>Nombre</th>
+                                        
+                                        <th>Descripcion</th>
+                                        <th>Precio</th>
+                                        <th>Descuento</th>
+                                      
                                     </tr>
                                 </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Titulo</th>
-                                        <th>Genero</th>
-                                        <th>Calificación</th>
-                                        <th>Premios</th>
-                                        <th>Duración</th>
-                                    </tr>
-                                </tfoot>
+                              
                                 <tbody>
                                     {this.state.movies.map((movie) => {
                                         return (

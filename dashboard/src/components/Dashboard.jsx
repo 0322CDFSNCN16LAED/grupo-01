@@ -1,8 +1,10 @@
 
-import GenresInDb from "./genres/GenresInDb";
+import GenresInDb from "./genres/CategoriasInDb";
 import LastMovie from "./LastMovie";
 import MiniCard from "./MiniCard";
+
 import { useEffect, useState } from "react";
+import MoviesList from "./movies/MoviesList";
 
 export default function Dashboard() {
     const [productsCount , setProductsCount] = useState([]);
@@ -10,7 +12,7 @@ export default function Dashboard() {
 
         const respuesta = await fetch("http://localhost:3000/apis/productos")
         const resultado = await respuesta.json();
-        console.log(resultado)
+     
         const productsCount = resultado.meta.total
         setProductsCount(productsCount)
     }
@@ -20,6 +22,7 @@ export default function Dashboard() {
 
         const respuesta = await fetch("http://localhost:3000/apis/usuarios")
         const resultado = await respuesta.json();
+        
         const usuariosCount = resultado.meta.total
         setUsuariosCount(usuariosCount)
     }
@@ -101,6 +104,18 @@ export default function Dashboard() {
                 {/* <!-- Genres in DB --> */}
                 <GenresInDb />
             </div>
+            <div >
+                {/* <!-- Last Movie in DB --> */}
+                <MoviesList />
+               
+
+               
+            </div>
+
+
+
+
+            
         </>
     );
 }
