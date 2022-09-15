@@ -34,10 +34,11 @@ function App() {
                 {/* <!-- End of MainContent --> */}
 
                 {/* <!-- Footer --> */}
-                <footer className="sticky-footer bg-white">
+                <footer className="sticky-footer bg-green">
                     <div className="container my-auto">
                         <div className="copyright text-center my-auto">
-                            <span>Copyright &copy; Dashboard 2021</span>
+                            <span>2022 Todos los derechos
+    reservados</span>
                         </div>
                     </div>
                 </footer>

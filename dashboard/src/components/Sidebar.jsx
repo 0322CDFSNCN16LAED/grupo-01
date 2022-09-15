@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logoDH from "../assets/images/logo-DH.png";
+import logo from "../assets/images/logo.jpg";
 
 function Sidebar() {
     return (
@@ -15,7 +15,7 @@ function Sidebar() {
                 href="/"
             >
                 <div className="sidebar-brand-icon">
-                    <img className="w-100" src={logoDH} alt="Digital House" />
+                    <img className="w-100 margin-50px" src={logo} alt="Green Meat" />
                 </div>
             </a>
 
@@ -26,7 +26,7 @@ function Sidebar() {
             <li className="nav-item active">
                 <a className="nav-link" href="/">
                     <i className="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard - GreenMeet</span>
+                    <span className="color-blue">Dashboard - GreenMeet</span>
                 </a>
             </li>
 
@@ -34,27 +34,22 @@ function Sidebar() {
             <hr className="sidebar-divider" />
 
             {/* <!-- Heading --> */}
-            <div className="sidebar-heading">Actions</div>
+            <div className="sidebar-heading color-blue">Actions</div>
 
             {/* <!-- Nav Item - Pages --> */}
             <li className="nav-item">
                 <Link className="nav-link collapsed" to="/movies" exact="true">
-                    <i className="fas fa-fw fa-folder"></i>
-                    <span>Usuarios</span>
+                    <i className="fas fa-fw fa-folder color-blue"></i>
+                    <span className="color-blue">Usuarios</span>
                 </Link>
             </li>
             <li className="nav-item">
                 <Link className="nav-link collapsed" to="/movies" exact="true">
-                    <i className="fas fa-fw fa-folder"></i>
-                    <span>Productos</span>
+                    <i className="fas fa-fw fa-folder color-blue"></i>
+                    <span  className="color-blue">Productos</span>
                 </Link>
             </li>
-            <li className="nav-item">
-                <Link className="nav-link collapsed" to="/search" exact="true">
-                    <i className="fas fa-fw fa-search"></i>
-                    <span> Buscar productos</span>
-                </Link>
-            </li>
+            
 
            
             {/* <!-- Divider --> */}

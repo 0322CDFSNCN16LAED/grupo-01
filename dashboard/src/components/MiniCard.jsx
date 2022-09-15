@@ -28,7 +28,7 @@ export default function MiniCard({ title, color, value, icon }) {
                         </div>
                         <div className="col-auto">
                             <i
-                                className={`fas ${icon} fa-2x text-gray-300`}
+                                className={`fas ${icon} fa-2x color-blue`}
                             ></i>
                         </div>
                     </div>
