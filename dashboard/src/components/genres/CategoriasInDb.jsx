@@ -3,15 +3,17 @@ import { useEffect, useState } from "react";
 
 export default function Categorias() {
     const [categorias , setCategorias] = useState([]);
+
     async function fetchCategorias(){
         const respuesta = await fetch("http://localhost:3000/apis/categorias")
         const resultado = await respuesta.json();
         const categorias = resultado.data
         setCategorias(categorias)  
-    }
+    } ;
+   
 
     useEffect(()=> {
-        fetchCategorias();  
+        fetchCategorias();
     }, [])
     
     return (
@@ -21,9 +23,14 @@ export default function Categorias() {
             <div className="card text-black ">
                 <div className="card-body">
                 {categorias.map((categoria) => {
+                
+             
+                
+                
+                
                 return (
                <p>
-                {categoria.nombre} :
+                {categoria.nombre} : {categoria.productos.length}
                 </p>
                 )
             })}

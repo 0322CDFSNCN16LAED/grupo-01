@@ -2,7 +2,7 @@ import BigCard from "./BigCard";
 import { useEffect, useState } from "react";
 
 
-export default function LastMovie() {
+export default function LastProduct() {
     const [product , setProductLast] = useState([]);
     async function fetchLastProduct(){
         const respuesta = await fetch("http://localhost:3000/apis/productos")

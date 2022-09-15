@@ -1,4 +1,4 @@
-export default function Movie({ nombre, precio , descripcion, descuento}) {
+export default function Product({ nombre, precio , descripcion, descuento}) {
     return (
         <tr>
             <td>{nombre}</td>

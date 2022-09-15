@@ -2,24 +2,23 @@ import React from "react";
 import { Component } from "react";
 import { Route } from "react-router-dom";
 import MensajeSecreto from "../MensajeSecreto";
-import Movie from "./Movie";
+import Product from "./Product";
 
-const EXPRESS_HOST = "http://localhost:3001";
 
-export default class MoviesList extends Component {
+export default class ProductList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            movies: [],
+            products: [],
         };
     }
 
     async componentDidMount() {
         const result = await fetch("http://localhost:3000/apis/productos");
-        const moviesResult = await result.json();
-        const newMovies = moviesResult.data;
+        const productsResult = await result.json();
+        const newProducts = productsResult.data;
         this.setState({
-            movies: newMovies,
+            products: newProducts,
         });
     }
 
@@ -53,9 +52,9 @@ export default class MoviesList extends Component {
                                 </thead>
                               
                                 <tbody>
-                                    {this.state.movies.map((movie) => {
+                                    {this.state.products.map((product) => {
                                         return (
-                                            <Movie {...movie} key={movie.id} />
+                                            <Product {...product} key={product.id} />
                                         );
                                     })}
                                 </tbody>

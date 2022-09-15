@@ -1,10 +1,10 @@
 import "./App.css";
 import Dashboard from "./components/Dashboard";
-import MoviesList from "./components/movies/MoviesList";
+import ProductsList from "./components/products/ProductList";
 import Sidebar from "./components/Sidebar";
 
 import { Route, Switch } from "react-router-dom";
-import SearchMovies from "./components/movies/SearchMovies";
+import SearchMovies from "./components/products/SearchMovies";
 
 function App() {
     return (
@@ -25,7 +25,7 @@ function App() {
                                 component={Dashboard}
                                 exact={true}
                             />
-                            <Route path="/movies" component={MoviesList} />
+                            <Route path="/products" component={ProductsList} />
                             <Route path="/search" component={SearchMovies} />
                         </Switch>
                     </div>

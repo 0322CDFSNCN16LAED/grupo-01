@@ -1,10 +1,10 @@
 
 import GenresInDb from "./genres/CategoriasInDb";
-import LastMovie from "./LastMovie";
+import LastProduct from "./LastProduct";
 import MiniCard from "./MiniCard";
 
 import { useEffect, useState } from "react";
-import MoviesList from "./movies/MoviesList";
+import ProductList from "./products/ProductList";
 
 export default function Dashboard() {
     const [productsCount , setProductsCount] = useState([]);
@@ -98,7 +98,7 @@ export default function Dashboard() {
             {/* <!-- Content Row Last Movie in Data Base --> */}
             <div className="row">
                 {/* <!-- Last Movie in DB --> */}
-                <LastMovie />
+                <LastProduct />
                 {/* <!-- End content row last movie in Data Base --> */}
 
                 {/* <!-- Genres in DB --> */}
@@ -106,7 +106,7 @@ export default function Dashboard() {
             </div>
             <div >
                 {/* <!-- Last Movie in DB --> */}
-                <MoviesList />
+                <ProductList />
                
 
                
