@@ -19,9 +19,10 @@ export default function Categorias() {
     return (
         <BigCard title="Categorias de productos en la base de datos">
 
-        <div className="col-lg-6 mb-4">
-            <div className="card text-black ">
-                <div className="card-body">
+        <div className="col-lg-6 mb-4 width-100">
+            <div className="card text-black width-100 border-categorias">
+                <div className="card-body width-100 border-categorias">
+                <ul className="width-100">
                 {categorias.map((categoria) => {
                 
              
@@ -29,11 +30,12 @@ export default function Categorias() {
                 
                 
                 return (
-               <p>
-                {categoria.nombre} : {categoria.productos.length}
-                </p>
+               <li className="width-100">
+                La categoría {categoria.nombre} posee {categoria.productos.length} productos
+                </li>
                 )
             })}
+                </ul>
                 </div>
             </div>
         </div>

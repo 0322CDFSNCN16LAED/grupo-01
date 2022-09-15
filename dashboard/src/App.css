@@ -73,9 +73,9 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #ffe600;
+    color: #707375;
     text-align: left;
-    background-color: #fff;
+    background-color: #ffffff;
 }
 [tabindex="-1"]:focus {
     outline: 0 !important;
@@ -1321,7 +1321,7 @@ pre code {
 .table {
     width: 100%;
     margin-bottom: 1rem;
-    color: #ffe600;
+    color: #707375;
 }
 .table td,
 .table th {
@@ -3986,7 +3986,7 @@ input[type="submit"].btn-block {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #6e8c56;
+    background-color: #ffffff;
     background-clip: border-box;
     border: 1px solid #ffe600;
     border-radius: 0.35rem;
@@ -8557,7 +8557,7 @@ button.bg-dark:hover {
     color: #fff !important;
 }
 .text-primary {
-    color: #ffe600 !important;
+    color: #707375 !important;
 }
 a.text-primary:focus,
 a.text-primary:hover {
@@ -8571,7 +8571,7 @@ a.text-secondary:hover {
     color: #60616f !important;
 }
 .text-success {
-    color: #ffe600 !important;
+    color: #707375 !important;
 }
 a.text-success:focus,
 a.text-success:hover {
@@ -8585,7 +8585,7 @@ a.text-info:hover {
     color: #258391 !important;
 }
 .text-warning {
-    color: #ffe600 !important;
+    color: #707375 !important;
 }
 a.text-warning:focus,
 a.text-warning:hover {
@@ -10001,11 +10001,17 @@ body.sidebar-toggled footer.sticky-footer {
     width: 100%;
 }
 .color-blue {
-    color: #707375
+    color: #707375 !important
 }
 .margin-50px {
     margin-top: 100px;
 }
 .bg-green {
     background-color: #6e8c56;
+}
+.width-100 {
+    min-width: 100%;
+}
+.border-categorias {
+    border: 1px solid #707375 !important;
 }
