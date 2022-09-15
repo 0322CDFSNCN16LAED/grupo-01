@@ -79,6 +79,34 @@
             <option <% if(productToEdit.relevancia == "ninguna") {%> selected <% } %>> ninguna </option>
           </select>
         </div>
+        <br>
+        <div class="display-flex justify-content-space-between">
+          <label for="" class="width-126px"> Vidas que salva :</label>
+          <input class="width-45pc margin-bottom-10px border-radius-3px width-45pc grow margin-left-5px max-width-80pc " type="text" name="vidasQueSalva" id="vidasQueSalva" value= <%= productToEdit.vidasQueSalva %>>
+        </div>
+        <br>
+        
+        <div class="display-flex justify-content-space-between">
+          <label for="" class="width-126px"> Litros H2o ahorrados :</label>
+          <input class="width-45pc margin-bottom-10px border-radius-3px width-45pc grow margin-left-5px max-width-80pc " type="text" name="ltsH2oAhorrada" id="ltsH2oAhorrada" value= <%= productToEdit.ltsH2oAhorrada %>>
+        </div>
+        <br>
+        
+        <div class="display-flex justify-content-space-between">
+          <label for="" class="width-126px"> Kilos dioxido ahorrados :</label>
+          <input class="width-45pc margin-bottom-10px border-radius-3px width-45pc grow margin-left-5px max-width-80pc " type="text" name="kgCo2Ahorrado" id="kgCo2Ahorrado" value= <%= productToEdit.kgCo2Ahorrado %>>
+        </div>
+        <br>
+        <div class="display-flex justify-content-space-between">
+          <label for="" class="width-126px"> Stock Virtual :</label>
+          <input class="width-45pc margin-bottom-10px border-radius-3px width-45pc grow margin-left-5px max-width-80pc " type="text" name="stockVirtual" id="stockVirtual" value= <%= productToEdit.stockVirtual %>>
+        </div>
+        <br>
+        <div class="display-flex justify-content-space-between">
+          <label for="" class="width-126px"> Stock Fisico :</label>
+          <input class="width-45pc margin-bottom-10px border-radius-3px width-45pc grow margin-left-5px max-width-80pc " type="text" name="stockFisico" id="stockFisico" value= <%= productToEdit.stockFisico %>>
+        </div>
+        <br>
         
           <br>
           <button class="bg-verde border-none border-radius-3px padding-5px text-color-pagina boton2" type="submit">Guardar</button>
