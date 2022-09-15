@@ -1,5 +1,4 @@
-
-import GenresInDb from "./genres/CategoriasInDb";
+import GenresInDb from "./categorias/CategoriasInDb";
 import LastProduct from "./LastProduct";
 import MiniCard from "./MiniCard";
 
